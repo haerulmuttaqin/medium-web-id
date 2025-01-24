@@ -6,7 +6,7 @@
   </a>
 </p>
 
-> Resume  Builder | Streamline your development workflow! Our platform offers instant Resume  creation, real-time testing, and seamless integration
+> Read Medium as Free | Enjoy free access to Medium articles and quench your thirst for information with a wide array of topics at your fingertips
 
 ### 🏠 [Homepage](https://orify.me/)
 
