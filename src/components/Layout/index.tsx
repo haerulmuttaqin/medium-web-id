@@ -1,8 +1,7 @@
 "use client";
-import React, {FC, Fragment, useEffect, useState} from 'react';
+import React, {FC, Fragment, useEffect} from 'react';
 import {Content, LeftSidebarState, Main, PageLayout, TopNavigation,} from '@atlaskit/page-layout';
-import {AppSwitcher, AtlassianNavigation, PrimaryButton, SignIn} from "@atlaskit/atlassian-navigation";
-import {NavigationProvider} from "@atlaskit/navigation-next";
+import {AtlassianNavigation, PrimaryButton, SignIn} from "@atlaskit/atlassian-navigation";
 import SideNav from "@component/SideNav";
 import MobileNavigation from "@component/SideNav/Mobile";
 import {LayoutProps} from "@component/Layout/layout";
@@ -10,17 +9,10 @@ import BaseContent from "./content";
 import {FlagsProvider} from "@atlaskit/flag";
 import Head from "next/head";
 import DefaultSettings from "@component/Setting";
-import DefaultHelp from "@component/Help";
 import {useRouter} from "next/router";
-import {Box, Text, xcss} from "@atlaskit/primitives";
 import {useTranslation} from "next-i18next";
-import Button from "@atlaskit/button";
-import DropdownMenu, {DropdownItemRadio, DropdownItemRadioGroup} from '@atlaskit/dropdown-menu';
-import secureLocalStorage from "react-secure-storage";
-import Tooltip from "@atlaskit/tooltip";
 import DefaultProfile from "@component/Profile";
 import {useSession} from "next-auth/react";
-import {LinkButton} from "@atlaskit/button/new";
 import Link from "next/link";
 
 const AtlassianProductHome = () => (
@@ -98,80 +90,78 @@ const Layout: FC<LayoutProps> = (
                 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
                 <link rel="manifest" href="/site.webmanifest"/>
             </Head>
-            <NavigationProvider initialUIController={{isResizeDisabled: true}}>
-                {wSize < 800 ? (
-                    <Fragment>
-                        {isSideNavOpen && (
-                            <MobileNavigation title={title} sidebarList={sidebarList} sidebarTitle={sidebarTitle}
-                                              loadingSideBar={loadingSidebar}/>)}
-                        <Main>
-                            <BaseContent
-                                isSideNavOpen={isSideNavOpen}
-                                isAdmin={isAdmin}
-                                title={title}
-                                description={description}
-                                renderAction={renderAction}
-                                renderBottomBar={renderBottomBar}
-                                shouldShowBreadcrumbs={shouldShowBreadcrumbs}
-                                shouldShowPageHeader={shouldShowPageHeader}
-                                shouldShowFooter={shouldShowFooter}>
-                                {children}
-                            </BaseContent>
-                        </Main>
-                    </Fragment>
-                ) : (
-                    <Fragment>
-                        <PageLayout
-                            onLeftSidebarExpand={(state: LeftSidebarState) =>
-                                console.log('onExpand', state)
-                            }
-                            onLeftSidebarCollapse={(state: LeftSidebarState) =>
-                                console.log('onCollapse', state)
-                            }
-                        >
-                            {
-                                shouldShowNavBar &&
-                                (
-                                    <TopNavigation isFixed={true}>
-                                        <AtlassianNavigation
-                                            label="dashboard"
-                                            primaryItems={[
-                                                <PrimaryButton key={0} onClick={openHome}>{t('home')}</PrimaryButton>,
-                                                status == "authenticated" ? <PrimaryButton key={1}
-                                                                                           onClick={openProject}>{t('my_projects')}</PrimaryButton> : null,
-                                                <PrimaryButton key={3} onClick={openAbout}>{t('about')}</PrimaryButton>,
-                                            ]}
-                                            renderProductHome={AtlassianProductHome}
-                                            renderSettings={DefaultSettings}
-                                            renderProfile={status == "authenticated" ? DefaultProfile : DefaultSignIn}
-                                        />
-                                    </TopNavigation>
-                                )
-                            }
-                            <Content>
-                                {isSideNavOpen &&
-                                    <SideNav isAdmin={isAdmin} menuList={sidebarList} title={sidebarTitle}
-                                             loading={loadingSidebar}/>}
-                                <Main>
-                                    <BaseContent
-                                        isSideNavOpen={isSideNavOpen}
-                                        isAdmin={isAdmin}
-                                        title={title}
-                                        description={description}
-                                        renderAction={renderAction}
-                                        renderBottomBar={renderBottomBar}
-                                        shouldShowBreadcrumbs={shouldShowBreadcrumbs}
-                                        shouldShowPageHeader={shouldShowPageHeader}
-                                        shouldShowFooter={shouldShowFooter}
-                                    >
-                                        {children}
-                                    </BaseContent>
-                                </Main>
-                            </Content>
-                        </PageLayout>
-                    </Fragment>
-                )}
-            </NavigationProvider>
+            {wSize < 800 ? (
+                <Fragment>
+                    {isSideNavOpen && (
+                        <MobileNavigation title={title} sidebarList={sidebarList} sidebarTitle={sidebarTitle}
+                                          loadingSideBar={loadingSidebar}/>)}
+                    <Main>
+                        <BaseContent
+                            isSideNavOpen={isSideNavOpen}
+                            isAdmin={isAdmin}
+                            title={title}
+                            description={description}
+                            renderAction={renderAction}
+                            renderBottomBar={renderBottomBar}
+                            shouldShowBreadcrumbs={shouldShowBreadcrumbs}
+                            shouldShowPageHeader={shouldShowPageHeader}
+                            shouldShowFooter={shouldShowFooter}>
+                            {children}
+                        </BaseContent>
+                    </Main>
+                </Fragment>
+            ) : (
+                <Fragment>
+                    <PageLayout
+                        onLeftSidebarExpand={(state: LeftSidebarState) =>
+                            console.log('onExpand', state)
+                        }
+                        onLeftSidebarCollapse={(state: LeftSidebarState) =>
+                            console.log('onCollapse', state)
+                        }
+                    >
+                        {
+                            shouldShowNavBar &&
+                            (
+                                <TopNavigation isFixed={true}>
+                                    <AtlassianNavigation
+                                        label="dashboard"
+                                        primaryItems={[
+                                            <PrimaryButton key={0} onClick={openHome}>{t('home')}</PrimaryButton>,
+                                            status == "authenticated" ? <PrimaryButton key={1}
+                                                                                       onClick={openProject}>{t('my_projects')}</PrimaryButton> : null,
+                                            <PrimaryButton key={3} onClick={openAbout}>{t('about')}</PrimaryButton>,
+                                        ]}
+                                        renderProductHome={AtlassianProductHome}
+                                        renderSettings={DefaultSettings}
+                                        renderProfile={status == "authenticated" ? DefaultProfile : DefaultSignIn}
+                                    />
+                                </TopNavigation>
+                            )
+                        }
+                        <Content>
+                            {isSideNavOpen &&
+                                <SideNav isAdmin={isAdmin} menuList={sidebarList} title={sidebarTitle}
+                                         loading={loadingSidebar}/>}
+                            <Main>
+                                <BaseContent
+                                    isSideNavOpen={isSideNavOpen}
+                                    isAdmin={isAdmin}
+                                    title={title}
+                                    description={description}
+                                    renderAction={renderAction}
+                                    renderBottomBar={renderBottomBar}
+                                    shouldShowBreadcrumbs={shouldShowBreadcrumbs}
+                                    shouldShowPageHeader={shouldShowPageHeader}
+                                    shouldShowFooter={shouldShowFooter}
+                                >
+                                    {children}
+                                </BaseContent>
+                            </Main>
+                        </Content>
+                    </PageLayout>
+                </Fragment>
+            )}
         </FlagsProvider>
     );
 };

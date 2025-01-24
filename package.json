@@ -42,7 +42,6 @@
     "@atlaskit/mobile-header": "^6.2.3",
     "@atlaskit/modal-dialog": "^12.10.6",
     "@atlaskit/navigation": "^37.0.2",
-    "@atlaskit/navigation-next": "^9.0.17",
     "@atlaskit/notification-indicator": "^9.2.0",
     "@atlaskit/page": "^12.3.6",
     "@atlaskit/page-header": "^10.4.5",

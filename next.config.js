@@ -90,6 +90,7 @@ const nextConfig = withTM(
             "@atlaskit/datetime-picker",
             "@atlaskit/calendar",
             "@atlaskit/tooltip",
+            "@emotion/react",
             "echarts",
             "zrender",
         ]
