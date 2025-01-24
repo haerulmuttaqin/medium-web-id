@@ -1,16 +1,13 @@
 'use client'
 /** @jsxImportSource @emotion/react */
-import React, {useRef} from 'react';
+import React from 'react';
 import type {NextPage} from "next";
 import dynamic from "next/dynamic";
 import {FlagsProvider} from "@atlaskit/flag";
-import {Box, Stack, xcss, Inline} from "@atlaskit/primitives";
+import {Box, Inline, xcss} from "@atlaskit/primitives";
 import Heading from "@atlaskit/heading";
-import {token} from "@atlaskit/tokens";
 import ContentWrapper from "@component/Layout/common/content-wrapper";
 import {useTranslation} from "next-i18next";
-import {useColorMode} from "@atlaskit/app-provider";
-import Content from "@/pages/main/content";
 
 const Layout = dynamic(
     () => import('@component/Layout'),

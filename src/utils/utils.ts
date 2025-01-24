@@ -1,5 +1,6 @@
 import secureLocalStorage from "react-secure-storage";
 import {MockProps} from "@api/data/interfaces/mock";
+import {z} from "zod";
 
 export const createKey = (input?: string) => input ? input.replace(/^(the|a|an)/, '').replace(/\s/g, '') : input;
 
@@ -119,3 +120,8 @@ export const getMethodType = (method: string) => {
 
     }
 }
+
+export const urlSchema = z
+    .string()
+    .min(1, { message: "URL field cannot be empty" })
+    .url({ message: "Please enter a valid URL" });
