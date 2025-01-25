@@ -6,15 +6,16 @@ import Footer from "@component/Footer";
 import LandingTerminal from "@pages/landing/components/Terminal";
 import LandingSubFeatures from "@pages/landing/components/SubFeatures";
 import LandingPageLayout from "@pages/landing/components/Layout";
-import {ArticleDetails, scrapeArticleContent} from "@pages/post/data/article";
+import {useRouter} from "next/router";
 
-
-export default async function LandingPage() {
-    let content: ArticleDetails | { error: string } | null = await scrapeArticleContent("url");
+export default function LandingPage() {
+    const router = useRouter()
+    const {url} = router.query
 
     useEffect(() => {
-        console.log(content)
-    }, []);
+        console.log(url)
+    }, [url]);
+
     return (
         <LandingPageLayout title={"Untitled"}>
             <LandingPageHero/>

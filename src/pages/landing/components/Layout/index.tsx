@@ -52,16 +52,17 @@ const LandingPageLayout: FC<LandingPageLayoutProps> = (
                 <meta name="theme-color" content="#1D7AFC"/>
             </Head>
             <Fragment>
-                <PageLayout>
-                    <TopNavigation isFixed={true}>
-                        <LandingPageNavigation/>
-                    </TopNavigation>
-                    <Content>
-                        <Main>
+                <TopNavigation isFixed={true}>
+                    <LandingPageNavigation/>
+                </TopNavigation>
+                <Content>
+                    <Main>
+                    <br/>
+                    <br/>
+                    <br/>
                         {children}
-                        </Main>
-                    </Content>
-                </PageLayout>
+                    </Main>
+                </Content>
             </Fragment>
         </Box>
     );

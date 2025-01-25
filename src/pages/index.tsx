@@ -1,7 +1,18 @@
-import React from "react";
-import Main from "@/pages/main";
-import LandingPage from "@pages/landing";
+import React, {useEffect} from "react";
+import LandingPage from "@pages/landing/[url]";
+import {useRouter} from "next/router";
 
-const Index = () => <LandingPage/>;
+export default function Page() {
+    const router = useRouter()
+    return <p>Post: {router.query.slug}</p>
+}
 
-export default Index;
+// const Index = () => {
+//     const router = useRouter()
+//     const {url} = router.query
+//
+//     useEffect(() => {
+//         console.log(url)
+//     }, [url]);
+//     return <LandingPage/>
+// };
