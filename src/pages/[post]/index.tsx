@@ -1,15 +1,15 @@
 import React, {useEffect, useState} from "react";
 import Footer from "@component/Footer";
 import LandingPageLayout from "@pages/landing/components/Layout";
-import {useFetchPost} from "@pages/post/data/remote";
+import {useFetchPost} from "@pages/[post]/data/remote";
 import {useRouter} from "next/router";
+import {usePathname} from "next/navigation";
 
-export default function PostPage() {
+export default function PostPage({url}: { url: string }) {
     const router = useRouter()
-    const {url} = router.query
-
-    const mediumUrl = url;
-
+    const paths = usePathname()
+    const {post} = router.query
+    const [mediumUrl, setMediumUrl] = useState(url)
     const [content, setContent] = useState("")
     const {
         data: postData,
@@ -17,10 +17,6 @@ export default function PostPage() {
         mutate: mostMutate,
         error: postError
     } = useFetchPost(mediumUrl as string)
-
-    useEffect(() => {
-
-    }, []);
 
     return (
         <LandingPageLayout title={"Post"}>

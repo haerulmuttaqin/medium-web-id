@@ -15,13 +15,11 @@ export default async function handler(req: any, res: any) {
 
     const page = await browser.newPage();
     await page.setExtraHTTPHeaders({
-        'Referer': 'https://t.co/12038712947289341293812839321',
+        'Referer': 'https://t.co/' + Math.floor(Math.random() * 1E16),
     });
-    await page.goto(`https://freedium.cfd/${req.query.url}`, {waitUntil: "networkidle0"});
+    await page.goto(`https://readmedium.com/${req.query.url}`, {waitUntil: "networkidle0"});
     const content = await page.evaluate(() => {
-        document.querySelector("#problemModal")?.remove()
-        document.querySelector("p.text-base")?.remove()
-        const container = document.querySelector(".container");
+        const container = document.querySelector(".read-medium-post");
         return container?.innerHTML ?? "<i>post not found</i>"
     });
     res.status(200).json({success: true, message: "Successfully", data: content})

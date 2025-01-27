@@ -416,3 +416,11 @@ div[class*="-ActionsWrapper"] {
     width: 2.9rem !important;
     justify-content: end !important;
 }
+
+.read-medium-post {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    word-break: break-word;
+    word-wrap: break-word;
+}
