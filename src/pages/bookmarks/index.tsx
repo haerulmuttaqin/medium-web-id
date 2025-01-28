@@ -15,7 +15,7 @@ import {showFlag} from "@store/actions/show-flag";
 import {useDispatch} from "react-redux";
 import Modal, {ModalBody, ModalFooter, ModalHeader, ModalTitle, ModalTransition,} from '@atlaskit/modal-dialog';
 import {OptionProps} from "@api/data/interfaces";
-import {deleteProject} from "@api/data/services/project";
+import {deleteProject} from "@api/data/services/bookmark";
 import DropdownMenu, {DropdownItem, DropdownItemGroup} from "@atlaskit/dropdown-menu";
 import MoreIcon from "@atlaskit/icon/glyph/more";
 import {ProjectProps} from "@api/data/interfaces/project";
@@ -25,8 +25,7 @@ import ContentWrapper from "@component/Layout/common/content-wrapper";
 import Auth from "@protected/auth";
 import {useTranslation} from "next-i18next";
 import Link from "next/link";
-import {useFetchProjects} from "@pages/projects/data/remote";
-import Code from "@atlaskit/code/inline";
+import {useFetchBookmarks} from "@pages/bookmarks/data/remote";
 import CodeInline from "@component/Code/CodeInline";
 
 const Layout = dynamic(
@@ -34,7 +33,7 @@ const Layout = dynamic(
     {ssr: false}
 )
 
-const Projects: NextPage = () => {
+const BookmarkPage: NextPage = () => {
     const {t} = useTranslation(["common"])
     const dispatch = useDispatch();
     const router = useRouter()
@@ -53,11 +52,11 @@ const Projects: NextPage = () => {
     const closeModalDelete = useCallback(() => setIsOpenAlertDelete(false), []);
 
     const {
-        data: dataProjects,
-        isLoading: isLoadingProjects,
+        data: databookmarks,
+        isLoading: isLoadingbookmarks,
         mutate: mutateProject,
         error: errorProject
-    } = useFetchProjects()
+    } = useFetchBookmarks()
 
     const onFilterTypeChange = (option: any) => {
         setFilterType(option ? option.value : 1)
@@ -97,14 +96,15 @@ const Projects: NextPage = () => {
                 );
             })
     }
+
     const handleClickNew = () => {
-        router.push("/projects/create")
+        router.push("/bookmarks/create")
     }
     const handleOnShow = (project_id: string, sid?: string, idx?: number) => {
         router.push(`/project?id=${project_id}&sid=${sid}&idx=${idx}`)
     }
     const handleOnEdit = (project_id: string, sid?: string, idx?: number) => {
-        router.push(`/projects/${project_id}?action=edit&sid=${sid}&idx=${idx}`)
+        router.push(`/bookmarks/${project_id}?action=edit&sid=${sid}&idx=${idx}`)
     }
     const handleOpenModalDelete = (params: ProjectProps) => {
         setShouldBeDelete(params)
@@ -119,7 +119,7 @@ const Projects: NextPage = () => {
     }, []);
 
     useEffect(() => {
-        if ((dataProjects == undefined) && errorProject) {
+        if ((databookmarks == undefined) && errorProject) {
             dispatch(
                 showFlag({
                     success: false,
@@ -160,7 +160,7 @@ const Projects: NextPage = () => {
         ],
     };
 
-    const dataWithFilterQuery = (filterQuery == "" ? dataProjects : filterByValue(dataProjects, filterQuery))
+    const dataWithFilterQuery = (filterQuery == "" ? databookmarks : filterByValue(databookmarks, filterQuery))
     const dataWithFilterType = (filterType == "1" ? dataWithFilterQuery : dataWithFilterQuery?.filter((filter: ProjectProps) => filter?.is_active == filterType))
     const rows = dataWithFilterType?.map(
         (row: ProjectProps, index: number) => ({
@@ -218,7 +218,7 @@ const Projects: NextPage = () => {
 
     return (
         <Layout
-            title="MediumWebID Project"
+            title="Bookmarked Articles"
             renderAction={
                 <ButtonGroup label="Content actions">
                     <Button appearance="primary" onClick={handleClickNew}>{t("create_new_project")}</Button>
@@ -265,7 +265,7 @@ const Projects: NextPage = () => {
                     rows={rows}
                     rowsPerPage={10}
                     defaultPage={1}
-                    isLoading={isLoadingProjects}
+                    isLoading={isLoadingbookmarks}
                     loadingSpinnerSize="large"
                 />
             </ContentWrapper>
@@ -302,4 +302,4 @@ const Projects: NextPage = () => {
     );
 };
 
-export default Auth(Projects);
+export default Auth(BookmarkPage);

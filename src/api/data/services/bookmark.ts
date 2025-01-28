@@ -1,27 +1,27 @@
 import {api} from "@/api";
 import {BaseResponse} from "../interfaces";
-import {ProjectPayloadProps} from "../interfaces/project";
+import {BookmarkPayloadProps} from "../interfaces/project";
 
 
-export const getProjects = async (): Promise<BaseResponse> => {
+export const getBookmarks = async (): Promise<BaseResponse> => {
     return await api({
         method: 'GET',
-        url: "projects",
+        url: "bookmarks",
     });
 };
 
 export const getProject = async (project_id: string, sheet_id: string): Promise<BaseResponse> => {
     return await api({
         method: 'GET',
-        url: `projects/${project_id}/${sheet_id}`,
+        url: `bookmarks/${project_id}/${sheet_id}`,
     });
 };
 
-export const addProject = async (payload: ProjectPayloadProps): Promise<BaseResponse> => {
+export const addBookmark = async (payload: BookmarkPayloadProps): Promise<BaseResponse> => {
     try {
         const {data} = await api({
             method: "POST",
-            url: "projects",
+            url: "bookmark",
             data: payload
         })
         if (data) {
@@ -39,11 +39,11 @@ export const addProject = async (payload: ProjectPayloadProps): Promise<BaseResp
     }
 };
 
-export const updateProject = async (id: string, sid: string, idx: number, payload: ProjectPayloadProps): Promise<BaseResponse> => {
+export const updateProject = async (id: string, sid: string, idx: number, payload: BookmarkPayloadProps): Promise<BaseResponse> => {
     try {
         const {data} = await api({
             method: "POST",
-            url: `projects/${sid}/${idx}/${id}`,
+            url: `bookmarks/${sid}/${idx}/${id}`,
             data: payload
         })
         if (data) {
@@ -65,7 +65,7 @@ export const deleteProject = async (dns: string, sid: string, idx: number): Prom
     try {
         const {data} = await api({
             method: "DELETE",
-            url: `projects/${sid}/${idx}/${dns}`,
+            url: `bookmarks/${sid}/${idx}/${dns}`,
         })
         if (data) {
             return data

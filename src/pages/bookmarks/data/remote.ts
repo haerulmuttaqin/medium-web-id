@@ -1,9 +1,9 @@
 import useSWR from "swr";
-import {getProject, getProjects} from "@api/data/services/project";
+import {getProject, getBookmarks} from "@api/data/services/bookmark";
 
-export const useFetchProjects = () => useSWR(
+export const useFetchBookmarks = () => useSWR(
     ['project'],
-    () => getProjects().then((res) => res.data.data),
+    () => getBookmarks().then((res) => res.data.data),
     {
         revalidateIfStale: false,
         revalidateOnFocus: false,

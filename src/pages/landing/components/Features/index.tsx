@@ -64,7 +64,7 @@ const LandingFeatures = () => {
                     {/*            <br/>*/}
                     {/*            <Stack space="space.100" grow="fill">*/}
                     {/*                <Text size={"large"}>*/}
-                    {/*                    Effortlessly manage unlimited projects with precision and ease. Our intuitive*/}
+                    {/*                    Effortlessly manage unlimited bookmarks with precision and ease. Our intuitive*/}
                     {/*                    platform enables seamless task delegation, real-time collaboration, and in-depth*/}
                     {/*                    progress tracking, ensuring unparalleled productivity and success.*/}
                     {/*                </Text>*/}

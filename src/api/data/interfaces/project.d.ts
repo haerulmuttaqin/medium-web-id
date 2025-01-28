@@ -21,11 +21,13 @@ interface ProjectFormProps {
     onHandleSubmit: OnSubmitHandler<{}>
 }
 
-interface ProjectPayloadProps {
-    name: string
-    prefix: string
-    is_active?: string
+interface BookmarkPayloadProps {
+    author: { name: string, avatar: string }
+    title: string;
+    thumbnail: string;
+    summary: string;
+    content: string;
+    tags: string;
     created_at?: string
-    updated_at?: string
     sid?: string
 }

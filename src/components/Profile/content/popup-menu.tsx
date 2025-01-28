@@ -50,11 +50,11 @@ const ProfilePopupMenu = () => {
     }
 
     const openMyProject = () => {
-        router.push("/projects")
+        router.push("/bookmarks")
     }
 
     const openNewProject = () => {
-        router.push("/projects/create")
+        router.push("/bookmarks/create")
     }
 
     return (
@@ -129,9 +129,8 @@ const ProfilePopupMenu = () => {
                         )}
                     />
                 </Section>
-                <Section title={t("projects")} hasSeparator>
-                    <ButtonItem onClick={openMyProject}>{t("my_projects")}</ButtonItem>
-                    <ButtonItem onClick={openNewProject}>{t("create_new_project")}</ButtonItem>
+                <Section title={t("bookmarks")} hasSeparator>
+                    <ButtonItem onClick={openMyProject}>{t("my_bookmarks")}</ButtonItem>
                 </Section>
                 <Section hasSeparator>
                     <ButtonItem onClick={openModalLogout}>Logout</ButtonItem>

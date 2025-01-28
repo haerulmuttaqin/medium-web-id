@@ -27,7 +27,7 @@ import ChevronDownIcon from "@atlaskit/icon/utility/chevron-down";
 import ProjectIcon from '@atlaskit/icon/core/project';
 
 import {ButtonItem as ButtonItemMenu, MenuGroup, Section as SectionMenu} from '@atlaskit/menu';
-import {useFetchProjects} from "@pages/projects/data/remote";
+import {useFetchbookmarks} from "@pages/bookmarks/data/remote";
 import {ProjectProps} from "@api/data/interfaces/project";
 import AddIcon from '@atlaskit/icon/glyph/add';
 import TasksIcon from "@atlaskit/icon/glyph/subtask";
@@ -50,11 +50,11 @@ const MenuProject = ({data}: any) => {
     const router = useRouter()
     const {pid, sid, id} = router.query
     const {
-        data: dataProjects,
-        isLoading: isLoadingProjects,
+        data: databookmarks,
+        isLoading: isLoadingbookmarks,
         mutate: mutateProject,
         error: errorProject
-    } = useFetchProjects()
+    } = useFetchbookmarks()
 
     const handleChangeProject = (project: any) => {
         if (project.id == pid) return;
@@ -62,19 +62,19 @@ const MenuProject = ({data}: any) => {
     }
 
     const handleGoToManageProject = () => {
-        router.push("/projects")
+        router.push("/bookmarks")
     }
 
     const handleCreateNewProject = () => {
-        router.push("/projects/create")
+        router.push("/bookmarks/create")
     }
 
     return (
         <MenuGroup>
-            <SectionMenu title={t("projects")}>
+            <SectionMenu title={t("bookmarks")}>
                 {
-                    !isLoadingProjects && dataProjects?.length > 0
-                        ? dataProjects?.map((item: any) => {
+                    !isLoadingbookmarks && databookmarks?.length > 0
+                        ? databookmarks?.map((item: any) => {
                             return (
                                 <ButtonItemMenu
                                     key={item.id as any}
@@ -90,8 +90,7 @@ const MenuProject = ({data}: any) => {
                 }
             </SectionMenu>
             <SectionMenu hasSeparator>
-                <ButtonItemMenu onClick={handleGoToManageProject}>{t("my_projects")}</ButtonItemMenu>
-                <ButtonItemMenu onClick={handleCreateNewProject}>{t("create_new_project")}</ButtonItemMenu>
+                <ButtonItemMenu onClick={handleGoToManageProject}>{t("my_bookmarks")}</ButtonItemMenu>
             </SectionMenu>
         </MenuGroup>
     )
@@ -112,18 +111,18 @@ const SideNav = ({
     const {t} = useTranslation(['common'])
     const {mock_id, pid, sid, idx} = router.query
     const {
-        data: dataProjects,
-        isLoading: isLoadingProjects,
+        data: databookmarks,
+        isLoading: isLoadingbookmarks,
         mutate: mutateProject,
         error: errorProject
-    } = useFetchProjects()
-    const [projectSelected, setProjectSelected] = useState<ProjectProps>()
+    } = useFetchbookmarks()
+    const [bookmarkselected, setbookmarkselected] = useState<ProjectProps>()
 
     const pathname = router.pathname.split('/')[1]?.toLowerCase()
     const pathnameSub = router.pathname.split('/')[2]?.toLowerCase()
 
     const [isOpenProject, setIsOpenProject] = useState(false);
-    const [projects, setProjects] = useState<any>(JSON.parse(secureLocalStorage.getItem("companies") as string))
+    const [bookmarks, setbookmarks] = useState<any>(JSON.parse(secureLocalStorage.getItem("companies") as string))
     const navigateTo = (e: any, route: string) => {
         e.preventDefault()
         if (onClick) {
@@ -173,10 +172,10 @@ const SideNav = ({
     }
 
     useEffect(() => {
-        if (dataProjects) {
-            setProjectSelected(dataProjects?.find((x: any) => x.id == pid))
+        if (databookmarks) {
+            setbookmarkselected(databookmarks?.find((x: any) => x.id == pid))
         }
-    }, [isLoadingProjects])
+    }, [isLoadingbookmarks])
 
     return (
         <LeftSidebar
@@ -212,7 +211,7 @@ const SideNav = ({
             }
         >
             {
-                (isLoadingProjects || loading) && (
+                (isLoadingbookmarks || loading) && (
                     <Box id={"sidebar-loading"}>
                         <NavigationContent>
                             <NavigationHeader>
@@ -243,7 +242,7 @@ const SideNav = ({
                 )
             }
             {
-                !menuList && (!loading && !isLoadingProjects) ?
+                !menuList && (!loading && !isLoadingbookmarks) ?
                     <SideNavigation label="navigation" testId="side-navigation-app">
                         <Box xcss={sideNavStyle}>
                             <NestableNavigationContent initialStack={currentPath()} onChange={handleOnChangeNavigation}>
@@ -305,7 +304,7 @@ const SideNav = ({
                         </Box>
                     </SideNavigation>
                     :
-                    (!loading && !isLoadingProjects) &&
+                    (!loading && !isLoadingbookmarks) &&
                     (<SideNavigation label="navigation" testId="side-navigation">
                         <Box xcss={sideNavStyle}>
                             <NavigationHeader>
@@ -313,7 +312,7 @@ const SideNav = ({
                                     isOpen={isOpenProject}
                                     onClose={() => setIsOpenProject(false)}
                                     placement="bottom-start"
-                                    content={() => <MenuProject data={projects}/>}
+                                    content={() => <MenuProject data={bookmarks}/>}
                                     trigger={(triggerProps) => (
                                         <Button
                                             isSelected={isOpenProject}
@@ -323,7 +322,7 @@ const SideNav = ({
                                             iconAfter={isOpenProject ? ChevronUpIcon : ChevronDownIcon}
                                             onClick={() => setIsOpenProject(!isOpenProject)}
                                         >
-                                            {projectSelected?.name || "Selected Project"}
+                                            {bookmarkselected?.name || "Selected Project"}
                                         </Button>
                                     )}/>
                                 {/*<ButtonItem*/}
@@ -357,7 +356,7 @@ const SideNav = ({
                                                         key={`${i}-${menu.name}`}
                                                         iconBefore={<Lozenge testId={"sidebar-item-icon"}
                                                                              appearance={getMethodType(menu.method)}>{menu.method}</Lozenge>}
-                                                        description={`${projectSelected?.prefix || ''}/${menu.endpoint}`}
+                                                        description={`${bookmarkselected?.prefix || ''}/${menu.endpoint}`}
                                                         isSelected={checkMockUrl(menu.id)}
                                                         onClick={e => navigateToDetailMock(e, menu.id, menu.pid, menu.sid, menu.idx)}>
                                                         {menu.name}

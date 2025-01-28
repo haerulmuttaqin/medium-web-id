@@ -13,7 +13,7 @@ const CheckAuth = (WrapperComponent: any) => {
         const handleAuth = () => {
             const isLogin = secureLocalStorage.getItem('is_login')
             if (isLogin) {
-                router.push('/projects')
+                router.push('/bookmarks')
             }
         }
 

@@ -65,7 +65,7 @@ const Layout: FC<LayoutProps> = (
     }
 
     const openProject = () => {
-        router.replace("/projects")
+        router.replace("/bookmarks")
     }
 
     const openApiDoc = () => {
@@ -129,7 +129,7 @@ const Layout: FC<LayoutProps> = (
                                         primaryItems={[
                                             <PrimaryButton key={0} onClick={openHome}>{t('home')}</PrimaryButton>,
                                             status == "authenticated" ? <PrimaryButton key={1}
-                                                                                       onClick={openProject}>{t('my_projects')}</PrimaryButton> : null,
+                                                                                       onClick={openProject}>{t('my_bookmarks')}</PrimaryButton> : null,
                                             <PrimaryButton key={3} onClick={openAbout}>{t('about')}</PrimaryButton>,
                                         ]}
                                         renderProductHome={AtlassianProductHome}

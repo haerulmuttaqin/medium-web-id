@@ -115,7 +115,7 @@ const Auth: NextPage = () => {
                     showError(res)
                     signOut()
                 } else {
-                    window.location.href = window.location.protocol + "//" + window.location.host + "/projects"
+                    window.location.href = window.location.protocol + "//" + window.location.host + "/bookmarks"
                 }
             })
             .catch((err) => {
@@ -173,7 +173,7 @@ const Auth: NextPage = () => {
                                                           marginInlineEnd: "20px"
                                                       }}>📖 MediumWebID</span>
                                             </Heading>
-                                            <Text>Sign in to polish your professional profile..</Text>
+                                            <Text>Sign in to manage your bookmarked article</Text>
                                             <br/>
                                             <Button
                                                 onClick={() => popupCenter("/google-signin", "Google Sign In")}>
