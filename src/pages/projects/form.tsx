@@ -9,8 +9,6 @@ import TextField from '@atlaskit/textfield';
 import {ButtonGroup, LoadingButton} from "@atlaskit/button";
 import Button from '@atlaskit/button/new';
 import Toggle from '@atlaskit/toggle';
-import SectionMessage from "@atlaskit/section-message";
-import {Code} from "@atlaskit/code";
 
 
 const ProjectForm: FC<ProjectFormProps> = (

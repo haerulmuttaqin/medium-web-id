@@ -1,10 +1,9 @@
 import {NextPage} from 'next';
 import React, {useEffect, useState} from 'react';
 import dynamic from 'next/dynamic';
-import {FlagsProvider} from '@atlaskit/flag';
 import {useRouter} from 'next/router';
 import SpinnerLoading from '@component/Spinner';
-import {addProject, updateProject, getProject} from "@api/data/services/project";
+import {addProject, getProject, updateProject} from "@api/data/services/project";
 import ProjectForm from './form';
 import {ProjectPayloadProps} from '@api/data/interfaces/project';
 import {useDispatch} from "react-redux";
@@ -154,25 +153,23 @@ const Project: NextPage = () => {
 
 
     return (
-        <FlagsProvider>
-            <Layout
-                title={action == "edit" ? "Edit Project" : "Create Project"}
-            >
-                <ContentWrapper>
-                    {
-                        loading
-                            ? <SpinnerLoading size={"large"}/>
-                            : <ProjectForm
-                                data={projectData as any}
-                                setData={setProjectData}
-                                type={action as any || project_id}
-                                onHandleCancel={handleCancel}
-                                onHandleSubmit={action == "edit" ? updateProjectData : postProjectData}
-                            />
-                    }
-                </ContentWrapper>
-            </Layout>
-        </FlagsProvider>
+        <Layout
+            title={action == "edit" ? "Edit Project" : "Create Project"}
+        >
+            <ContentWrapper>
+                {
+                    loading
+                        ? <SpinnerLoading size={"large"}/>
+                        : <ProjectForm
+                            data={projectData as any}
+                            setData={setProjectData}
+                            type={action as any || project_id}
+                            onHandleCancel={handleCancel}
+                            onHandleSubmit={action == "edit" ? updateProjectData : postProjectData}
+                        />
+                }
+            </ContentWrapper>
+        </Layout>
     );
 };
 

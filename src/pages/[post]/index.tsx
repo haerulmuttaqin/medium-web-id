@@ -63,7 +63,7 @@ export default function PostPage({url}: { url: string }) {
                                         <Flex>
                                             {
                                                 postData?.tags.map((tag: any) => (
-                                                    <SimpleTag text={tag}/>
+                                                    <SimpleTag key={tag} text={tag}/>
                                                 ))
                                             }
                                         </Flex>

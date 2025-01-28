@@ -32,7 +32,7 @@ const LandingFeatures = () => {
                                 <br/>
                                 <Stack space="space.100" grow="fill">
                                     <Text size={"large"}>
-                                        Simply Replace the Medium Article's Domain (TLD) with <code style={{backgroundColor: "var(--backgroud-code)"}}><strong>medium.web.id</strong></code>  or full domain if article with custom domain, and got the magic!
+                                        Simply Replace the Medium Article&apos;s Domain (TLD) with <code style={{backgroundColor: "var(--backgroud-code)"}}><strong>medium.web.id</strong></code>  or full domain if article with custom domain, and got the magic!
                                     </Text>
                                 </Stack>
                                 <br/>

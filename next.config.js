@@ -5,7 +5,6 @@ const nextConfig = {
     experimental: {
         scrollRestoration: true,
         forceSwcTransforms: true,
-        serverComponentsExternalPackages: ["puppeteer-core"],
     },
     async headers() {
         return [{

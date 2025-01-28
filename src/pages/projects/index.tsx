@@ -14,9 +14,8 @@ import EmptyState from "@atlaskit/empty-state";
 import {showFlag} from "@store/actions/show-flag";
 import {useDispatch} from "react-redux";
 import Modal, {ModalBody, ModalFooter, ModalHeader, ModalTitle, ModalTransition,} from '@atlaskit/modal-dialog';
-import Tooltip from "@atlaskit/tooltip";
 import {OptionProps} from "@api/data/interfaces";
-import {deleteProject, getProjects} from "@api/data/services/project";
+import {deleteProject} from "@api/data/services/project";
 import DropdownMenu, {DropdownItem, DropdownItemGroup} from "@atlaskit/dropdown-menu";
 import MoreIcon from "@atlaskit/icon/glyph/more";
 import {ProjectProps} from "@api/data/interfaces/project";
@@ -27,7 +26,8 @@ import Auth from "@protected/auth";
 import {useTranslation} from "next-i18next";
 import Link from "next/link";
 import {useFetchProjects} from "@pages/projects/data/remote";
-import {Code} from "@atlaskit/code";
+import Code from "@atlaskit/code/inline";
+import CodeInline from "@component/Code/CodeInline";
 
 const Layout = dynamic(
     () => import('@component/Layout'),
@@ -176,19 +176,15 @@ const Projects: NextPage = () => {
                 {
                     key: createKey(row.name?.toString()),
                     content: (
-                        <Tooltip content={row.name}>
-                            {(tooltipProps) => (
-                                <Box {...tooltipProps} xcss={xcss({color: "color.text", cursor: "pointer"})}
-                                     onClick={() => handleOnShow(row.id, row.sid)}>
-                                    {row.name}
-                                </Box>
-                            )}
-                        </Tooltip>
+                        <Box xcss={xcss({color: "color.text", cursor: "pointer"})}
+                             onClick={() => handleOnShow(row.id, row.sid)}>
+                            {row.name}
+                        </Box>
                     ),
                 },
                 {
                     key: row.prefix,
-                    content: <Code onPointerEnterCapture={()=>{}} onPointerLeaveCapture={()=>{}}>{row.prefix}</Code>
+                    content: <CodeInline>{row.prefix}</CodeInline>
                 },
                 {
                     key: row.is_active,
