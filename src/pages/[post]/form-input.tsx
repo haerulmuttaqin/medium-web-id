@@ -22,9 +22,10 @@ const FormInput = () => {
     useEffect(() => {
         setIsLogin(secureLocalStorage.getItem("is_login") as any)
     }, []);
+
     const handleGetData = async (params: any) => {
         if (validURL(params.url)) {
-            router.push(`/${[params.url]}`)
+            await router.push(`/${[params.url]}`)
         } else {
             return {
                 url: "invalid url"
@@ -56,6 +57,7 @@ const FormInput = () => {
                                     <Fragment>
                                         <TextField placeholder={"Medium article URL"}
                                                    autoComplete="off" {...fieldProps}
+                                                   isDisabled={submitting}
                                                    elemBeforeInput={<span style={{paddingInline: "10px"}}><LinkIcon
                                                        label={"link"}/></span>}/>
                                         {error && (
