@@ -28,7 +28,7 @@ const LandingPageHero = () => {
                         </div>
                         <Box xcss={xcss({paddingTop: "space.100"})}>
                             <Text size={"large"}>
-                                Unlock unlimited access to Medium's premium content. Enjoy seamless reading from top
+                                Unlock unlimited access to Medium&apos;s premium content. Enjoy seamless reading from top
                                 writers with our paywall solution.
                             </Text>
                         </Box>
