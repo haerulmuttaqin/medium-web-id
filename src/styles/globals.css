@@ -39,7 +39,7 @@ html[data-color-mode="dark"][data-theme~="dark:light"] {
 html[data-color-mode="light"][data-theme~="light:dark"],
 html[data-color-mode="dark"][data-theme~="dark:dark"] {
     --ds-border-input: #55616e !important;
-    --backgound-color: #55616e;
+    --backgound-color: transparent;
     --backgound-code: #15171a !important;
     --border-color-code: #252c33 !important;
 }
