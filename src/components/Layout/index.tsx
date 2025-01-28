@@ -18,7 +18,7 @@ import Link from "next/link";
 const AtlassianProductHome = () => (
     <Link href={"/"}>
         <span className={'charlie-text'}
-              style={{fontSize: "18px", fontWeight: "600", marginInlineEnd: "20px"}}>🤘 MediumWebID</span>
+              style={{fontSize: "18px", fontWeight: "600", marginInlineEnd: "20px"}}>📖 MediumWebID</span>
     </Link>
 );
 

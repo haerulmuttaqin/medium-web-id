@@ -1,11 +1,10 @@
 import type {NextPage} from "next";
-import React, {Suspense, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import dynamic from "next/dynamic";
 import {Box, Stack, xcss} from "@atlaskit/primitives";
 import EmptyState from "@atlaskit/empty-state";
 import {useRouter} from "next/router";
 import {usePathname} from "next/navigation";
-import {useFetchPost} from "@pages/[post]/data/remote";
 import PostPage from "@pages/[post]";
 
 const Layout = dynamic(
@@ -45,14 +44,12 @@ const Overview: NextPage = () => {
     }, [pathNames]);
 
     useEffect(() => {
-        if (Object.keys(router.query).length === 0) {
+        if (Object.keys(router.query).length === 0 || paths.length > 30) {
             setIsUrlMedium(true)
         }
-    }, [router.isReady]);
+    }, [paths]);
 
-    if (isUrlMedium) return <Suspense fallback={"Loading"}>
-        <PostPage url={paths} />
-    </Suspense>
+    if (isUrlMedium && router.isReady && paths != "") return <PostPage url={paths}/>
 
     return (
         <>

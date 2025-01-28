@@ -1,5 +1,4 @@
 import React, {FC, Fragment} from 'react';
-import '@/styles/landing.module.css'
 import {Box} from '@atlaskit/primitives';
 import {Content, Main, PageLayout, TopNavigation,} from '@atlaskit/page-layout';
 import {LandingPageLayoutProps} from "@component/Layout/layout";
@@ -16,7 +15,7 @@ const LandingPageLayout: FC<LandingPageLayoutProps> = (
     return (
         <Box id={'landing-body'}>
             <Head>
-                <title>MediumWebID: Resume Service for unparalleled Dev!</title>
+                <title>{title || "MediumWebID: Unlocking Access - Medium Paywall Solution!"}</title>
                 <meta name="author" content="Haerul Muttaqin"/>
                 <meta name="robots" content="index, follow"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>

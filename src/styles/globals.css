@@ -31,13 +31,17 @@
 html[data-color-mode="light"][data-theme~="light:light"],
 html[data-color-mode="dark"][data-theme~="dark:light"] {
     --ds-border-input: #b7bfcb !important;
-    --backgound-color: #fafbfc
+    --backgound-color: #fafbfc;
+    --backgound-code: #f6f6f6 !important;
+    --border-color-code: #e5e5e5 !important;
 }
 
 html[data-color-mode="light"][data-theme~="light:dark"],
 html[data-color-mode="dark"][data-theme~="dark:dark"] {
     --ds-border-input: #55616e !important;
-    --backgound-color: transparent
+    --backgound-color: #55616e;
+    --backgound-code: #15171a !important;
+    --border-color-code: #252c33 !important;
 }
 
 .font {
@@ -423,4 +427,58 @@ div[class*="-ActionsWrapper"] {
     -webkit-font-smoothing: antialiased;
     word-break: break-word;
     word-wrap: break-word;
+}
+
+.img-post {
+    width: 100% !important;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+figure {
+    display: block;
+    margin-block-start: unset;
+    margin-block-end: unset;
+    margin-inline-start: unset;
+    margin-inline-end: unset;
+    unicode-bidi: isolate;
+}
+
+#content-wrapper > div > p {
+    font-weight: 400;
+    font-style: normal;
+    font-family: source-serif-pro, Georgia, Cambria, Times New Roman, Times, serif;
+    font-size: 18px;
+    line-height: 32px;
+    letter-spacing: -.003em;
+}
+
+#content-wrapper > div > h1 {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: "Charlie Text", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+#content-wrapper > div > p > h2 {
+    font-size: 28px;
+    font-weight: 500;
+    font-family: "Charlie Text", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
+
+.code-post {
+    display: block;
+    font-family: monospace;
+    unicode-bidi: isolate;
+    white-space: pre;
+    margin: 1em 1px;
+    padding: 1em 1em;
+    border-radius: 8px;
+    border-color: var(--border-color-code);
+    border-width: 1px;
+    border-style: solid;
+    font-size: 14px !important;
+    line-height: 1.5rem;
+    background-color: var(--backgound-code);
 }

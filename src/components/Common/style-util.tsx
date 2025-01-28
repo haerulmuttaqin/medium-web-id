@@ -6,6 +6,21 @@ export const cardBasicStyle = xcss({
     borderRadius: "border.radius.100",
 })
 
+export const cardAuthorStyle = xcss({
+    backgroundColor: "elevation.surface.raised",
+    borderRadius: "border.radius.200",
+    padding: "space.200"
+})
+
+export const cardTagsStyle = xcss({
+    borderRadius: "border.radius.200",
+    outlineColor: "color.border",
+    outlineWidth: "border.width",
+    outlineStyle: "solid",
+    paddingBlock: "space.200",
+    paddingInline: "space.200"
+})
+
 export const cardStyle = xcss({
     backgroundColor: "elevation.surface.raised",
     boxShadow: "elevation.shadow.raised",

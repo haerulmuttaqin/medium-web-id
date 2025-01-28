@@ -6,11 +6,13 @@ import ContainerGrid from "@components/ContainerGrid";
 import {Col, Hidden, Row} from "react-grid-system";
 import Image from "@atlaskit/image";
 import LandingWrapper from "@pages/landing/components/Layout/landing-wrapper";
+import React from "react";
+import {Code} from "@atlaskit/code";
 
 
 const LandingFeatures = () => {
     return (
-        <div id={"features"} style={{marginTop: "50px"}}>
+        <div id={"features"} style={{marginTop: "-150px"}}>
             <LandingWrapper>
                 <ContainerGrid>
                     <Row>
@@ -23,18 +25,14 @@ const LandingFeatures = () => {
                             <Box paddingInlineStart={"space.100"} paddingInlineEnd={"space.300"}>
                                 <br/>
                                 <br/>
-                                <Heading level={"h800"}>
-                                    Get Your Custom Endpoint
-                                </Heading>
+                                <div className={"heading"}
+                                     style={{fontSize: "28px", fontWeight: "500", letterSpacing: "-0.03em"}}>
+                                    Unlocking Access: Medium Paywall Solution!
+                                </div>
                                 <br/>
                                 <Stack space="space.100" grow="fill">
                                     <Text size={"large"}>
-                                        Unlock the power of tailored solutions with our Custom Endpoint service. Easily
-                                        create and manage endpoints that fit your unique requirements, ensuring seamless
-                                        integration and optimal performance for your applications. Elevate your
-                                        capabilities
-                                        and streamline your workflow with precision-engineered endpoints designed just
-                                        for you
+                                        Simply Replace the Medium Article's Domain (TLD) with <code style={{backgroundColor: "var(--backgroud-code)"}}><strong>medium.web.id</strong></code>  or full domain if article with custom domain, and got the magic!
                                     </Text>
                                 </Stack>
                                 <br/>
@@ -45,42 +43,42 @@ const LandingFeatures = () => {
                             <Image src={"./assets/images/create-endpoint.png"} alt={"Custom Endpoint"}/>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col sm={12} lg={12}>
-                            <Hidden xs sm>
-                                <Box paddingBlock={"space.600"}></Box>
-                            </Hidden>
-                        </Col>
-                        <Col sm={12} md={8} lg={8}>
-                            <Hidden xs sm>
-                                <Image src={"./assets/images/create-project.png"} alt={"Custom Endpoint"}/>
-                            </Hidden>
-                        </Col>
-                        <Col sm={12} md={4} lg={4}>
-                            <Box paddingInlineStart={"space.100"} paddingInlineEnd={"space.300"}>
-                                <br/>
-                                <br/>
-                                <Heading level={"h800"}>
-                                    Manage Unlimited Project
-                                </Heading>
-                                <br/>
-                                <Stack space="space.100" grow="fill">
-                                    <Text size={"large"}>
-                                        Effortlessly manage unlimited projects with precision and ease. Our intuitive
-                                        platform enables seamless task delegation, real-time collaboration, and in-depth
-                                        progress tracking, ensuring unparalleled productivity and success.
-                                    </Text>
-                                </Stack>
-                                <br/>
-                                <br/>
-                            </Box>
-                        </Col>
-                        <Col sm={12} md={8} lg={8}>
-                            <Hidden md lg xl xxl xxxl>
-                                <Image src={"./assets/images/create-project.png"} alt={"Custom Endpoint"}/>
-                            </Hidden>
-                        </Col>
-                    </Row>
+                    {/*<Row>*/}
+                    {/*    <Col sm={12} lg={12}>*/}
+                    {/*        <Hidden xs sm>*/}
+                    {/*            <Box paddingBlock={"space.600"}></Box>*/}
+                    {/*        </Hidden>*/}
+                    {/*    </Col>*/}
+                    {/*    <Col sm={12} md={8} lg={8}>*/}
+                    {/*        <Hidden xs sm>*/}
+                    {/*            <Image src={"./assets/images/create-project.png"} alt={"Custom Endpoint"}/>*/}
+                    {/*        </Hidden>*/}
+                    {/*    </Col>*/}
+                    {/*    <Col sm={12} md={4} lg={4}>*/}
+                    {/*        <Box paddingInlineStart={"space.100"} paddingInlineEnd={"space.300"}>*/}
+                    {/*            <br/>*/}
+                    {/*            <br/>*/}
+                    {/*            <Heading level={"h800"}>*/}
+                    {/*                Manage Unlimited Project*/}
+                    {/*            </Heading>*/}
+                    {/*            <br/>*/}
+                    {/*            <Stack space="space.100" grow="fill">*/}
+                    {/*                <Text size={"large"}>*/}
+                    {/*                    Effortlessly manage unlimited projects with precision and ease. Our intuitive*/}
+                    {/*                    platform enables seamless task delegation, real-time collaboration, and in-depth*/}
+                    {/*                    progress tracking, ensuring unparalleled productivity and success.*/}
+                    {/*                </Text>*/}
+                    {/*            </Stack>*/}
+                    {/*            <br/>*/}
+                    {/*            <br/>*/}
+                    {/*        </Box>*/}
+                    {/*    </Col>*/}
+                    {/*    <Col sm={12} md={8} lg={8}>*/}
+                    {/*        <Hidden md lg xl xxl xxxl>*/}
+                    {/*            <Image src={"./assets/images/create-project.png"} alt={"Custom Endpoint"}/>*/}
+                    {/*        </Hidden>*/}
+                    {/*    </Col>*/}
+                    {/*</Row>*/}
                 </ContainerGrid>
             </LandingWrapper>
             <div className={"gradient-bottom"}></div>
