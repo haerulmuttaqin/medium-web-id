@@ -26,20 +26,22 @@ const LandingSubFeatures = () => {
                     paddingBottom: "space.1000",
                     textAlign: "center"
                 })}>
-                    <Image src={"./assets/images/catalog-icon.svg"} alt={"Catalog Icon"}/>
+                    <Image src={"./assets/images/DevOpsHealth_Icon.svg"} alt={"Catalog Icon"}/>
                     <br/>
                     <div className={"heading"}
                          style={{fontSize: "31px", fontWeight: "500", letterSpacing: "-0.03em"}}>
-                        Resume s, instantly! Effortless creation, intuitive interface.
+                        Enjoy and Manage Premium Medium Articles for Free
                     </div>
                     <Box xcss={xcss({paddingTop: "space.100"})}>
                         <Text size={"large"}>
-                            Transform your API development process with our intuitive interface and instant Resume  generation.
+                            A free tool to access premium Medium articles, bypass paywalls, and manage your reading
+                            across devices.
                         </Text>
                     </Box>
                     <br/>
                     <br/>
-                    <Button onClick={() => router.push("/projects/create")} appearance="primary">Create FREE Mock Now</Button>
+                    <Button onClick={() => router.push("/projects/create")} appearance="primary">Create FREE Mock
+                        Now</Button>
                 </Box>
             </LandingWrapper>
         </div>

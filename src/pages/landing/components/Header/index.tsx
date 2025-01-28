@@ -5,7 +5,6 @@ import {IconButton} from "@atlaskit/button/new";
 import secureLocalStorage from "react-secure-storage";
 import {Box, xcss} from "@atlaskit/primitives";
 import Link from "next/link";
-import '@/styles/landing.module.css'
 import DefaultProfile from "@component/Profile";
 import {ButtonItem, MenuGroup, Section} from "@atlaskit/menu";
 import ChevronRightIcon from "@atlaskit/icon/glyph/chevron-right";
@@ -40,7 +39,7 @@ const navContainerStyle = xcss({
 const AtlassianProductHome = () => (
     <Link href={"/"}>
         <span className={'charlie-text'}
-              style={{fontSize: "18px", fontWeight: "600", marginInlineEnd: "20px"}}>🤘 MediumWebID</span>
+              style={{fontSize: "18px", fontWeight: "600", marginInlineEnd: "20px"}}>📖 MediumWebID</span>
     </Link>
 );
 
@@ -181,8 +180,8 @@ const LandingPageNavigation = () => {
                 <AtlassianNavigation
                     label="site"
                     primaryItems={[
-                        <PrimaryButton key={0} onClick={handleFeatureClick}>Features</PrimaryButton>,
-                        <PrimaryButton key={1} onClick={handleAboutClick}>About</PrimaryButton>,
+                        // <PrimaryButton key={0} onClick={handleFeatureClick}>Features</PrimaryButton>,
+                        // <PrimaryButton key={1} onClick={handleAboutClick}>About</PrimaryButton>,
                     ]}
                     renderProductHome={AtlassianProductHome}
                     renderSignIn={isLogin != undefined ? (isLogin ? DefaultProfile : ButtonSignIn) : ButtonSignIn}

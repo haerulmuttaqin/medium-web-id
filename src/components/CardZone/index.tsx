@@ -6,7 +6,6 @@ import {
     cardNoShadowNoBackgroundNoBorderStyle,
     cardNoShadowNoBackgroundNoBorderStyleSelected
 } from "@component/Common/style-util";
-import Thumbnail from "@component/Thumbnail";
 import {SimpleTag as Tag} from '@atlaskit/tag';
 import {useTranslation} from "next-i18next";
 import VidPlayIcon from '@atlaskit/icon/glyph/vid-play'
@@ -38,13 +37,13 @@ const CardImage: FC<ImageProps> = ({src, name, provider, selected, onError, onLo
                                      label="playing"/></span>}
                          text={t('playing')} color="redLight"/>
                 </Box>)}
-            <Thumbnail
-                src={src}
-                name={name}
-                provider={provider}
-                selected={selected}
-                onError={() => setError(true)}
-                onLoaded={() => setTimeout(() => setLoaded(true), 100)}/>
+            {/*<Thumbnail*/}
+            {/*    src={src}*/}
+            {/*    name={name}*/}
+            {/*    provider={provider}*/}
+            {/*    selected={selected}*/}
+            {/*    onError={() => setError(true)}*/}
+            {/*    onLoaded={() => setTimeout(() => setLoaded(true), 100)}/>*/}
         </Box>
     )
 }

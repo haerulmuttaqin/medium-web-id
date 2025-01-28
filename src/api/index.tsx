@@ -11,6 +11,9 @@ export const localApi = axios.create({
 export const authApi = axios.create({
     baseURL: process.env.NEXT_PUBLIC_API_URL,
 })
+export const plainApi = axios.create({
+    baseURL: process.env.NEXT_PUBLIC_API_URL,
+})
 
 api.interceptors.request.use(
     (config: any) => {

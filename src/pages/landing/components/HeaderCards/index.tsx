@@ -59,7 +59,7 @@ const features: FeatureProps[] = [
 const LandingHeaderCards = () => {
 
     return (
-        <div style={{marginTop: "-160px"}}>
+        <div>
             <LandingWrapper>
                 <ContainerGrid>
                     <Row>
