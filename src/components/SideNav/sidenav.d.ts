@@ -1,6 +1,6 @@
 import {Region, RegionProps} from "@/api/data/interfaces/region";
 import {AreaProps} from "@/api/data/interfaces/area";
-import {ProjectProps} from "@api/data/interfaces/project";
+import {ProjectProps} from "@api/data/interfaces/bookmark";
 import {MockProps} from "@api/data/interfaces/mock";
 
 type SideNavContentProps = {

@@ -1,7 +1,6 @@
-import {ProjectProps} from "@api/data/interfaces/project";
 
-export interface ContentProjectProps {
-    area?: ProjectProps
+export interface BookmarkContentProps {
+    bookmarks?: BookmarkProps[]
     loading: boolean
-    onItemClick: (param: ProjectProps) => void
+    onItemClick: (param: BookmarkProps) => void
 }

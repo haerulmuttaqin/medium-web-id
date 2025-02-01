@@ -13,6 +13,7 @@ import {resetFlag, showFlag as showFlagWithResetBack} from "@/store/actions/show
 import {useRouter} from "next/router";
 import Footer from "@component/Footer";
 import ContentWrapper from "@component/Layout/common/content-wrapper";
+import '@/styles/landing.module.css'
 
 const BaseContent: FC<LayoutProps> = (
     {

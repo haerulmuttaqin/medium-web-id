@@ -82,6 +82,7 @@ export default function PostPage({url}: { url: string }) {
             summary: postData?.summary,
             content: postData?.content,
             tags: postData?.tags,
+            url: paths,
         }
         await addBookmark(params)
             .then((res) => {

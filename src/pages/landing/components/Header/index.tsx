@@ -165,7 +165,8 @@ const LandingPageNavigation = () => {
     const [isLogin, setIsLogin] = useState<boolean>()
     const router = useRouter()
 
-    const handleFeatureClick = () => {
+    const handleBookmarkClick = () => {
+        router.push("/bookmarks")
     }
     const handleAboutClick = () => {
         router.push("/about")
@@ -180,8 +181,8 @@ const LandingPageNavigation = () => {
                 <AtlassianNavigation
                     label="site"
                     primaryItems={[
-                        // <PrimaryButton key={0} onClick={handleFeatureClick}>Features</PrimaryButton>,
-                        // <PrimaryButton key={1} onClick={handleAboutClick}>About</PrimaryButton>,
+                        isLogin ? <PrimaryButton key={0} onClick={handleBookmarkClick}>My Bookmarks</PrimaryButton> : null,
+                        <PrimaryButton key={1} onClick={handleAboutClick}>About</PrimaryButton>,
                     ]}
                     renderProductHome={AtlassianProductHome}
                     renderSignIn={isLogin != undefined ? (isLogin ? DefaultProfile : ButtonSignIn) : ButtonSignIn}

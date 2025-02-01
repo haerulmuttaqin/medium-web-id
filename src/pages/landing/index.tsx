@@ -1,7 +1,6 @@
 import React from "react";
 import '@/styles/landing.module.css'
 import LandingPageHero from "@/pages/landing/components/Hero";
-import LandingHeaderCards from "@pages/landing/components/HeaderCards";
 import LandingFeatures from "@pages/landing/components/Features";
 import Footer from "@component/Footer";
 import LandingSubFeatures from "@pages/landing/components/SubFeatures";

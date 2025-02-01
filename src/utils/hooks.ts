@@ -76,6 +76,24 @@ export const useIsTabActive = () => {
     return isTabVisible;
 };
 
+export const useUserData = () => {
+    const [storedValue, setStoredValue] = useState(() => {
+        try {
+            return JSON.parse(secureLocalStorage.getItem("user") as string || `{"id": "0"}`)
+        } catch (error) {
+            console.error('Error retrieving data from local storage user:', error);
+            return `{"id": "0"}`
+        }
+    });
+
+    useEffect(() => {
+        const user = JSON.parse(secureLocalStorage.getItem("user") as string || `{"id": "0"}`)
+        setStoredValue(user)
+    }, []);
+
+    return storedValue;
+};
+
 /**
  *
  * @param key the query key

@@ -1,12 +1,12 @@
 import {api} from "@/api";
 import {BaseResponse} from "../interfaces";
-import {BookmarkPayloadProps} from "../interfaces/project";
+import {BookmarkPayloadProps} from "../interfaces/bookmark";
 
 
-export const getBookmarks = async (): Promise<BaseResponse> => {
+export const getBookmarks = async (projectId: string): Promise<BaseResponse> => {
     return await api({
         method: 'GET',
-        url: "bookmarks",
+        url: `bookmarks/${projectId}`,
     });
 };
 
