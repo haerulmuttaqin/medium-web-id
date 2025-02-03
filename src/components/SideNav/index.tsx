@@ -31,11 +31,11 @@ const SideNav = ({
                  }: SideNavContentProps) => {
     const router = useRouter()
     const [userRole, serUserRole] = useState<string>("admin")
-    const {t} = useTranslation(['common'])
+    const {t} = useTranslation(["common"])
     const {mock_id, pid, sid, idx} = router.query
 
-    const pathname = router.pathname.split('/')[1]?.toLowerCase()
-    const pathnameSub = router.pathname.split('/')[2]?.toLowerCase()
+    const pathname = router.pathname.split("/")[1]?.toLowerCase()
+    const pathnameSub = router.pathname.split("/")[2]?.toLowerCase()
 
     const [isOpenProject, setIsOpenProject] = useState(false);
     const navigateTo = (e: any, route: string) => {
@@ -77,7 +77,7 @@ const SideNav = ({
         return value?.toLowerCase() === mock_id
     }
 
-    const currentPath = () => (router.pathname.split('/').length == 3 || router.pathname.split('/').length == 4) ? [router.pathname.split("/")[1]] : []
+    const currentPath = () => (router.pathname.split("/").length == 3 || router.pathname.split("/").length == 4) ? [router.pathname.split("/")[1]] : []
 
     const handleOnChangeNavigation = (e: any) => {
     }
@@ -91,8 +91,8 @@ const SideNav = ({
             id={isMobile ? "left-sidebar-mobile" : "left-sidebar"}
             skipLinkTitle="Navigation"
             isFixed={true}
-            onFlyoutExpand={() => console.log('onFlyoutExpand')}
-            onFlyoutCollapse={() => console.log('onFlyoutCollapse')}
+            onFlyoutExpand={() => console.log("onFlyoutExpand")}
+            onFlyoutCollapse={() => console.log("onFlyoutCollapse")}
             resizeGrabAreaLabel="Resize"
             resizeButtonLabel="Current"
             valueTextLabel="Width"
@@ -104,7 +104,7 @@ const SideNav = ({
                             shouldHideResizeButton ? <span></span> :
                                 <Tooltip
                                     content={
-                                        <p>{props.isLeftSidebarCollapsed ? 'Expand' : 'Collapse'} the
+                                        <p>{props.isLeftSidebarCollapsed ? "Expand" : "Collapse"} the
                                             navigation [
                                             <br/>(left bracket)</p>
                                     }
@@ -152,7 +152,7 @@ const SideNav = ({
                                                                                 <ButtonItem
                                                                                     id={`${subChildMenu.route}-${subChildMenu.route}`}
                                                                                     key={`${subI}-${subChildMenu.route}`}
-                                                                                    isSelected={checkSubUrl(subChildMenu.route?.split('/')[1] as string)}
+                                                                                    isSelected={checkSubUrl(subChildMenu.route?.split("/")[1] as string)}
                                                                                     onClick={e => navigateTo(e, `${menu.route}${subChildMenu.route}`)}>
                                                                                     {t(subChildMenu.locale)}
                                                                                 </ButtonItem>
@@ -170,7 +170,7 @@ const SideNav = ({
                                             <ButtonItem
                                                 id={menu.route.replace("/", "")}
                                                 key={`${i}-${menu.route}`}
-                                                isSelected={checkUrl(menu.route?.split('/')[1] as string)}
+                                                isSelected={checkUrl(menu.route?.split("/")[1] as string)}
                                                 onClick={e => navigateTo(e, menu.route)}>
                                                 {menu.title}
                                             </ButtonItem>

@@ -1,10 +1,10 @@
-import {Box, Text} from '@atlaskit/primitives';
+import {Box, Text} from "@atlaskit/primitives";
 import {LayoutProps} from "@component/Layout/layout";
 import React, {FC, useEffect} from "react";
 import PageHeader from "@atlaskit/page-header";
 import BreadcrumbList from "../Breadcrumb";
 import {useDispatch, useSelector} from "react-redux";
-import {useFlags} from '@atlaskit/flag';
+import {useFlags} from "@atlaskit/flag";
 import SuccessIcon from "@atlaskit/icon/glyph/check-circle";
 import Error from "@atlaskit/icon/glyph/error";
 import {token} from "@atlaskit/tokens";
@@ -13,7 +13,7 @@ import {resetFlag, showFlag as showFlagWithResetBack} from "@/store/actions/show
 import {useRouter} from "next/router";
 import Footer from "@component/Footer";
 import ContentWrapper from "@component/Layout/common/content-wrapper";
-import '@/styles/landing.module.css'
+import "@/styles/landing.module.css"
 
 const BaseContent: FC<LayoutProps> = (
     {
@@ -69,7 +69,7 @@ const BaseContent: FC<LayoutProps> = (
                 icon: (
                     <SuccessIcon
                         label="Success"
-                        primaryColor={token('color.icon.success', G400)}
+                        primaryColor={token("color.icon.success", G400)}
                     />
                 ),
                 title: flagTitle,
@@ -86,7 +86,7 @@ const BaseContent: FC<LayoutProps> = (
                 icon: (
                     <Error
                         label="Error"
-                        primaryColor={token('color.icon.danger', R300)}
+                        primaryColor={token("color.icon.danger", R300)}
                     />
                 ),
                 title: flagTitle,

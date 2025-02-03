@@ -1,5 +1,5 @@
 import React from "react";
-import '@/styles/landing.module.css'
+import "@/styles/landing.module.css"
 import LandingPageHero from "@/pages/landing/components/Hero";
 import LandingFeatures from "@pages/landing/components/Features";
 import Footer from "@component/Footer";

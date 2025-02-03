@@ -1,4 +1,4 @@
-import React, {FC} from 'react';
+import React, {FC} from "react";
 import SpinnerLoading from "@component/Spinner";
 import EmptyState from "@atlaskit/empty-state";
 import Grid, {GridItem} from "@atlaskit/grid";

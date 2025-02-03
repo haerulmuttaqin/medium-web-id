@@ -14,7 +14,7 @@ import {useTranslation} from "next-i18next";
 import LangOption from "@component/LangOption";
 
 const Layout = dynamic(
-    () => import('@component/Layout/index'),
+    () => import("@component/Layout/index"),
     {ssr: false}
 )
 
@@ -33,7 +33,7 @@ const langOptions = [
 
 const Lang: NextPage = () => {
     const [selected, setSelected] = useState<string>(secureLocalStorage.getItem("lang") as string || "en");
-    const {t, i18n} = useTranslation(['common'])
+    const {t, i18n} = useTranslation(["common"])
 
     const onChange = ({currentTarget: {value}}: SyntheticEvent<HTMLInputElement>) => {
         const option = value || "id";
@@ -47,7 +47,7 @@ const Lang: NextPage = () => {
 
     return (
         <>
-            <Layout title={t('lang_setting')} description={t('lang_setting_desc')} isSideNavOpen={true}>
+            <Layout title={t("lang_setting")} description={t("lang_setting_desc")} isSideNavOpen={true}>
                 <ContentWrapper>
                     <Grid>
                         <GridItem>

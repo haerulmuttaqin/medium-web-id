@@ -11,9 +11,9 @@ const CheckAuth = (WrapperComponent: any) => {
         const [isAuth, setIsAuth] = useState(false)
 
         const handleAuth = () => {
-            const isLogin = secureLocalStorage.getItem('is_login')
+            const isLogin = secureLocalStorage.getItem("is_login")
             if (isLogin) {
-                router.push('/bookmarks')
+                router.push("/bookmarks")
             }
         }
 

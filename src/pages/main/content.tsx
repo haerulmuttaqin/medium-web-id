@@ -1,4 +1,4 @@
-import React, {FC, Fragment, useState} from 'react';
+import React, {FC, Fragment, useState} from "react";
 
 import {Box, xcss} from "@atlaskit/primitives";
 import {showFlag} from "@/store/actions/show-flag";

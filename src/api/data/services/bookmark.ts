@@ -5,14 +5,14 @@ import {BookmarkPayloadProps} from "../interfaces/bookmark";
 
 export const getBookmarks = async (projectId: string): Promise<BaseResponse> => {
     return await api({
-        method: 'GET',
+        method: "GET",
         url: `bookmarks/${projectId}`,
     });
 };
 
 export const getProject = async (project_id: string, sheet_id: string): Promise<BaseResponse> => {
     return await api({
-        method: 'GET',
+        method: "GET",
         url: `bookmarks/${project_id}/${sheet_id}`,
     });
 };

@@ -19,31 +19,31 @@
 
 // @ts-ignore
 (function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
+    if (typeof define === "function" && define.amd) {
         // AMD. Register as an anonymous module.
-        define(['exports', 'echarts'], factory);
+        define(["exports", "echarts"], factory);
     } else if (
-        typeof exports === 'object' &&
-        typeof exports.nodeName !== 'string'
+        typeof exports === "object" &&
+        typeof exports.nodeName !== "string"
     ) {
         // CommonJS
-        factory(exports, require('echarts/lib/echarts'));
+        factory(exports, require("echarts/lib/echarts"));
     } else {
         // Browser globals
         factory({}, root.echarts);
     }
 })(this, function (exports, echarts) {
     var log = function (msg) {
-        if (typeof console !== 'undefined') {
+        if (typeof console !== "undefined") {
             console && console.error && console.error(msg);
         }
     };
     if (!echarts) {
-        log('ECharts is not Loaded');
+        log("ECharts is not Loaded");
         return;
     }
-    var contrastColor = '#B9B8CE';
-    var backgroundColor = '#100C2A';
+    var contrastColor = "#B9B8CE";
+    var backgroundColor = "#100C2A";
     var axisCommon = function () {
         return {
             axisLine: {
@@ -53,17 +53,17 @@
             },
             splitLine: {
                 lineStyle: {
-                    color: '#484753'
+                    color: "#484753"
                 }
             },
             splitArea: {
                 areaStyle: {
-                    color: ['rgba(255,255,255,0.02)', 'rgba(255,255,255,0.05)']
+                    color: ["rgba(255,255,255,0.02)", "rgba(255,255,255,0.05)"]
                 }
             },
             minorSplitLine: {
                 lineStyle: {
-                    color: '#20203B'
+                    color: "#20203B"
                 }
             }
         };
@@ -75,14 +75,14 @@
         backgroundColor: backgroundColor,
         axisPointer: {
             lineStyle: {
-                color: '#817f91'
+                color: "#817f91"
             },
             crossStyle: {
-                color: '#817f91'
+                color: "#817f91"
             },
             label: {
                 // TODO Contrast of label backgorundColor
-                color: '#fff'
+                color: "#fff"
             }
         },
         legend: {
@@ -95,10 +95,10 @@
         },
         title: {
             textStyle: {
-                color: '#EEF1FA'
+                color: "#EEF1FA"
             },
             subtextStyle: {
-                color: '#B9B8CE'
+                color: "#B9B8CE"
             }
         },
         toolbox: {
@@ -107,47 +107,47 @@
             }
         },
         dataZoom: {
-            borderColor: '#71708A',
+            borderColor: "#71708A",
             textStyle: {
                 color: contrastColor
             },
             brushStyle: {
-                color: 'rgba(135,163,206,0.3)'
+                color: "rgba(135,163,206,0.3)"
             },
             handleStyle: {
-                color: '#353450',
-                borderColor: '#C5CBE3'
+                color: "#353450",
+                borderColor: "#C5CBE3"
             },
             moveHandleStyle: {
-                color: '#B0B6C3',
+                color: "#B0B6C3",
                 opacity: 0.3
             },
-            fillerColor: 'rgba(135,163,206,0.2)',
+            fillerColor: "rgba(135,163,206,0.2)",
             emphasis: {
                 handleStyle: {
-                    borderColor: '#91B7F2',
-                    color: '#4D587D'
+                    borderColor: "#91B7F2",
+                    color: "#4D587D"
                 },
                 moveHandleStyle: {
-                    color: '#636D9A',
+                    color: "#636D9A",
                     opacity: 0.7
                 }
             },
             dataBackground: {
                 lineStyle: {
-                    color: '#71708A',
+                    color: "#71708A",
                     width: 1
                 },
                 areaStyle: {
-                    color: '#71708A'
+                    color: "#71708A"
                 }
             },
             selectedDataBackground: {
                 lineStyle: {
-                    color: '#87A3CE'
+                    color: "#87A3CE"
                 },
                 areaStyle: {
-                    color: '#87A3CE'
+                    color: "#87A3CE"
                 }
             }
         },
@@ -188,7 +188,7 @@
         categoryAxis: axisCommon(),
 
         line: {
-            symbol: 'circle'
+            symbol: "circle"
         },
         graph: {
             color: colorPalette
@@ -200,14 +200,14 @@
         },
         candlestick: {
             itemStyle: {
-                color: '#FD1050',
-                color0: '#0CF49B',
-                borderColor: '#FD1050',
-                borderColor0: '#0CF49B'
+                color: "#FD1050",
+                color0: "#0CF49B",
+                borderColor: "#FD1050",
+                borderColor0: "#0CF49B"
             }
         }
     };
 
     theme.categoryAxis.splitLine.show = false;
-    echarts.registerTheme('dark', theme);
+    echarts.registerTheme("dark", theme);
 });

@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from "axios";
 import secureLocalStorage from "react-secure-storage";
 import {signOut} from "next-auth/react";
 
@@ -17,7 +17,7 @@ export const plainApi = axios.create({
 
 api.interceptors.request.use(
     (config: any) => {
-        config.headers["Authorization"] = `Bearer ${secureLocalStorage.getItem('token')}`
+        config.headers["Authorization"] = `Bearer ${secureLocalStorage.getItem("token")}`
         config.headers["x-application-id"] = `${process.env.APP_ID || "6lqvkg65stvk4e068l636l17pkatcj72"}`
         return config;
     },

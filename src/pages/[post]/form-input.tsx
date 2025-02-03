@@ -1,8 +1,8 @@
-import React, {Fragment, useEffect, useState} from 'react';
-import Button from '@atlaskit/button/new';
-import Form, {ErrorMessage, Field, FormSection,} from '@atlaskit/form';
-import TextField from '@atlaskit/textfield';
-import LinkIcon from '@atlaskit/icon/core/link';
+import React, {Fragment, useEffect, useState} from "react";
+import Button from "@atlaskit/button/new";
+import Form, {ErrorMessage, Field, FormSection,} from "@atlaskit/form";
+import TextField from "@atlaskit/textfield";
+import LinkIcon from "@atlaskit/icon/core/link";
 import secureLocalStorage from "react-secure-storage";
 import {useRouter} from "next/router";
 import {isValidDomain, isValidURL} from "@utils/utils";
@@ -25,7 +25,7 @@ const FormInput = () => {
 
     const handleGetData = async (params: any) => {
         if (isValidDomain(params.url)) {
-            await router.push(`/${[params.url.replace(/^.*\/\/[^\/]+/, '')]}`)
+            await router.push(`/${[params.url.replace(/^.*\/\/[^\/]+/, "")]}`)
         } else {
             return {
                 url: "invalid url"
@@ -35,11 +35,11 @@ const FormInput = () => {
     return (
         <div
             style={{
-                display: 'flex',
-                width: '700px',
-                maxWidth: '100%',
-                margin: '0 auto',
-                flexDirection: 'column',
+                display: "flex",
+                width: "700px",
+                maxWidth: "100%",
+                margin: "0 auto",
+                flexDirection: "column",
             }}
         >
             <Form<{ url: string; }>

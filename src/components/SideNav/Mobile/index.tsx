@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import MobileHeader from "@atlaskit/mobile-header";
-import {Box} from '@atlaskit/primitives';
+import {Box} from "@atlaskit/primitives";
 import {useColorMode} from "@atlaskit/app-provider";
 import SideNav from "@component/SideNav";
 import DefaultSettings from "@component/Setting";
@@ -8,18 +8,18 @@ import DefaultSettings from "@component/Setting";
 const MobileNavigation = (props: any) => {
 
     const colorScheme = useColorMode()
-    const [drawer, setDrawer] = useState({drawerState: 'none', isOpen: false})
+    const [drawer, setDrawer] = useState({drawerState: "none", isOpen: false})
 
     const navOpened = () => {
-        setDrawer({drawerState: 'navigation', isOpen: true});
+        setDrawer({drawerState: "navigation", isOpen: true});
     };
 
     const sidebarOpened = () => {
-        setDrawer({drawerState: 'sidebar', isOpen: true});
+        setDrawer({drawerState: "sidebar", isOpen: true});
     };
 
     const drawerClosed = () => {
-        setDrawer({drawerState: 'none', isOpen: false});
+        setDrawer({drawerState: "none", isOpen: false});
     };
 
     return (

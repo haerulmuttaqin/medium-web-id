@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useMemo, useState} from 'react';
+import {useCallback, useEffect, useMemo, useState} from "react";
 import {useRouter} from "next/router";
 import secureLocalStorage from "react-secure-storage";
 import {Role} from "@/resources/role";
@@ -9,7 +9,7 @@ export const useUserRole = () => {
             const user = JSON.parse(secureLocalStorage.getItem("user") as string || `{"user_role": "user"}`)
             return user.user_role
         } catch (error) {
-            console.error('Error retrieving data from local storage user:', error);
+            console.error("Error retrieving data from local storage user:", error);
             return Role.User
         }
     });
@@ -28,7 +28,7 @@ export const useUserId = () => {
             const user = JSON.parse(secureLocalStorage.getItem("user") as string || `{"id": "0"}`)
             return user.id
         } catch (error) {
-            console.error('Error retrieving data from local storage user:', error);
+            console.error("Error retrieving data from local storage user:", error);
             return 0
         }
     });
@@ -46,7 +46,7 @@ export const useCompany = () => {
         try {
             return JSON.parse(secureLocalStorage.getItem("company_id") as string)
         } catch (error) {
-            console.error('Error retrieving data from local storage company_id:', error);
+            console.error("Error retrieving data from local storage company_id:", error);
             return Role.User
         }
     });
@@ -63,13 +63,13 @@ export const useIsTabActive = () => {
     const [isTabVisible, setIsTabVisible] = useState(true);
 
     const handleVisibilityChange = useCallback(() => {
-        setIsTabVisible(document.visibilityState === 'visible');
+        setIsTabVisible(document.visibilityState === "visible");
     }, []);
 
     useEffect(() => {
-        document.addEventListener('visibilitychange', handleVisibilityChange);
+        document.addEventListener("visibilitychange", handleVisibilityChange);
         return () => {
-            document.removeEventListener('visibilitychange', handleVisibilityChange);
+            document.removeEventListener("visibilitychange", handleVisibilityChange);
         };
     }, []);
 
@@ -81,7 +81,7 @@ export const useUserData = () => {
         try {
             return JSON.parse(secureLocalStorage.getItem("user") as string || `{"id": "0"}`)
         } catch (error) {
-            console.error('Error retrieving data from local storage user:', error);
+            console.error("Error retrieving data from local storage user:", error);
             return `{"id": "0"}`
         }
     });

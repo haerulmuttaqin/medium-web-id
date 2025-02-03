@@ -18,7 +18,7 @@ const LandingSubFeatures = () => {
                 marginTop: "-2px",
                 paddingTop: "50px",
                 backgroundSize: "cover",
-                backgroundImage: 'url("./assets/images/bg-hero-2.svg")'
+                backgroundImage: "url('./assets/images/bg-hero-2.svg')"
             }}>
             <LandingWrapper>
                 <Box xcss={xcss({

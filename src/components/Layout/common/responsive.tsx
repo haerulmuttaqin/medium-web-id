@@ -6,7 +6,7 @@ import {UNSAFE_BREAKPOINTS_CONFIG} from "@atlaskit/primitives";
 // /**
 //  *
 //  *
-//  * Everything in here is taken from @atlaskit/primitives, codesandbox wasn't playing
+//  * Everything in here is taken from @atlaskit/primitives, codesandbox wasn"t playing
 //  * nice when importing responsive utilities
 //  *
 //  *
@@ -86,9 +86,9 @@ import {UNSAFE_BREAKPOINTS_CONFIG} from "@atlaskit/primitives";
 // /**
 //  * This is our smallest breakpoint with a few nuances to it:
 //  * 1. It is the default value for shorthands, eg. `<GridItem span={6} />` maps to `{ [SMALLEST_BREAKPOINT]: props.span }`
-//  * 2. It's omitted in `media.below` as there's nothing below `0px`.
+//  * 2. It"s omitted in `media.below` as there"s nothing below `0px`.
 //  *
-//  * @experimental There's a chance this will change in _value_, but should only be used in a way that it will not matter if this value changes.
+//  * @experimental There"s a chance this will change in _value_, but should only be used in a way that it will not matter if this value changes.
 //  */
 // export const SMALLEST_BREAKPOINT = UNSAFE_BREAKPOINTS_ORDERED_LIST[0];
 //
@@ -104,11 +104,11 @@ import {UNSAFE_BREAKPOINTS_CONFIG} from "@atlaskit/primitives";
 // const internalMedia = {
 //     /**
 //      * A media query to target viewports above the min width of a given breakpoint.
-//      * Note that `media.above.xs` is redundant and should not be used, but it's included for programatic purposes.
+//      * Note that `media.above.xs` is redundant and should not be used, but it"s included for programatic purposes.
 //      */
 //     above: {
 //         /**
-//          * `above.xxs` is redundant and no media query should be used, but it's included for programatic purposes…
+//          * `above.xxs` is redundant and no media query should be used, but it"s included for programatic purposes…
 //          *
 //          * Eg. this is `@media (min-width: 0px)`
 //          */
@@ -176,9 +176,9 @@ import {UNSAFE_BREAKPOINTS_CONFIG} from "@atlaskit/primitives";
 //  * @example
 //  * A map to build optional `display:none` for consumption on a div.
 //  * ```ts
-//  * const hideMediaQueries = buildAboveMediaQueryCSS({ display: 'none' });
+//  * const hideMediaQueries = buildAboveMediaQueryCSS({ display: "none" });
 //  *
-//  * const Component = ({ hideAtBreakpoints: ('xs' | 'sm')[], children: ReactNode }) => {
+//  * const Component = ({ hideAtBreakpoints: ("xs" | "sm")[], children: ReactNode }) => {
 //  *   return <div css={hideAtBreakpoints.map(b => hideMediaQueries[b])}>{children}</div>;
 //  * }
 //  * ```
@@ -186,9 +186,9 @@ import {UNSAFE_BREAKPOINTS_CONFIG} from "@atlaskit/primitives";
 //  * This roughly builds a map that will look roughly like this (if done manually):
 //  * ```ts
 //  * {
-//  *   xxs: css({ '@media (min-width: 0px)': { display: 'none' } }),
-//  *   xs: css({ '@media (min-width: …px)': { display: 'none' } }),
-//  *   sm: css({ '@media (min-width: …px)': { display: 'none' } }),
+//  *   xxs: css({ "@media (min-width: 0px)": { display: "none" } }),
+//  *   xs: css({ "@media (min-width: …px)": { display: "none" } }),
+//  *   sm: css({ "@media (min-width: …px)": { display: "none" } }),
 //  * }
 //  * ```
 //  */

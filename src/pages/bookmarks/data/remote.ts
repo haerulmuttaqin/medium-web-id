@@ -2,7 +2,7 @@ import useSWR from "swr";
 import {getProject, getBookmarks} from "@api/data/services/bookmark";
 
 export const useFetchBookmarks = (projectId: string) => useSWR(
-    [projectId, 'bookmark'],
+    [projectId, "bookmark"],
     () => getBookmarks(projectId).then((res) => res.data.data),
     {
         revalidateIfStale: false,
@@ -15,7 +15,7 @@ export const useFetchBookmarks = (projectId: string) => useSWR(
 )
 
 export const useFetchProject = (pid: string, sid: string) => useSWR(
-    ['project', pid, sid],
+    ["project", pid, sid],
     () => getProject(pid, sid).then((res) => res.data.data),
     {
         revalidateIfStale: false,

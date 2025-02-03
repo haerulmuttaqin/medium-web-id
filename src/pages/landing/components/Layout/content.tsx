@@ -1,8 +1,8 @@
-import {Box, media, Text, xcss} from '@atlaskit/primitives';
+import {Box, media, Text, xcss} from "@atlaskit/primitives";
 import {LayoutProps} from "@component/Layout/layout";
 import React, {FC} from "react";
 import PageHeader from "@atlaskit/page-header";
-import '@/styles/landing.module.css'
+import "@/styles/landing.module.css"
 
 const containerStyles = xcss({
     paddingLeft: "space.250",

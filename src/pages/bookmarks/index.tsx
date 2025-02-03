@@ -1,21 +1,21 @@
 import type {NextPage} from "next";
 import React, {useCallback, useEffect, useState} from "react";
 import dynamic from "next/dynamic";
-import Button from '@atlaskit/button/new';
+import Button from "@atlaskit/button/new";
 import {useRouter} from "next/router";
 import {showFlag} from "@store/actions/show-flag";
 import {useDispatch} from "react-redux";
-import Modal, {ModalBody, ModalFooter, ModalHeader, ModalTitle, ModalTransition,} from '@atlaskit/modal-dialog';
+import Modal, {ModalBody, ModalFooter, ModalHeader, ModalTitle, ModalTransition,} from "@atlaskit/modal-dialog";
 import ContentWrapper from "@component/Layout/common/content-wrapper";
 import Auth from "@protected/auth";
 import {useTranslation} from "next-i18next";
 import {useFetchBookmarks} from "@pages/bookmarks/data/remote";
 import Content from "@pages/bookmarks/content";
 import {useUserData} from "@utils/hooks";
-import '@/styles/landing.module.css'
+import "@/styles/landing.module.css"
 
 const Layout = dynamic(
-    () => import('@component/Layout'),
+    () => import("@component/Layout"),
     {ssr: false}
 )
 

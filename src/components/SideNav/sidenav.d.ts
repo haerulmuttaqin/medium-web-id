@@ -14,6 +14,6 @@ type SideNavContentProps = {
     onClick?: () => void;
 };
 type State = {
-    drawerState: 'navigation' | 'sidebar' | 'none',
+    drawerState: "navigation" | "sidebar" | "none",
     isOpen: boolean;
 };

@@ -22,7 +22,7 @@ const cardStyle = xcss({
         boxShadow: "elevation.shadow.overlay",
         cursor: "pointer",
     },
-    ':active': {
+    ":active": {
         backgroundColor: "elevation.surface.pressed",
     },
 })

@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 
-import Button from '@atlaskit/button/new';
+import Button from "@atlaskit/button/new";
 
-import {ModalBody, ModalFooter, ModalHeader, ModalTitle, useModal,} from '@atlaskit/modal-dialog';
+import {ModalBody, ModalFooter, ModalHeader, ModalTitle, useModal,} from "@atlaskit/modal-dialog";
 import type {UIAnalyticsEvent} from "@atlaskit/analytics-next";
 import {KeyboardOrMouseEvent} from "@atlaskit/modal-dialog/types";
 import {useRouter} from "next/router";

@@ -1,5 +1,5 @@
 /** @jsxImportSource @emotion/react */
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from "react";
 import {AtlassianNavigation, PrimaryButton} from "@atlaskit/atlassian-navigation";
 import {IconButton} from "@atlaskit/button/new";
 import secureLocalStorage from "react-secure-storage";
@@ -14,8 +14,8 @@ import {useSetColorMode} from "@atlaskit/app-provider";
 import {useTranslation} from "next-i18next";
 import Popup from "@atlaskit/popup";
 import LangOptionSmall from "@component/LangOption/small";
-import MenuIcon from '@atlaskit/icon/core/menu';
-import {ColorMode} from '@atlaskit/app-provider/theme-provider';
+import MenuIcon from "@atlaskit/icon/core/menu";
+import {ColorMode} from "@atlaskit/app-provider/theme-provider";
 import {useRouter} from "next/router";
 
 const navStyle = xcss({
@@ -38,13 +38,13 @@ const navContainerStyle = xcss({
 
 const AtlassianProductHome = () => (
     <Link href={"/"}>
-        <span className={'charlie-text'}
+        <span className={"charlie-text"}
               style={{fontSize: "18px", fontWeight: "600", marginInlineEnd: "20px"}}>📖 MediumWebID</span>
     </Link>
 );
 
 const ButtonSignIn = () => {
-    const {t, i18n} = useTranslation(['common'])
+    const {t, i18n} = useTranslation(["common"])
     const router = useRouter()
     const [isOpen, setIsOpen] = useState<boolean>(false);
     const {options, selectedValue} = useThemeSwitcher();
@@ -100,12 +100,12 @@ const ButtonSignIn = () => {
                                 (
                                     <Box onClick={(e: React.MouseEvent) => e.stopPropagation()}>
                                         <Section title={t("lang_setting_desc")}>
-                                            <ButtonItem isSelected={selectedLang === 'id'}
+                                            <ButtonItem isSelected={selectedLang === "id"}
                                                         onClick={() => onChangeLang("id")}><LangOptionSmall
-                                                optionType={'id'}>{t("lang_id")}</LangOptionSmall></ButtonItem>
-                                            <ButtonItem isSelected={selectedLang === 'en'}
+                                                optionType={"id"}>{t("lang_id")}</LangOptionSmall></ButtonItem>
+                                            <ButtonItem isSelected={selectedLang === "en"}
                                                         onClick={() => onChangeLang("en")}><LangOptionSmall
-                                                optionType={'en'}>{t("lang_en")}</LangOptionSmall></ButtonItem>
+                                                optionType={"en"}>{t("lang_en")}</LangOptionSmall></ButtonItem>
                                         </Section>
                                     </Box>
                                 )

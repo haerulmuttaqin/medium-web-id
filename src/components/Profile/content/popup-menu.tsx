@@ -1,14 +1,14 @@
-import {ButtonItem, MenuGroup, Section} from '@atlaskit/menu';
+import {ButtonItem, MenuGroup, Section} from "@atlaskit/menu";
 import React, {SyntheticEvent, useCallback, useEffect, useState} from "react";
 import Avatar from "@atlaskit/avatar";
-import ChevronRightIcon from '@atlaskit/icon/glyph/chevron-right'
+import ChevronRightIcon from "@atlaskit/icon/glyph/chevron-right"
 import {Box, Flex, Text, Stack, xcss} from "@atlaskit/primitives";
 import {PopupSelect} from "@atlaskit/select";
 import useThemeSwitcher from "@component/Profile/content/ThemeSwither/useThemeSwithcer";
 import {useSetColorMode} from "@atlaskit/app-provider";
 import {ColorMode} from "@atlaskit/app-provider/theme-provider";
 import secureLocalStorage from "react-secure-storage";
-import Modal, {ModalTransition} from '@atlaskit/modal-dialog';
+import Modal, {ModalTransition} from "@atlaskit/modal-dialog";
 import LogoutModal from "@component/Logout";
 import {useRouter} from "next/router";
 import {useSession} from "next-auth/react";
@@ -18,7 +18,7 @@ import LangOptionSmall from "@component/LangOption/small";
 
 const ProfilePopupMenu = () => {
     const router = useRouter()
-    const {t, i18n} = useTranslation(['common'])
+    const {t, i18n} = useTranslation(["common"])
     const {options, selectedValue} = useThemeSwitcher();
     const setColorMode = useSetColorMode();
     const [isOpen, setIsOpen] = useState(false);
@@ -84,12 +84,12 @@ const ProfilePopupMenu = () => {
                             (
                                 <Box onClick={(e: React.MouseEvent) => e.stopPropagation()}>
                                     <Section title={t("lang_setting_desc")}>
-                                        <ButtonItem isSelected={selectedLang === 'id'}
+                                        <ButtonItem isSelected={selectedLang === "id"}
                                                     onClick={() => onChangeLang("id")}><LangOptionSmall
-                                            optionType={'id'}>{t("lang_id")}</LangOptionSmall></ButtonItem>
-                                        <ButtonItem isSelected={selectedLang === 'en'}
+                                            optionType={"id"}>{t("lang_id")}</LangOptionSmall></ButtonItem>
+                                        <ButtonItem isSelected={selectedLang === "en"}
                                                     onClick={() => onChangeLang("en")}><LangOptionSmall
-                                            optionType={'en'}>{t("lang_en")}</LangOptionSmall></ButtonItem>
+                                            optionType={"en"}>{t("lang_en")}</LangOptionSmall></ButtonItem>
                                     </Section>
                                 </Box>
                             )

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React, {useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from "react";
 import {css} from "@emotion/react";
 
 
@@ -41,7 +41,7 @@ const ContentWrapperByContainer = ({children}: any) => {
 
     return (
         <div ref={ref} id={"content-wrapper"} css={cssStyle(contentWidth)}>
-            <div css={css(cssInnerStyle(contentWidth))} style={{paddingBottom: '60px'}}>
+            <div css={css(cssInnerStyle(contentWidth))} style={{paddingBottom: "60px"}}>
                 {children}
             </div>
         </div>

@@ -1,6 +1,6 @@
-import React, {FC, Fragment, useEffect} from 'react';
-import {Box} from '@atlaskit/primitives';
-import {Content, Main, PageLayout, TopNavigation,} from '@atlaskit/page-layout';
+import React, {FC, Fragment, useEffect} from "react";
+import {Box} from "@atlaskit/primitives";
+import {Content, Main, PageLayout, TopNavigation,} from "@atlaskit/page-layout";
 import {LandingPageLayoutProps} from "@component/Layout/layout";
 import Head from "next/head";
 import LandingPageNavigation from "@/pages/landing/components/Header";
@@ -64,7 +64,7 @@ const LandingPageLayout: FC<LandingPageLayoutProps> = (
                 icon: (
                     <SuccessIcon
                         label="Success"
-                        primaryColor={token('color.icon.success', G400)}
+                        primaryColor={token("color.icon.success", G400)}
                     />
                 ),
                 title: flagTitle,
@@ -81,7 +81,7 @@ const LandingPageLayout: FC<LandingPageLayoutProps> = (
                 icon: (
                     <Error
                         label="Error"
-                        primaryColor={token('color.icon.danger', R300)}
+                        primaryColor={token("color.icon.danger", R300)}
                     />
                 ),
                 title: flagTitle,
@@ -94,7 +94,7 @@ const LandingPageLayout: FC<LandingPageLayoutProps> = (
 
     return (
         <FlagsProvider>
-            <Box id={'landing-body'}>
+            <Box id={"landing-body"}>
                 <Head>
                     <title>{title || "MediumWebID: Unlocking Access - Medium Paywall Solution!"}</title>
                     <meta name="author" content="Haerul Muttaqin"/>

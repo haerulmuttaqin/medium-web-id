@@ -1,6 +1,6 @@
-import type { ChangeEventHandler, HTMLAttributes, ReactNode } from 'react';
+import type { ChangeEventHandler, HTMLAttributes, ReactNode } from "react";
 
-import { css, jsx } from '@emotion/react';
+import { css, jsx } from "@emotion/react";
 
 type ToggleProps = HTMLAttributes<HTMLInputElement> & {
   children: ReactNode;
@@ -10,8 +10,8 @@ type ToggleProps = HTMLAttributes<HTMLInputElement> & {
 };
 
 const labelStyles = css({
-  display: 'block',
-  whiteSpace: 'nowrap',
+  display: "block",
+  whiteSpace: "nowrap",
 });
 
 const Toggle = ({

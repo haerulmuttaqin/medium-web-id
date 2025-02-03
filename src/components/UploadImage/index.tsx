@@ -3,7 +3,7 @@ import {Box, xcss, Text, media} from "@atlaskit/primitives"
 import Image from "@atlaskit/image";
 import ContainerGrid from "../ContainerGrid";
 import {Row, Col} from "react-grid-system"
-import Button from '@atlaskit/button';
+import Button from "@atlaskit/button";
 
 
 const boxImageStyles = xcss({
@@ -31,7 +31,7 @@ const UploadImages: FC<any> = ({image, onChange}) => {
                 <Box xcss={boxImageStyles}>
                     <Image
                         style={{
-                            backgroundSize: 'cover',
+                            backgroundSize: "cover",
                             objectFit: "cover",
                             borderRadius: 2,
                             height: "100%",

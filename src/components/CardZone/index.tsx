@@ -6,9 +6,9 @@ import {
     cardNoShadowNoBackgroundNoBorderStyle,
     cardNoShadowNoBackgroundNoBorderStyleSelected
 } from "@component/Common/style-util";
-import {SimpleTag as Tag} from '@atlaskit/tag';
+import {SimpleTag as Tag} from "@atlaskit/tag";
 import {useTranslation} from "next-i18next";
-import VidPlayIcon from '@atlaskit/icon/glyph/vid-play'
+import VidPlayIcon from "@atlaskit/icon/glyph/vid-play"
 import {useColorMode} from "@atlaskit/app-provider";
 
 let thumbnailBoxStyle = xcss({
@@ -22,20 +22,20 @@ let thumbnailBoxStyle = xcss({
 });
 
 const CardImage: FC<ImageProps> = ({src, name, provider, selected, onError, onLoaded}) => {
-    const {t} = useTranslation(['common', 'zone'])
+    const {t} = useTranslation(["common", "zone"])
     const colorMode = useColorMode()
     const [error, setError] = useState(false)
     const [loaded, setLoaded] = useState(false)
     return (
         <Box xcss={thumbnailBoxStyle} id="image-containter"
-             style={{backgroundColor: colorMode === 'dark' ? '#22272b' : 'rgb(100 102 104)'}}>
+             style={{backgroundColor: colorMode === "dark" ? "#22272b" : "rgb(100 102 104)"}}>
             {(selected && !error) && (
-                <Box as={'span'} xcss={xcss({position: "absolute"})}
-                     id={colorMode === 'dark' ? 'tag-playing-dark' : 'tag-playing-light'}>
-                    <Tag elemBefore={<span style={{paddingTop: '2px', paddingLeft: '4px'}}>
+                <Box as={"span"} xcss={xcss({position: "absolute"})}
+                     id={colorMode === "dark" ? "tag-playing-dark" : "tag-playing-light"}>
+                    <Tag elemBefore={<span style={{paddingTop: "2px", paddingLeft: "4px"}}>
                         <VidPlayIcon size="small"
                                      label="playing"/></span>}
-                         text={t('playing')} color="redLight"/>
+                         text={t("playing")} color="redLight"/>
                 </Box>)}
             {/*<Thumbnail*/}
             {/*    src={src}*/}
@@ -49,7 +49,7 @@ const CardImage: FC<ImageProps> = ({src, name, provider, selected, onError, onLo
 }
 
 const CardZone: FC<CardZoneProps> = (props) => {
-    const {t} = useTranslation(['common', 'zone'])
+    const {t} = useTranslation(["common", "zone"])
     const {data, selected, onItemClick} = props
     return (
         <Box
@@ -74,8 +74,8 @@ const CardZone: FC<CardZoneProps> = (props) => {
                                 <Stack>
                                     <Heading level="h400">{data?.caption}</Heading>
                                     <Text
-                                        size={"small"}>{`${data?.provider === 'webview' ? t('live_streaming') + '.' : t('live_streaming')}`}</Text>
-                                    <Text size={"small"}>{`${data?.views || 0} ${t('x_views')}`}</Text>
+                                        size={"small"}>{`${data?.provider === "webview" ? t("live_streaming") + "." : t("live_streaming")}`}</Text>
+                                    <Text size={"small"}>{`${data?.views || 0} ${t("x_views")}`}</Text>
                                 </Stack>
                             </Inline>
                         </Inline>

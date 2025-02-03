@@ -1,6 +1,6 @@
-'use client'
+"use client"
 /** @jsxImportSource @emotion/react */
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from "react";
 import type {NextPage} from "next";
 import dynamic from "next/dynamic";
 import {FlagsProvider} from "@atlaskit/flag";
@@ -17,12 +17,12 @@ import SpinnerLoading from "@component/Spinner";
 import {useRouter} from "next/router";
 import {actionSignIn} from "@api/data/services/auth";
 import {useDispatch} from "react-redux";
-import {showFlag} from '@store/actions/show-flag';
-import CheckAuth from '@protected/check-auth';
+import {showFlag} from "@store/actions/show-flag";
+import CheckAuth from "@protected/check-auth";
 import secureLocalStorage from "react-secure-storage";
 
 const Layout = dynamic(
-    () => import('@component/Layout'),
+    () => import("@component/Layout"),
     {ssr: false}
 )
 
@@ -67,7 +67,7 @@ const GithubSVG = () => (
 );
 
 const Auth: NextPage = () => {
-    const {t} = useTranslation(['common'])
+    const {t} = useTranslation(["common"])
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const {data: session, status} = useSession();
@@ -125,14 +125,14 @@ const Auth: NextPage = () => {
             })
     };
 
-    if (status === 'loading' || isLoading) return (
+    if (status === "loading" || isLoading) return (
         <Flex>
             <SpinnerWrapper>
                 <SpinnerLoading size={"large"}/>
             </SpinnerWrapper>
         </Flex>
     );
-    else if (status === 'authenticated') {
+    else if (status === "authenticated") {
         if (!secureLocalStorage.getItem("is_login")) {
             onAuth()
         }
@@ -168,7 +168,7 @@ const Auth: NextPage = () => {
                                     })}>
                                         <Flex direction={"column"} gap={"space.100"} justifyContent={"center"}>
                                             <Heading level="h800">
-                                                <span className={'charlie-text'}
+                                                <span className={"charlie-text"}
                                                       style={{
                                                           marginInlineEnd: "20px"
                                                       }}>📖 MediumWebID</span>

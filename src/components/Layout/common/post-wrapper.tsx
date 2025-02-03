@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
-import React from 'react';
+import React from "react";
 import {css} from "@emotion/react";
 
 const breakpoints = [270, 576, 768, 992, 1200, 2140]

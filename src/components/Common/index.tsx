@@ -2,8 +2,8 @@ import {FC, ReactNode} from "react";
 import {xcss, Box} from "@atlaskit/primitives"
 
 const nameWrapperStyles = xcss({
-    display: 'flex',
-    alignItems: 'center',
+    display: "flex",
+    alignItems: "center",
 });
 
 export const NameWrapper: FC<{ children: ReactNode }> = ({ children }) => (
@@ -11,7 +11,7 @@ export const NameWrapper: FC<{ children: ReactNode }> = ({ children }) => (
 );
 
 const avatarWrapperStyles = xcss({
-    marginInlineEnd: 'space.100',
+    marginInlineEnd: "space.100",
 });
 
 export const AvatarWrapper: FC<{ children: ReactNode }> = ({ children }) => (

@@ -1,6 +1,6 @@
 import React, {FC, Fragment, useEffect, useState} from "react";
-import '@/styles/landing.module.css'
-import 'highlight.js/styles/github-dark.css';
+import "@/styles/landing.module.css"
+import "highlight.js/styles/github-dark.css";
 import Footer from "@component/Footer";
 import LandingPageLayout from "@pages/landing/components/Layout";
 import {useFetchPost} from "@pages/[post]/data/remote";
@@ -11,26 +11,26 @@ import {Box, Flex, Inline, Grid, Stack, Text, xcss} from "@atlaskit/primitives";
 import PostWrapper from "@component/Layout/common/post-wrapper";
 import Divider from "@component/Divider";
 import {cardAuthorStyle, cardTagsStyle} from "@component/Common/style-util";
-import Avatar from '@atlaskit/avatar';
-import {SimpleTag} from '@atlaskit/tag';
+import Avatar from "@atlaskit/avatar";
+import {SimpleTag} from "@atlaskit/tag";
 import {addBookmark} from "@api/data/services/bookmark";
 import {showFlag} from "@store/actions/show-flag";
 import {useDispatch} from "react-redux";
-import Button, {IconButton} from '@atlaskit/button/new';
-import StoryIcon from '@atlaskit/icon/core/story';
+import Button, {IconButton} from "@atlaskit/button/new";
+import StoryIcon from "@atlaskit/icon/core/story";
 import {ButtonGroup} from "@atlaskit/button";
 import {responsiveStyles} from "@styles/styles";
 import {RWebShare} from "react-web-share";
 import ShareIcon from "@atlaskit/icon/core/share";
 import {ContentShareButtonProps} from "@pages/[post]/data/props";
-import DropdownMenu, {DropdownItem} from '@atlaskit/dropdown-menu';
+import DropdownMenu, {DropdownItem} from "@atlaskit/dropdown-menu";
 import {useTranslation} from "next-i18next";
 import {FlagsProvider} from "@atlaskit/flag";
 
 export default function PostPage({url}: { url: string }) {
     const paths = usePathname()
     const dispatch = useDispatch();
-    const {t} = useTranslation(['common'])
+    const {t} = useTranslation(["common"])
     const [wSize, setSize] = React.useState(0);
     const [mediumUrl, setMediumUrl] = useState(url || paths)
     const [onCopied, setOnCopied] = useState<boolean>(false)
@@ -147,12 +147,12 @@ export default function PostPage({url}: { url: string }) {
                                         <Grid
                                             xcss={responsiveStyles} gap="space.200" alignItems="center"
                                             templateAreas={wSize < 1200 ? [
-                                                'content content content',
-                                                'action action action',
+                                                "content content content",
+                                                "action action action",
                                             ] : [
-                                                'content content content action action',
+                                                "content content content action action",
                                             ]}>
-                                            <Box style={{gridArea: 'content', marginBottom: 'auto'}}>
+                                            <Box style={{gridArea: "content", marginBottom: "auto"}}>
                                                 <Inline alignBlock="center" space={"space.100"}>
                                                     <Flex gap="space.200" alignItems="center">
                                                         <Avatar src={postData?.author?.avatar}/>
@@ -162,7 +162,7 @@ export default function PostPage({url}: { url: string }) {
                                                     </Flex>
                                                 </Inline>
                                             </Box>
-                                            <Box style={{gridArea: 'action', marginBottom: 'auto'}}>
+                                            <Box style={{gridArea: "action", marginBottom: "auto"}}>
                                                 <Inline alignBlock="center">
                                                     <ButtonGroup label="Action">
                                                         {
@@ -226,7 +226,7 @@ export default function PostPage({url}: { url: string }) {
 
 const ShareButtonWeb: FC<ContentShareButtonProps> = (props) => {
     const {onCopiedURL, shareData} = props
-    const {t} = useTranslation(['common'])
+    const {t} = useTranslation(["common"])
     const handleCopyURL = () => {
         navigator.clipboard
             .writeText(shareData?.url as string || window?.location?.href)
