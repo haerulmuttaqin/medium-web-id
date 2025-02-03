@@ -32,7 +32,7 @@ const highlightStyles = css({
     textAlign: "center",
     "&::after": {
       color: token("color.text.inverse", "#FFF"),
-      content: ""Stickied element"",
+      content: "'Stickied element'",
     },
   },
 });
