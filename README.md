@@ -16,7 +16,13 @@
 npm install --legacy-peer-deps
 ```
 
-## Usage
+## Usage (Build)
+
+```sh
+npm run build
+```
+
+## Usage (Start)
 
 ```sh
 npm run start
