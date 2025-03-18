@@ -1,16 +1,10 @@
-import React, {FC, Fragment, useEffect} from "react";
+import React, {FC, Fragment} from "react";
 import {Box} from "@atlaskit/primitives";
-import {Content, Main, PageLayout, TopNavigation,} from "@atlaskit/page-layout";
+import {Content, Main, TopNavigation,} from "@atlaskit/page-layout";
 import {LandingPageLayoutProps} from "@component/Layout/layout";
 import Head from "next/head";
 import LandingPageNavigation from "@/pages/landing/components/Header";
 import {useDispatch, useSelector} from "react-redux";
-import {FlagsProvider, useFlags} from "@atlaskit/flag";
-import {resetFlag, showFlag as showFlagWithResetBack} from "@store/actions/show-flag";
-import SuccessIcon from "@atlaskit/icon/glyph/check-circle";
-import {token} from "@atlaskit/tokens";
-import {G400, R300} from "@atlaskit/theme/colors";
-import Error from "@atlaskit/icon/glyph/error";
 import {useRouter} from "next/router";
 
 const LandingPageLayout: FC<LandingPageLayoutProps> = (
@@ -24,76 +18,76 @@ const LandingPageLayout: FC<LandingPageLayoutProps> = (
     const router = useRouter()
     const dispatch = useDispatch();
     const {show, title: flagTitle, message, success, goBack} = useSelector((state: any) => state.flag)
-    const {showFlag} = useFlags()
+    // const {showFlag} = useFlags()
+    //
+    // useEffect(() => {
+    //     if (show) {
+    //         if (success == true) {
+    //             if (goBack == true) {
+    //                 router.back()
+    //                 dispatch(showFlagWithResetBack({
+    //                     show: show,
+    //                     title: flagTitle,
+    //                     message: message,
+    //                     success: success,
+    //                     goBack: false
+    //                 }) as any)
+    //             } else {
+    //                 showSuccessFlag()
+    //             }
+    //         } else {
+    //             if (goBack == true) {
+    //                 router.back()
+    //                 dispatch(showFlagWithResetBack({
+    //                     show: show,
+    //                     title: flagTitle,
+    //                     message: message,
+    //                     success: success,
+    //                     goBack: false
+    //                 }) as any)
+    //             } else {
+    //                 showErrorFlag()
+    //             }
+    //         }
+    //     }
+    // }, [show, message])
 
-    useEffect(() => {
-        if (show) {
-            if (success == true) {
-                if (goBack == true) {
-                    router.back()
-                    dispatch(showFlagWithResetBack({
-                        show: show,
-                        title: flagTitle,
-                        message: message,
-                        success: success,
-                        goBack: false
-                    }) as any)
-                } else {
-                    showSuccessFlag()
-                }
-            } else {
-                if (goBack == true) {
-                    router.back()
-                    dispatch(showFlagWithResetBack({
-                        show: show,
-                        title: flagTitle,
-                        message: message,
-                        success: success,
-                        goBack: false
-                    }) as any)
-                } else {
-                    showErrorFlag()
-                }
-            }
-        }
-    }, [show, message])
-
-    const showSuccessFlag = () => {
-        setTimeout(() => {
-            showFlag({
-                icon: (
-                    <SuccessIcon
-                        label="Success"
-                        primaryColor={token("color.icon.success", G400)}
-                    />
-                ),
-                title: flagTitle,
-                description: message,
-                isAutoDismiss: true,
-            });
-            dispatch(resetFlag() as any)
-        }, 300)
-    };
-
-    const showErrorFlag = () => {
-        setTimeout(() => {
-            showFlag({
-                icon: (
-                    <Error
-                        label="Error"
-                        primaryColor={token("color.icon.danger", R300)}
-                    />
-                ),
-                title: flagTitle,
-                description: message,
-                isAutoDismiss: true,
-            })
-            dispatch(resetFlag() as any)
-        }, 300)
-    }
+    // const showSuccessFlag = () => {
+    //     setTimeout(() => {
+    //         showFlag({
+    //             icon: (
+    //                 <SuccessIcon
+    //                     label="Success"
+    //                     primaryColor={token("color.icon.success", G400)}
+    //                 />
+    //             ),
+    //             title: flagTitle,
+    //             description: message,
+    //             isAutoDismiss: true,
+    //         });
+    //         dispatch(resetFlag() as any)
+    //     }, 300)
+    // };
+    //
+    // const showErrorFlag = () => {
+    //     setTimeout(() => {
+    //         showFlag({
+    //             icon: (
+    //                 <Error
+    //                     label="Error"
+    //                     primaryColor={token("color.icon.danger", R300)}
+    //                 />
+    //             ),
+    //             title: flagTitle,
+    //             description: message,
+    //             isAutoDismiss: true,
+    //         })
+    //         dispatch(resetFlag() as any)
+    //     }, 300)
+    // }
 
     return (
-        <FlagsProvider>
+        // <FlagsProvider>
             <Box id={"landing-body"}>
                 <Head>
                     <title>{title || "MediumWebID: Unlocking Access - Medium Paywall Solution!"}</title>
@@ -103,25 +97,25 @@ const LandingPageLayout: FC<LandingPageLayoutProps> = (
                     <meta name="title" content="MediumWebID"/>
                     <meta name="url" content="https://orify.me"/>
                     <meta name="description"
-                          content="Streamline your development workflow! Our platform offers instant Resume  creation, real-time testing, and seamless integration"/>
-                    <meta name="keywords" content="Resume , API Builder FREE, Free Resume "/>
+                          content="Unlock Premium Knowledge – No Paywall, No Problem."/>
+                    <meta name="keywords" content="Medium, Read Article Free, Free Article, Bypass Paywall"/>
                     <meta name="image" content="https://orify.me/orify.webp"/>
                     <meta property="og:title" content="MediumWebID"/>
                     <meta property="og:url" content="https://orify.me"/>
                     <meta property="og:description"
-                          content="Streamline your development workflow! Our platform offers instant Resume  creation, real-time testing, and seamless integration"/>
+                          content="Unlock Premium Knowledge – No Paywall, No Problem."/>
                     <meta property="og:keywords" content="Resume , API Builder FREE, Free Resume "/>
                     <meta property="og:image" content="https://orify.me/orify.webp"/>
                     <meta itemProp="title" content="MediumWebID"/>
                     <meta itemProp="url" content="https://orify.me"/>
                     <meta itemProp="description"
-                          content="Streamline your development workflow! Our platform offers instant Resume  creation, real-time testing, and seamless integration"/>
+                          content="Unlock Premium Knowledge – No Paywall, No Problem."/>
                     <meta itemProp="keywords" content="Resume , API Builder FREE, Free Resume "/>
                     <meta itemProp="image" content="https://orify.me/orify.webp"/>
                     <meta property="twitter:title" content="MediumWebID"/>
                     <meta property="twitter:url" content="https://orify.me"/>
                     <meta property="twitter:description"
-                          content="Streamline your development workflow! Our platform offers instant Resume  creation, real-time testing, and seamless integration"/>
+                          content="Unlock Premium Knowledge – No Paywall, No Problem."/>
                     <meta property="twitter:keywords" content="Resume , API Builder FREE, Free Resume "/>
                     <meta property="twitter:image" content="https://orify.me/orify.webp"/>
                     <meta charSet="UTF-8"/>
@@ -145,7 +139,7 @@ const LandingPageLayout: FC<LandingPageLayoutProps> = (
                     </Content>
                 </Fragment>
             </Box>
-        </FlagsProvider>
+        // {/*</FlagsProvider>*/}
     );
 };
 
