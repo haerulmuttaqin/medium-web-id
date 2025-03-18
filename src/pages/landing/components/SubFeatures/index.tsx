@@ -40,8 +40,7 @@ const LandingSubFeatures = () => {
                     </Box>
                     <br/>
                     <br/>
-                    <Button onClick={() => router.push("/bookmarks/create")} appearance="primary">Create FREE Mock
-                        Now</Button>
+                    <Button onClick={() => router.push("/bookmarks/create")} appearance="primary">Manage Bookmark</Button>
                 </Box>
             </LandingWrapper>
         </div>

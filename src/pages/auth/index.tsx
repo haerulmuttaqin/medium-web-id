@@ -8,10 +8,9 @@ import {Box, Flex, Text, xcss} from "@atlaskit/primitives";
 import Grid, {GridItem} from "@atlaskit/grid";
 import Heading from "@atlaskit/heading";
 import ContentWrapper from "@component/Layout/common/content-wrapper";
-import {useTranslation} from "next-i18next";
 import {signOut, useSession} from "next-auth/react";
 import Button from "@atlaskit/button/new";
-import {cardBasicStyle, cardStyle} from "@component/Common/style-util";
+import {cardBasicStyle} from "@component/Common/style-util";
 import {SpinnerWrapper} from "@atlaskit/media-ui/modalSpinner";
 import SpinnerLoading from "@component/Spinner";
 import {useRouter} from "next/router";
@@ -67,10 +66,11 @@ const GithubSVG = () => (
 );
 
 const Auth: NextPage = () => {
-    const {t} = useTranslation(["common"])
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const {data: session, status} = useSession();
+    const router = useRouter();
+    const {redirect} = router.query
 
     const popupCenter = (url: string, title: string) => {
         const dualScreenLeft = window.screenLeft ?? window.screenX;
@@ -115,7 +115,11 @@ const Auth: NextPage = () => {
                     showError(res)
                     signOut()
                 } else {
-                    window.location.href = window.location.protocol + "//" + window.location.host + "/bookmarks"
+                    if (redirect) {
+                        window.location.href = redirect + ""
+                    } else {
+                        window.location.href = window.location.protocol + "//" + window.location.host + "/bookmarks"
+                    }
                 }
             })
             .catch((err) => {

@@ -59,6 +59,28 @@ export const useCompany = () => {
     return storedValue;
 };
 
+export const useIsLoggedIn = () => {
+    const [storedValue, setStoredValue] = useState(() => {
+        try {
+            return JSON.parse(secureLocalStorage.getItem("is_login") as string)
+        } catch (error) {
+            console.error("Error retrieving data from local storage company_id:", error);
+            return false
+        }
+    });
+
+    useEffect(() => {
+        const data = JSON.parse(secureLocalStorage.getItem("is_login") as string) as boolean
+        if (data == null) {
+            setStoredValue(false)
+        } else {
+            setStoredValue(data)
+        }
+    }, []);
+
+    return storedValue;
+};
+
 export const useIsTabActive = () => {
     const [isTabVisible, setIsTabVisible] = useState(true);
 

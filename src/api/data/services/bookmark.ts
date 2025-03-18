@@ -1,6 +1,5 @@
 import {api} from "@/api";
 import {BaseResponse} from "../interfaces";
-import {BookmarkPayloadProps} from "../interfaces/bookmark";
 
 
 export const getBookmarks = async (projectId: string): Promise<BaseResponse> => {
@@ -9,6 +8,15 @@ export const getBookmarks = async (projectId: string): Promise<BaseResponse> => 
         url: `bookmarks/${projectId}`,
     });
 };
+
+
+export const getBookmarkByUrl = async (bid: string, url: string): Promise<BaseResponse> => {
+    return await api({
+        method: "GET",
+        url: `bookmark/url/${bid}?url=${url}`,
+    });
+};
+
 
 export const getProject = async (project_id: string, sheet_id: string): Promise<BaseResponse> => {
     return await api({
@@ -23,6 +31,27 @@ export const addBookmark = async (payload: BookmarkPayloadProps): Promise<BaseRe
             method: "POST",
             url: "bookmark",
             data: payload
+        })
+        if (data) {
+            return data
+        } else {
+            return {success: false, message: "An error occurred"}
+        }
+    } catch (err: any) {
+        if (err.response?.data != undefined) {
+            return err.response?.data
+        } else if (err.response?.errors != undefined) {
+            return err.response?.errors
+        }
+        return {success: false, message: err.message}
+    }
+};
+
+export const deleteBookmark = async (bid: string, xid: number): Promise<BaseResponse> => {
+    try {
+        const {data} = await api({
+            method: "DELETE",
+            url: `bookmark/${bid}/${xid}`,
         })
         if (data) {
             return data

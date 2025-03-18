@@ -73,7 +73,7 @@ const BookmarkPage: NextPage = () => {
     }
 
     const handleOnShow = (params: BookmarkProps) => {
-        // router.push(`/bookmarks?id=${project_id}&sid=${sid}&idx=${idx}`)
+        router.push(params.url as string)
     }
 
     const handleOpenModalDelete = (params: BookmarkProps) => {
@@ -102,7 +102,12 @@ const BookmarkPage: NextPage = () => {
         <Layout
             title="Bookmarked Articles">
             <ContentWrapper>
-                <Content bookmarks={dataBookmarks} loading={isLoadingBookmarks} onItemClick={handleOnShow}/>
+                <Content
+                    bookmarks={dataBookmarks}
+                    loading={isLoadingBookmarks}
+                    onItemClick={handleOnShow}
+                    onItemDelete={handleOpenModalDelete}
+                />
                 <br/>
             </ContentWrapper>
 

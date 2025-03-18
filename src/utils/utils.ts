@@ -120,9 +120,7 @@ export const getMethodType = (method: string) => {
 }
 
 export const isValidDomain = (str: string) => {
-    let pattern = new RegExp("^(https?:\\/\\/)?" + // protocol
-        "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
-        "((\\d{1,3}\\.){3}\\d{1,3}))"); // fragment locator
+    let pattern = new RegExp("^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.[a-zA-Z]{2,}"); // fragment locator
     return pattern.test(str);
 }
 

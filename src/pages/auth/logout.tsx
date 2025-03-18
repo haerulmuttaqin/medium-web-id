@@ -26,7 +26,7 @@ const SignOut = () => {
             dispatch(
                 showFlag({
                     success: true,
-                    title: "You"re Logged Out",
+                    title: "You're Logged Out",
                 }) as any
             );
             secureLocalStorage.setItem("is_login", false)

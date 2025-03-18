@@ -3,20 +3,20 @@ import "@/styles/landing.module.css"
 import "highlight.js/styles/github-dark.css";
 import Footer from "@component/Footer";
 import LandingPageLayout from "@pages/landing/components/Layout";
-import {useFetchPost} from "@pages/[post]/data/remote";
+import {useFetchBookmark, useFetchPost} from "@pages/[post]/data/remote";
 import {usePathname} from "next/navigation";
 import {SpinnerWrapper} from "@atlaskit/media-ui/modalSpinner";
 import SpinnerLoading from "@component/Spinner";
-import {Box, Flex, Inline, Grid, Stack, Text, xcss} from "@atlaskit/primitives";
+import {Box, Flex, Grid, Inline, Text, xcss} from "@atlaskit/primitives";
 import PostWrapper from "@component/Layout/common/post-wrapper";
 import Divider from "@component/Divider";
 import {cardAuthorStyle, cardTagsStyle} from "@component/Common/style-util";
 import Avatar from "@atlaskit/avatar";
 import {SimpleTag} from "@atlaskit/tag";
-import {addBookmark} from "@api/data/services/bookmark";
+import {addBookmark, deleteBookmark} from "@api/data/services/bookmark";
 import {showFlag} from "@store/actions/show-flag";
 import {useDispatch} from "react-redux";
-import Button, {IconButton} from "@atlaskit/button/new";
+import Button from "@atlaskit/button/new";
 import StoryIcon from "@atlaskit/icon/core/story";
 import {ButtonGroup} from "@atlaskit/button";
 import {responsiveStyles} from "@styles/styles";
@@ -26,6 +26,9 @@ import {ContentShareButtonProps} from "@pages/[post]/data/props";
 import DropdownMenu, {DropdownItem} from "@atlaskit/dropdown-menu";
 import {useTranslation} from "next-i18next";
 import {FlagsProvider} from "@atlaskit/flag";
+import {useIsLoggedIn, useUserData} from "@utils/hooks";
+import {useRouter} from "next/router";
+import CheckboxCheckedIcon from '@atlaskit/icon/core/checkbox-checked';
 
 export default function PostPage({url}: { url: string }) {
     const paths = usePathname()
@@ -35,6 +38,9 @@ export default function PostPage({url}: { url: string }) {
     const [mediumUrl, setMediumUrl] = useState(url || paths)
     const [onCopied, setOnCopied] = useState<boolean>(false)
     const [isLoadingBookmark, setIsLoadingBookmark] = useState<boolean>(false)
+    const isLoggedIn = useIsLoggedIn()
+    const user = useUserData()
+    const router = useRouter()
 
     const updateWindowDimensions = () => {
         setSize(window.innerWidth);
@@ -73,6 +79,13 @@ export default function PostPage({url}: { url: string }) {
         error: postError
     } = useFetchPost(mediumUrl as string)
 
+    const {
+        data: bookmarkData,
+        isLoading: bookmarkDataIsLoading,
+        mutate: bookmarkMutate,
+        error: bookmarkError,
+    } = useFetchBookmark(user.project as string, mediumUrl as string)
+
     const postBookmarkData = async () => {
         setIsLoadingBookmark(true)
         const params = {
@@ -103,6 +116,7 @@ export default function PostPage({url}: { url: string }) {
                             message: "The bookmark has been successfully added!",
                         }) as any
                     )
+                    setTimeout(() => bookmarkMutate(), 300)
                 }
             })
             .catch((err) => {
@@ -117,11 +131,63 @@ export default function PostPage({url}: { url: string }) {
             })
     }
 
+    const deleteBookmarkData = async () => {
+        setIsLoadingBookmark(true)
+        await deleteBookmark(user.project as string, bookmarkData?.xid)
+            .then((res) => {
+                setIsLoadingBookmark(false)
+                if (!res.success) {
+                    dispatch(
+                        showFlag({
+                            success: false,
+                            title: "Add Failed, Please try again!",
+                            message: res.message
+                        }) as any
+                    );
+                } else {
+                    dispatch(
+                        showFlag({
+                            success: true,
+                            title: "Successfully deleted",
+                            message: "The bookmark has been successfully deleted!",
+                        }) as any
+                    )
+                    setTimeout(() => bookmarkMutate(), 300)
+                }
+            })
+            .catch((err) => {
+                setIsLoadingBookmark(false)
+                dispatch(
+                    showFlag({
+                        success: false,
+                        title: "Add Failed, Please try again!",
+                        message: err.message
+                    }) as any
+                );
+            })
+    }
+
+    const navigateToLogin = () => {
+        router.push("/auth?redirect=" + paths)
+    }
+
     useEffect(() => {
         if (url == null && paths != "") {
             setMediumUrl(paths)
         }
     }, [paths]);
+
+    useEffect(() => {
+        if (postData?.content == null) {
+            router.back()
+            dispatch(
+                showFlag({
+                    success: false,
+                    title: "Fetch Failed, Please try again!",
+                }) as any
+            );
+        }
+    }, [postData]);
 
     return (
         <FlagsProvider>
@@ -146,11 +212,11 @@ export default function PostPage({url}: { url: string }) {
                                     <Box xcss={cardAuthorStyle}>
                                         <Grid
                                             xcss={responsiveStyles} gap="space.200" alignItems="center"
-                                            templateAreas={wSize < 1200 ? [
+                                            templateAreas={wSize < 700 ? [
                                                 "content content content",
                                                 "action action action",
                                             ] : [
-                                                "content content content action action",
+                                                "content content content  action action",
                                             ]}>
                                             <Box style={{gridArea: "content", marginBottom: "auto"}}>
                                                 <Inline alignBlock="center" space={"space.100"}>
@@ -192,10 +258,15 @@ export default function PostPage({url}: { url: string }) {
                                                         <Button isLoading={isLoadingBookmark}
                                                                 isDisabled={isLoadingBookmark}
                                                                 appearance="primary"
-                                                                onClick={postBookmarkData}
+                                                                onClick={
+                                                                    isLoggedIn ? (bookmarkData ? deleteBookmarkData : postBookmarkData) : navigateToLogin
+                                                                }
                                                                 iconBefore={(props) =>
-                                                                    <StoryIcon
-                                                                        size="small" {...props}/>}>{t("bookmark")}</Button>
+                                                                    bookmarkData ?
+                                                                        <CheckboxCheckedIcon size="small" {...props}/>
+                                                                        :
+                                                                        <StoryIcon
+                                                                            size="small" {...props}/>}>{bookmarkData?.content ? t("un_bookmark") : t("bookmark")}</Button>
                                                     </ButtonGroup>
                                                 </Inline>
                                             </Box>
@@ -206,7 +277,7 @@ export default function PostPage({url}: { url: string }) {
                                         <Box xcss={cardTagsStyle}>
                                             <Flex>
                                                 {
-                                                    postData?.tags.map((tag: any) => (
+                                                    postData?.tags?.map((tag: any) => (
                                                         <SimpleTag key={tag} text={tag}/>
                                                     ))
                                                 }

@@ -6,7 +6,7 @@ import {BookmarkContentProps} from "@pages/bookmarks/data/props";
 import CardBookmark from "@component/CardBookmark";
 
 const Content: FC<BookmarkContentProps> = (props) => {
-    const {bookmarks, loading, onItemClick} = props
+    const {bookmarks, loading, onItemClick, onItemDelete} = props
 
     return (
         <>
@@ -30,6 +30,7 @@ const Content: FC<BookmarkContentProps> = (props) => {
                                             <CardBookmark
                                                 data={item}
                                                 onItemClick={() => onItemClick(item)}
+                                                onItemDelete={() => onItemDelete(item)}
                                             />
                                         </GridItem>
                                     )

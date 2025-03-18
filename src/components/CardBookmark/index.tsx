@@ -35,7 +35,7 @@ const CardBookmarkImage: FC<ImageProps> = ({src, name}) => {
 }
 
 const CardRegion: FC<CardBookmarkProps> = (props) => {
-    const {data, onItemClick} = props
+    const {data, onItemClick, onItemDelete} = props
 
     return (
         <Box id={"container__card-meter"} xcss={cardNoShadowStyle} onClick={onItemClick}>

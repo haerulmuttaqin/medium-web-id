@@ -28,7 +28,7 @@ const FormInput = () => {
             await router.push(`/${[params.url.replace(/^.*\/\/[^\/]+/, "")]}`)
         } else {
             return {
-                url: "invalid url"
+                url: "Please input valid medium post url"
             }
         }
     }
@@ -61,7 +61,7 @@ const FormInput = () => {
                                                    elemBeforeInput={<span style={{paddingInline: "10px"}}><LinkIcon
                                                        label={"link"}/></span>}/>
                                         {error && (
-                                            <ErrorMessage>please input valid medium post url</ErrorMessage>
+                                            <ErrorMessage>{error}</ErrorMessage>
                                         )}
                                     </Fragment>
                                 )}
