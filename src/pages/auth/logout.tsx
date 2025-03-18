@@ -13,8 +13,8 @@ const spinnerStyles = xcss({
     alignItems: "center",
     justifyContent: "space-around",
     textAlign: "center",
-    width: '100%',
-    height: '100vh',
+    width: "100%",
+    height: "100vh",
 });
 
 const SignOut = () => {

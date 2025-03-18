@@ -1,6 +1,6 @@
 "use client";
-import React, {FC, Fragment, useEffect} from 'react';
-import {Content, LeftSidebarState, Main, PageLayout, TopNavigation,} from '@atlaskit/page-layout';
+import React, {FC, Fragment, useEffect} from "react";
+import {Content, LeftSidebarState, Main, PageLayout, TopNavigation,} from "@atlaskit/page-layout";
 import {AtlassianNavigation, PrimaryButton, SignIn} from "@atlaskit/atlassian-navigation";
 import SideNav from "@component/SideNav";
 import MobileNavigation from "@component/SideNav/Mobile";
@@ -17,7 +17,7 @@ import Link from "next/link";
 
 const AtlassianProductHome = () => (
     <Link href={"/"}>
-        <span className={'charlie-text'}
+        <span className={"charlie-text"}
               style={{fontSize: "18px", fontWeight: "600", marginInlineEnd: "20px"}}>📖 MediumWebID</span>
     </Link>
 );
@@ -42,7 +42,7 @@ const Layout: FC<LayoutProps> = (
         sidebarTitle,
     }
 ) => {
-    const {t} = useTranslation(['common'])
+    const {t} = useTranslation(["common"])
     const router = useRouter()
     const [wSize, setSize] = React.useState(0);
     const {data: session, status} = useSession()
@@ -65,7 +65,7 @@ const Layout: FC<LayoutProps> = (
     }
 
     const openProject = () => {
-        router.replace("/projects")
+        router.replace("/bookmarks")
     }
 
     const openApiDoc = () => {
@@ -114,10 +114,10 @@ const Layout: FC<LayoutProps> = (
                 <Fragment>
                     <PageLayout
                         onLeftSidebarExpand={(state: LeftSidebarState) =>
-                            console.log('onExpand', state)
+                            console.log("onExpand", state)
                         }
                         onLeftSidebarCollapse={(state: LeftSidebarState) =>
-                            console.log('onCollapse', state)
+                            console.log("onCollapse", state)
                         }
                     >
                         {
@@ -127,10 +127,10 @@ const Layout: FC<LayoutProps> = (
                                     <AtlassianNavigation
                                         label="dashboard"
                                         primaryItems={[
-                                            <PrimaryButton key={0} onClick={openHome}>{t('home')}</PrimaryButton>,
+                                            <PrimaryButton key={0} onClick={openHome}>{t("home")}</PrimaryButton>,
                                             status == "authenticated" ? <PrimaryButton key={1}
-                                                                                       onClick={openProject}>{t('my_projects')}</PrimaryButton> : null,
-                                            <PrimaryButton key={3} onClick={openAbout}>{t('about')}</PrimaryButton>,
+                                                                                       onClick={openProject}>{t("my_bookmarks")}</PrimaryButton> : null,
+                                            <PrimaryButton key={3} onClick={openAbout}>{t("about")}</PrimaryButton>,
                                         ]}
                                         renderProductHome={AtlassianProductHome}
                                         renderSettings={DefaultSettings}

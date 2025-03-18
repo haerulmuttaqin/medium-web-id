@@ -1,5 +1,5 @@
-import {combineReducers} from 'redux'
-import showFlagReducer from './flag'
+import {combineReducers} from "redux"
+import showFlagReducer from "./flag"
 import setThemeReducer from "@/store/reducers/theme";
 
 const rootReducer = combineReducers({

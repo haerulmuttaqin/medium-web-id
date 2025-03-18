@@ -1,9 +1,8 @@
-
 /*landingpage*/
 
 @font-face {
     font-family: "Charlie Display";
-    src: url("../../public/assets/fonts/Charlie_Display-Thin.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Display-Thin.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Display-Thin.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Display-Thin.woff") format("woff");
     font-weight: 100;
     font-style: normal;
     font-display: swap
@@ -11,7 +10,7 @@
 
 @font-face {
     font-family: "Charlie Display";
-    src: url("../../public/assets/fonts/Charlie_Display-Thin_Italic.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Display-Thin_Italic.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Display-Thin_Italic.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Display-Thin_Italic.woff") format("woff");
     font-weight: 100;
     font-style: italic;
     font-display: swap
@@ -19,7 +18,7 @@
 
 @font-face {
     font-family: "Charlie Display";
-    src: url("../../public/assets/fonts/Charlie_Display-Light.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Display-Light.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Display-Light.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Display-Light.woff") format("woff");
     font-weight: 300;
     font-style: normal;
     font-display: swap
@@ -27,7 +26,7 @@
 
 @font-face {
     font-family: "Charlie Display";
-    src: url("../../public/assets/fonts/Charlie_Display-Light_Italic.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Display-Light_Italic.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Display-Light_Italic.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Display-Light_Italic.woff") format("woff");
     font-weight: 300;
     font-style: italic;
     font-display: swap
@@ -35,7 +34,7 @@
 
 @font-face {
     font-family: "Charlie Display";
-    src: url("../../public/assets/fonts/Charlie_Display-Regular.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Display-Regular.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Display-Regular.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Display-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap
@@ -43,7 +42,7 @@
 
 @font-face {
     font-family: "Charlie Display";
-    src: url("../../public/assets/fonts/Charlie_Display-Regular_Italic.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Display-Regular_Italic.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Display-Regular_Italic.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Display-Regular_Italic.woff") format("woff");
     font-weight: normal;
     font-style: italic;
     font-display: swap
@@ -51,7 +50,7 @@
 
 @font-face {
     font-family: "Charlie Display";
-    src: url("../../public/assets/fonts/Charlie_Display-Semibold.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Display-Semibold.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Display-Semibold.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Display-Semibold.woff") format("woff");
     font-weight: 500;
     font-style: normal;
     font-display: swap
@@ -59,7 +58,7 @@
 
 @font-face {
     font-family: "Charlie Display";
-    src: url("../../public/assets/fonts/Charlie_Display-Semibold_Italic.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Display-Semibold_Italic.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Display-Semibold_Italic.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Display-Semibold_Italic.woff") format("woff");
     font-weight: 500;
     font-style: italic;
     font-display: swap
@@ -67,7 +66,7 @@
 
 @font-face {
     font-family: "Charlie Display";
-    src: url("../../public/assets/fonts/Charlie_Display-Bold.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Display-Bold.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Display-Bold.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Display-Bold.woff") format("woff");
     font-weight: 600;
     font-style: normal;
     font-display: swap
@@ -75,7 +74,7 @@
 
 @font-face {
     font-family: "Charlie Display";
-    src: url("../../public/assets/fonts/Charlie_Display-Bold_Italic.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Display-Bold_Italic.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Display-Bold_Italic.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Display-Bold_Italic.woff") format("woff");
     font-weight: 600;
     font-style: italic;
     font-display: swap
@@ -83,7 +82,7 @@
 
 @font-face {
     font-family: "Charlie Display";
-    src: url("../../public/assets/fonts/Charlie_Display-Black.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Display-Black.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Display-Black.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Display-Black.woff") format("woff");
     font-weight: 700;
     font-style: normal;
     font-display: swap
@@ -91,7 +90,7 @@
 
 @font-face {
     font-family: "Charlie Display";
-    src: url("../../public/assets/fonts/Charlie_Display-Black_Italic.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Display-Black_Italic.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Display-Black_Italic.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Display-Black_Italic.woff") format("woff");
     font-weight: 700;
     font-style: italic;
     font-display: swap
@@ -99,7 +98,7 @@
 
 @font-face {
     font-family: "Charlie Display";
-    src: url("../../public/assets/fonts/Charlie_Display-Ultra.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Display-Ultra.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Display-Ultra.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Display-Ultra.woff") format("woff");
     font-weight: 800;
     font-style: normal;
     font-display: swap
@@ -107,7 +106,7 @@
 
 @font-face {
     font-family: "Charlie Display";
-    src: url("../../public/assets/fonts/Charlie_Display-Ultra_Italic.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Display-Ultra_Italic.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Display-Ultra_Italic.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Display-Ultra_Italic.woff") format("woff");
     font-weight: 800;
     font-style: italic;
     font-display: swap
@@ -115,7 +114,7 @@
 
 @font-face {
     font-family: "Charlie Text";
-    src: url("../../public/assets/fonts/Charlie_Text-Thin.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Text-Thin.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Text-Thin.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Text-Thin.woff") format("woff");
     font-weight: 100;
     font-style: normal;
     font-display: swap
@@ -123,7 +122,7 @@
 
 @font-face {
     font-family: "Charlie Text";
-    src: url("../../public/assets/fonts/Charlie_Text-Thin_Italic.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Text-Thin_Italic.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Text-Thin_Italic.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Text-Thin_Italic.woff") format("woff");
     font-weight: 100;
     font-style: italic;
     font-display: swap
@@ -131,7 +130,7 @@
 
 @font-face {
     font-family: "Charlie Text";
-    src: url("../../public/assets/fonts/Charlie_Text-Light.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Text-Light.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Text-Light.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Text-Light.woff") format("woff");
     font-weight: 300;
     font-style: normal;
     font-display: swap
@@ -139,7 +138,7 @@
 
 @font-face {
     font-family: "Charlie Text";
-    src: url("../../public/assets/fonts/Charlie_Text-Light_Italic.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Text-Light_Italic.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Text-Light_Italic.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Text-Light_Italic.woff") format("woff");
     font-weight: 300;
     font-style: italic;
     font-display: swap
@@ -147,7 +146,7 @@
 
 @font-face {
     font-family: "Charlie Text";
-    src: url("../../public/assets/fonts/Charlie_Text-Regular.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Text-Regular.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Text-Regular.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Text-Regular.woff") format("woff");
     font-weight: normal;
     font-style: normal;
     font-display: swap
@@ -155,7 +154,7 @@
 
 @font-face {
     font-family: "Charlie Text";
-    src: url("../../public/assets/fonts/Charlie_Text-Regular_Italic.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Text-Regular_Italic.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Text-Regular_Italic.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Text-Regular_Italic.woff") format("woff");
     font-weight: normal;
     font-style: italic;
     font-display: swap
@@ -163,7 +162,7 @@
 
 @font-face {
     font-family: "Charlie Text";
-    src: url("../../public/assets/fonts/Charlie_Text-Semibold.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Text-Semibold.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Text-Semibold.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Text-Semibold.woff") format("woff");
     font-weight: 500;
     font-style: normal;
     font-display: swap
@@ -171,7 +170,7 @@
 
 @font-face {
     font-family: "Charlie Text";
-    src: url("../../public/assets/fonts/Charlie_Text-Semibold_Italic.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Text-Semibold_Italic.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Text-Semibold_Italic.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Text-Semibold_Italic.woff") format("woff");
     font-weight: 500;
     font-style: italic;
     font-display: swap
@@ -179,7 +178,7 @@
 
 @font-face {
     font-family: "Charlie Text";
-    src: url("../../public/assets/fonts/Charlie_Text-Bold.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Text-Bold.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Text-Bold.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Text-Bold.woff") format("woff");
     font-weight: 600;
     font-style: normal;
     font-display: swap
@@ -187,7 +186,7 @@
 
 @font-face {
     font-family: "Charlie Text";
-    src: url("../../public/assets/fonts/Charlie_Text-Bold_Italic.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Text-Bold_Italic.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Text-Bold_Italic.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Text-Bold_Italic.woff") format("woff");
     font-weight: 600;
     font-style: italic;
     font-display: swap
@@ -195,7 +194,7 @@
 
 @font-face {
     font-family: "Charlie Text";
-    src: url("../../public/assets/fonts/Charlie_Text-Black.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Text-Black.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Text-Black.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Text-Black.woff") format("woff");
     font-weight: 700;
     font-style: normal;
     font-display: swap
@@ -203,7 +202,7 @@
 
 @font-face {
     font-family: "Charlie Text";
-    src: url("../../public/assets/fonts/Charlie_Text-Black_Italic.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Text-Black_Italic.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Text-Black_Italic.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Text-Black_Italic.woff") format("woff");
     font-weight: 700;
     font-style: italic;
     font-display: swap
@@ -211,7 +210,7 @@
 
 @font-face {
     font-family: "Charlie Text";
-    src: url("../../public/assets/fonts/Charlie_Text-Ultra.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Text-Ultra.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Text-Ultra.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Text-Ultra.woff") format("woff");
     font-weight: 800;
     font-style: normal;
     font-display: swap
@@ -219,7 +218,7 @@
 
 @font-face {
     font-family: "Charlie Text";
-    src: url("../../public/assets/fonts/Charlie_Text-Ultra_Italic.woff2") format("woff2"),url("../../public/assets/fonts/Charlie_Text-Ultra_Italic.woff") format("woff");
+    src: url("../../public/assets/fonts/Charlie_Text-Ultra_Italic.woff2") format("woff2"), url("../../public/assets/fonts/Charlie_Text-Ultra_Italic.woff") format("woff");
     font-weight: 800;
     font-style: italic;
     font-display: swap
@@ -228,7 +227,7 @@
 @font-face {
     font-family: "Circular";
     src: url("../../public/assets/fonts/lineto-circular-book-c.eot");
-    src: url("../../public/assets/fonts/lineto-circular-book-c.eot#iefix") format("embedded-opentype"),url("../../public/assets/fonts/lineto-circular-book-c.woff") format("woff"),url("../../public/assets/fonts/lineto-circular-book-c.ttf") format("truetype"),url("../../public/assets/images/lineto-circular-book-c.svg#Circular-Book") format("svg");
+    src: url("../../public/assets/fonts/lineto-circular-book-c.eot#iefix") format("embedded-opentype"), url("../../public/assets/fonts/lineto-circular-book-c.woff") format("woff"), url("../../public/assets/fonts/lineto-circular-book-c.ttf") format("truetype"), url("../../public/assets/images/lineto-circular-book-c.svg#Circular-Book") format("svg");
     font-weight: normal;
     font-style: normal;
     font-display: swap
@@ -237,7 +236,7 @@
 @font-face {
     font-family: "Circular";
     src: url("../../public/assets/fonts/lineto-circular-medium-c.eot");
-    src: url("../../public/assets/fonts/lineto-circular-medium-c.eot#iefix") format("embedded-opentype"),url("../../public/assets/fonts/lineto-circular-medium-c.woff") format("woff"),url("../../public/assets/fonts/lineto-circular-medium-c.ttf") format("truetype"),url("../../public/assets/images/lineto-circular-medium-c.svg#Circular-Medium") format("svg");
+    src: url("../../public/assets/fonts/lineto-circular-medium-c.eot#iefix") format("embedded-opentype"), url("../../public/assets/fonts/lineto-circular-medium-c.woff") format("woff"), url("../../public/assets/fonts/lineto-circular-medium-c.ttf") format("truetype"), url("../../public/assets/images/lineto-circular-medium-c.svg#Circular-Medium") format("svg");
     font-weight: 500;
     font-style: normal;
     font-display: swap
@@ -246,7 +245,7 @@
 @font-face {
     font-family: "Circular";
     src: url("../../public/assets/fonts/lineto-circular-bold-c.eot");
-    src: url("../../public/assets/fonts/lineto-circular-bold-c.eot#iefix") format("embedded-opentype"),url("../../public/assets/fonts/lineto-circular-bold-c.woff") format("woff"),url("../../public/assets/fonts/lineto-circular-bold-c.ttf") format("truetype"),url("../../public/assets/images/lineto-circular-bold-c.svg#Circular-Bold") format("svg");
+    src: url("../../public/assets/fonts/lineto-circular-bold-c.eot#iefix") format("embedded-opentype"), url("../../public/assets/fonts/lineto-circular-bold-c.woff") format("woff"), url("../../public/assets/fonts/lineto-circular-bold-c.ttf") format("truetype"), url("../../public/assets/images/lineto-circular-bold-c.svg#Circular-Bold") format("svg");
     font-weight: 600;
     font-style: normal;
     font-display: swap
@@ -255,7 +254,7 @@
 @font-face {
     font-family: "Circular";
     src: url("../../public/assets/fonts/lineto-circular-black-c.eot");
-    src: url("../../public/assets/fonts/lineto-circular-black-c.eot#iefix") format("embedded-opentype"),url("../../public/assets/fonts/lineto-circular-black-c.woff") format("woff"),url("../../public/assets/fonts/lineto-circular-black-c.ttf") format("truetype"),url("../../public/assets/images/lineto-circular-black-c.svg#Circular-Black") format("svg");
+    src: url("../../public/assets/fonts/lineto-circular-black-c.eot#iefix") format("embedded-opentype"), url("../../public/assets/fonts/lineto-circular-black-c.woff") format("woff"), url("../../public/assets/fonts/lineto-circular-black-c.ttf") format("truetype"), url("../../public/assets/images/lineto-circular-black-c.svg#Circular-Black") format("svg");
     font-weight: 800;
     font-style: normal;
     font-display: swap
@@ -264,7 +263,7 @@
 @font-face {
     font-family: "Circular";
     src: url("../../public/assets/fonts/lineto-circular-bookitalic-c.eot");
-    src: url("../../public/assets/fonts/lineto-circular-bookitalic-c.eot#iefix") format("embedded-opentype"),url("../../public/assets/fonts/lineto-circular-bookitalic-c.woff") format("woff"),url("../../public/assets/fonts/lineto-circular-bookitalic-c.ttf") format("truetype"),url("../../public/assets/images/lineto-circular-bookitalic-c.svg#Circular-Bookitalic") format("svg");
+    src: url("../../public/assets/fonts/lineto-circular-bookitalic-c.eot#iefix") format("embedded-opentype"), url("../../public/assets/fonts/lineto-circular-bookitalic-c.woff") format("woff"), url("../../public/assets/fonts/lineto-circular-bookitalic-c.ttf") format("truetype"), url("../../public/assets/images/lineto-circular-bookitalic-c.svg#Circular-Bookitalic") format("svg");
     font-weight: normal;
     font-style: italic;
     font-display: swap
@@ -273,7 +272,7 @@
 @font-face {
     font-family: "Circular";
     src: url("../../public/assets/fonts/lineto-circular-mediumitalic-c.eot");
-    src: url("../../public/assets/fonts/lineto-circular-mediumitalic-c.eot#iefix") format("embedded-opentype"),url("../../public/assets/fonts/lineto-circular-mediumitalic-c.woff") format("woff"),url("../../public/assets/fonts/lineto-circular-mediumitalic-c.ttf") format("truetype"),url("../../public/assets/images/lineto-circular-mediumitalic-c.svg#Circular-Mediumitalic") format("svg");
+    src: url("../../public/assets/fonts/lineto-circular-mediumitalic-c.eot#iefix") format("embedded-opentype"), url("../../public/assets/fonts/lineto-circular-mediumitalic-c.woff") format("woff"), url("../../public/assets/fonts/lineto-circular-mediumitalic-c.ttf") format("truetype"), url("../../public/assets/images/lineto-circular-mediumitalic-c.svg#Circular-Mediumitalic") format("svg");
     font-weight: 500;
     font-style: italic;
     font-display: swap
@@ -282,7 +281,7 @@
 @font-face {
     font-family: "Circular";
     src: url("../../public/assets/fonts/lineto-circular-bolditalic-c.eot");
-    src: url("../../public/assets/fonts/lineto-circular-bolditalic-c.eot#iefix") format("embedded-opentype"),url("../../public/assets/fonts/lineto-circular-bolditalic-c.woff") format("woff"),url("../../public/assets/fonts/lineto-circular-bolditalic-c.ttf") format("truetype"),url("../../public/assets/images/lineto-circular-bolditalic-c.svg#Circular-Bolditalic") format("svg");
+    src: url("../../public/assets/fonts/lineto-circular-bolditalic-c.eot#iefix") format("embedded-opentype"), url("../../public/assets/fonts/lineto-circular-bolditalic-c.woff") format("woff"), url("../../public/assets/fonts/lineto-circular-bolditalic-c.ttf") format("truetype"), url("../../public/assets/images/lineto-circular-bolditalic-c.svg#Circular-Bolditalic") format("svg");
     font-weight: 600;
     font-style: italic;
     font-display: swap
@@ -291,7 +290,7 @@
 @font-face {
     font-family: "Circular";
     src: url("../../public/assets/fonts/lineto-circular-blackitalic-c.eot");
-    src: url("../../public/assets/fonts/lineto-circular-blackitalic-c.eot#iefix") format("embedded-opentype"),url("../../public/assets/fonts/lineto-circular-blackitalic-c.woff") format("woff"),url("../../public/assets/fonts/lineto-circular-blackitalic-c.ttf") format("truetype"),url("../../public/assets/images/lineto-circular-blackitalic-c.svg#Circular-Blackitalic") format("svg");
+    src: url("../../public/assets/fonts/lineto-circular-blackitalic-c.eot#iefix") format("embedded-opentype"), url("../../public/assets/fonts/lineto-circular-blackitalic-c.woff") format("woff"), url("../../public/assets/fonts/lineto-circular-blackitalic-c.ttf") format("truetype"), url("../../public/assets/images/lineto-circular-blackitalic-c.svg#Circular-Blackitalic") format("svg");
     font-weight: 800;
     font-style: italic;
     font-display: swap
@@ -307,6 +306,6 @@
 }
 
 .landing-navigation {
-    font-family: 'Rubik' , sans-serif;
+    font-family: "Rubik", sans-serif;
     font-weight: bold;
 }

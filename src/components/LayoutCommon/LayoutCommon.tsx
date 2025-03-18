@@ -55,7 +55,7 @@ const LayoutCommon = ({children, title}: LayoutCommonProps) => {
                 icon: (
                     <SuccessIcon
                         label="Success"
-                        primaryColor={token('color.icon.success', G400)}
+                        primaryColor={token("color.icon.success", G400)}
                     />
                 ),
                 title: flagTitle,
@@ -72,7 +72,7 @@ const LayoutCommon = ({children, title}: LayoutCommonProps) => {
                 icon: (
                     <Error
                         label="Error"
-                        primaryColor={token('color.icon.danger', R300)}
+                        primaryColor={token("color.icon.danger", R300)}
                     />
                 ),
                 title: flagTitle,

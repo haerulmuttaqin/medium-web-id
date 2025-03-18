@@ -1,13 +1,13 @@
 /**
- * @type {import('next-i18next').UserConfig}
+ * @type {import("next-i18next").UserConfig}
  */
 
-const HttpBackend = require('i18next-http-backend/cjs')
-const ChainedBackend = require('i18next-chained-backend').default
-const LocalStorageBackend = require('i18next-localstorage-backend').default
+const HttpBackend = require("i18next-http-backend/cjs")
+const ChainedBackend = require("i18next-chained-backend").default
+const LocalStorageBackend = require("i18next-localstorage-backend").default
 
-const isBrowser = typeof window !== 'undefined'
-const isDev = process.env.NODE_ENV === 'development'
+const isBrowser = typeof window !== "undefined"
+const isDev = process.env.NODE_ENV === "development"
 
 module.exports = {
     debug: isDev,
@@ -17,12 +17,12 @@ module.exports = {
     },
     partialBundledLanguages: isBrowser && true,
     // react: { // used only for the lazy reload
-    //   bindI18n: 'languageChanged loaded',
+    //   bindI18n: "languageChanged loaded",
     //   useSuspense: false
     // },
     i18n: {
-        defaultLocale: 'en',
-        locales: ['id', 'en'],
+        defaultLocale: "en",
+        locales: ["id", "en"],
         localeDetection: false,
     },
     serializeConfig: false,

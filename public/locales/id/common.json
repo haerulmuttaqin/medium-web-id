@@ -1,8 +1,8 @@
 {
   "home": "Home",
   "api_doc": "Dokumentasi API",
-  "projects": "Projects",
-  "my_projects": "Proyek Saya",
+  "bookmarks": "Bookmark",
+  "my_bookmarks": "Bookmark Saya",
   "create_new_project": "Buat Proyek Baru",
   "create_new_endpoint": "Buat Endpoint Baru",
   "manage_my_endpoint": "Kelola Endpoints",
@@ -27,7 +27,8 @@
   "match_browser": "Bawaan Browser",
   "lang_setting": "Pengaturan Bahasa",
   "lang_setting_desc": "Pilih bahasa Anda",
-  "playing": "Diputar",
-  "live_streaming": "Siaran Langsung",
+  "share": "Bagikan",
+  "bookmark": "Bookmark",
+  "un_bookmark": "Dibookmark",
   "x_views": "kali dilihat"
 }

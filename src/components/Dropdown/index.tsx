@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-import DropdownMenu, { DropdownItem, DropdownItemGroup } from '@atlaskit/dropdown-menu';
+import DropdownMenu, { DropdownItem, DropdownItemGroup } from "@atlaskit/dropdown-menu";
 
 const DropdownMenuItem= () => {
     return (

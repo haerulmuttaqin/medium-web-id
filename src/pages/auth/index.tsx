@@ -1,6 +1,6 @@
-'use client'
+"use client"
 /** @jsxImportSource @emotion/react */
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState} from "react";
 import type {NextPage} from "next";
 import dynamic from "next/dynamic";
 import {FlagsProvider} from "@atlaskit/flag";
@@ -8,21 +8,20 @@ import {Box, Flex, Text, xcss} from "@atlaskit/primitives";
 import Grid, {GridItem} from "@atlaskit/grid";
 import Heading from "@atlaskit/heading";
 import ContentWrapper from "@component/Layout/common/content-wrapper";
-import {useTranslation} from "next-i18next";
 import {signOut, useSession} from "next-auth/react";
 import Button from "@atlaskit/button/new";
-import {cardBasicStyle, cardStyle} from "@component/Common/style-util";
+import {cardBasicStyle} from "@component/Common/style-util";
 import {SpinnerWrapper} from "@atlaskit/media-ui/modalSpinner";
 import SpinnerLoading from "@component/Spinner";
 import {useRouter} from "next/router";
 import {actionSignIn} from "@api/data/services/auth";
 import {useDispatch} from "react-redux";
-import {showFlag} from '@store/actions/show-flag';
-import CheckAuth from '@protected/check-auth';
+import {showFlag} from "@store/actions/show-flag";
+import CheckAuth from "@protected/check-auth";
 import secureLocalStorage from "react-secure-storage";
 
 const Layout = dynamic(
-    () => import('@component/Layout'),
+    () => import("@component/Layout"),
     {ssr: false}
 )
 
@@ -67,10 +66,11 @@ const GithubSVG = () => (
 );
 
 const Auth: NextPage = () => {
-    const {t} = useTranslation(['common'])
     const dispatch = useDispatch();
     const [isLoading, setIsLoading] = useState<boolean>(false)
     const {data: session, status} = useSession();
+    const router = useRouter();
+    const {redirect} = router.query
 
     const popupCenter = (url: string, title: string) => {
         const dualScreenLeft = window.screenLeft ?? window.screenX;
@@ -115,7 +115,11 @@ const Auth: NextPage = () => {
                     showError(res)
                     signOut()
                 } else {
-                    window.location.href = window.location.protocol + "//" + window.location.host + "/projects"
+                    if (redirect) {
+                        window.location.href = redirect + ""
+                    } else {
+                        window.location.href = window.location.protocol + "//" + window.location.host + "/bookmarks"
+                    }
                 }
             })
             .catch((err) => {
@@ -125,14 +129,14 @@ const Auth: NextPage = () => {
             })
     };
 
-    if (status === 'loading' || isLoading) return (
+    if (status === "loading" || isLoading) return (
         <Flex>
             <SpinnerWrapper>
                 <SpinnerLoading size={"large"}/>
             </SpinnerWrapper>
         </Flex>
     );
-    else if (status === 'authenticated') {
+    else if (status === "authenticated") {
         if (!secureLocalStorage.getItem("is_login")) {
             onAuth()
         }
@@ -168,12 +172,12 @@ const Auth: NextPage = () => {
                                     })}>
                                         <Flex direction={"column"} gap={"space.100"} justifyContent={"center"}>
                                             <Heading level="h800">
-                                                <span className={'charlie-text'}
+                                                <span className={"charlie-text"}
                                                       style={{
                                                           marginInlineEnd: "20px"
                                                       }}>📖 MediumWebID</span>
                                             </Heading>
-                                            <Text>Sign in to polish your professional profile..</Text>
+                                            <Text>Sign in to manage your bookmarked article</Text>
                                             <br/>
                                             <Button
                                                 onClick={() => popupCenter("/google-signin", "Google Sign In")}>

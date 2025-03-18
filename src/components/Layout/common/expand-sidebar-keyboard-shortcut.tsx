@@ -1,8 +1,8 @@
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
-import { bind } from 'bind-event-listener';
+import { bind } from "bind-event-listener";
 
-import { usePageLayoutResize } from '@atlaskit/page-layout';
+import { usePageLayoutResize } from "@atlaskit/page-layout";
 
 export const ExpandLeftSidebarKeyboardShortcut = () => {
   const { toggleLeftSidebar } = usePageLayoutResize();
@@ -15,7 +15,7 @@ export const ExpandLeftSidebarKeyboardShortcut = () => {
     };
 
     return bind(document, {
-      type: 'keydown',
+      type: "keydown",
       listener: toggle,
     });
   }, [toggleLeftSidebar]);

@@ -1,9 +1,9 @@
 import React, {useState} from "react";
 import {Profile} from "@atlaskit/atlassian-navigation";
 import Avatar from "@atlaskit/avatar";
-import {Box, xcss} from '@atlaskit/primitives';
+import {Box, xcss} from "@atlaskit/primitives";
 
-import Popup from '@atlaskit/popup';
+import Popup from "@atlaskit/popup";
 import ProfilePopupMenu from "@component/Profile/content/popup-menu";
 import {useSession} from "next-auth/react";
 

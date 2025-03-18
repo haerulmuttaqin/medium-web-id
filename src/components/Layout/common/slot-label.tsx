@@ -1,6 +1,6 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
-import { css, jsx } from '@emotion/react';
+import { css, jsx } from "@emotion/react";
 
 type SlotLabelProps = {
   children: ReactNode;
@@ -8,11 +8,11 @@ type SlotLabelProps = {
 };
 
 const slotLabelStyles = css({
-  textAlign: 'center',
+  textAlign: "center",
 });
 
 const SlotLabel = ({ children, isSmall = false }: SlotLabelProps) => {
-  const Component = isSmall ? 'h4' : 'h3';
+  const Component = isSmall ? "h4" : "h3";
   return <Component css={slotLabelStyles}>{children}</Component>;
 };
 

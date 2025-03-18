@@ -11,11 +11,11 @@ const Auth = (WrapperComponent: any) => {
         const [isAuth, setIsAuth] = useState(false)
 
         const handleAuth = () => {
-            const isLogin = secureLocalStorage.getItem('is_login')
+            const isLogin = secureLocalStorage.getItem("is_login")
             if (isLogin) {
                 setIsAuth(true)
             } else {
-                router.replace('/auth')
+                router.replace("/auth")
             }
         }
 

@@ -1,8 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState} from "react";
 import {Search} from "@atlaskit/atlassian-navigation";
 
 const DefaultSearchBar = () => {
-    const [value, setValue] = useState('');
+    const [value, setValue] = useState("");
     const onChange = (event: any) => {
         setValue(event.target.value)
     }

@@ -8,7 +8,7 @@ import {usePathname} from "next/navigation";
 import PostPage from "@pages/[post]";
 
 const Layout = dynamic(
-    () => import('../../components/Layout/index'),
+    () => import("../../components/Layout/index"),
     {ssr: false}
 )
 
@@ -19,8 +19,8 @@ const boxStyles = xcss({
     justifyContent: "space-around",
     textAlign: "center",
     paddingTop: "space.600",
-    width: '100%',
-    height: '100%',
+    width: "100%",
+    height: "100%",
 });
 
 const Overview: NextPage = () => {
@@ -29,7 +29,7 @@ const Overview: NextPage = () => {
     const [isUrlMedium, setIsUrlMedium] = useState<boolean>()
 
     const paths = usePathname()
-    const pathNames = paths.split('/').filter(path => path)
+    const pathNames = paths.split("/").filter(path => path)
 
     useEffect(() => {
         if (pathNames[0] == "area") {

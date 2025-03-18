@@ -3,7 +3,7 @@ import {Container} from "react-grid-system";
 
 const ContainerGrid: FC<ContainerProps> = ({children}) => {
     return (
-        <Container fluid className={"container-grid"} style={{width: "100%", padding: '0 !important'}}>
+        <Container fluid className={"container-grid"} style={{width: "100%", padding: "0 !important"}}>
             {children}
         </Container>
     )

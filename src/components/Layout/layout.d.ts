@@ -1,4 +1,4 @@
-import {ReactElement, ReactNode} from 'react';
+import {ReactElement, ReactNode} from "react";
 import {RegionProps} from "@/api/data/interfaces/region";
 import {AreaProps} from "@/api/data/interfaces/area";
 

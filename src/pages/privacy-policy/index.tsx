@@ -1,6 +1,6 @@
-'use client'
+"use client"
 /** @jsxImportSource @emotion/react */
-import React, {useRef} from 'react';
+import React, {useRef} from "react";
 import type {NextPage} from "next";
 import dynamic from "next/dynamic";
 import {FlagsProvider} from "@atlaskit/flag";
@@ -13,12 +13,12 @@ import {useColorMode} from "@atlaskit/app-provider";
 import Content from "@/pages/main/content";
 
 const Layout = dynamic(
-    () => import('@component/Layout'),
+    () => import("@component/Layout"),
     {ssr: false}
 )
 
 const Privacy: NextPage = () => {
-    const {t} = useTranslation(['common'])
+    const {t} = useTranslation(["common"])
     return (
         <FlagsProvider>
             <Layout

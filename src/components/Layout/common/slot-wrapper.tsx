@@ -1,6 +1,6 @@
-import { css, jsx } from '@emotion/react';
+import { css, jsx } from "@emotion/react";
 
-import { token } from '@atlaskit/tokens';
+import { token } from "@atlaskit/tokens";
 
 type SlotWrapperProps = {
   borderColor?: string;
@@ -13,17 +13,17 @@ type SlotWrapperProps = {
 };
 
 const slotWrapperStyles = css({
-  boxSizing: 'border-box',
-  height: '100%',
-  padding: token('space.100', '8px'),
-  backgroundColor: token('color.background.neutral.subtle', 'white'),
+  boxSizing: "border-box",
+  height: "100%",
+  padding: token("space.100", "8px"),
+  backgroundColor: token("color.background.neutral.subtle", "white"),
   outlineOffset: -4,
-  overflowY: 'auto',
+  overflowY: "auto",
 });
 
 const extraPaddingStyles = css({
   minWidth: 50,
-  padding: `${token('space.100', '8px')} 28px`,
+  padding: `${token("space.100", "8px")} 28px`,
 });
 
 const SlotWrapper = ({
@@ -41,8 +41,8 @@ const SlotWrapper = ({
     style={{
       minHeight,
       backgroundColor: backgroundColor,
-      outline: borderColor ? `2px dashed ${borderColor}` : 'none',
-      overflowX: hasHorizontalScrollbar ? 'auto' : 'hidden',
+      outline: borderColor ? `2px dashed ${borderColor}` : "none",
+      overflowX: hasHorizontalScrollbar ? "auto" : "hidden",
     }}
   >
     {children}

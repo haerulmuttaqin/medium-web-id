@@ -1,8 +1,8 @@
 {
   "home": "Home",
   "api_doc": "API Documentation",
-  "projects": "Projects",
-  "my_projects": "My Projects",
+  "bookmarks": "Bookmarks",
+  "my_bookmarks": "My Bookmarks",
   "create_new_project": "Create New Project",
   "create_new_endpoint": "Create New Endpoint",
   "manage_my_endpoint": "Manage Endpoints",
@@ -27,7 +27,8 @@
   "match_browser": "Match browser",
   "lang_setting": "Language Settings",
   "lang_setting_desc": "Select your language",
-  "playing": "Playing",
-  "live_streaming": "Live Streaming",
+  "share": "Share",
+  "bookmark": "Bookmark",
+  "un_bookmark": "Bookmarked",
   "x_views": "views"
 }

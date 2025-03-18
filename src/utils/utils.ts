@@ -1,18 +1,18 @@
 import {z} from "zod";
 
-export const createKey = (input?: string) => input ? input.replace(/^(the|a|an)/, '').replace(/\s/g, '') : input;
+export const createKey = (input?: string) => input ? input.replace(/^(the|a|an)/, "").replace(/\s/g, "") : input;
 
 export const filterByValue = (array: any, string: string) => {
     return array.filter((o: any) => {
         return Object.keys(o).some(k => {
-            if (typeof o[k] === 'string') return o[k].toLowerCase().includes(string.toLowerCase());
+            if (typeof o[k] === "string") return o[k].toLowerCase().includes(string.toLowerCase());
         });
     });
 }
 
 export const passwordBuilder = () => {
-    let result = '';
-    const characters = '0123456789';
+    let result = "";
+    const characters = "0123456789";
     const charactersLength = characters.length;
     let counter = 0;
     while (counter < 6) {
@@ -40,13 +40,13 @@ export const requiredValidator = (
 
 export const imageExists = (image_url: any) => {
     const image = new Image();
-    image.src = image_url ? image_url : ''
+    image.src = image_url ? image_url : ""
     return image.width > 0
 }
 
 export async function clearImageCache() {
     try {
-        const prefix = 'img-cache-'
+        const prefix = "img-cache-"
         let arr = []; // Array to hold the keys
         // Iterate over localStorage and insert the keys that meet the condition into arr
         for (let i = 0; i < localStorage.length; i++) {
@@ -60,7 +60,7 @@ export async function clearImageCache() {
             localStorage.removeItem(arr[i] as string);
         }
     } catch {
-        console.error('failed clear image cache!')
+        console.error("failed clear image cache!")
     }
 }
 
@@ -95,7 +95,7 @@ export const getImageCache = (key: string) => {
 
     if ((d.getTime() - cachedData[0]) > 3600000) {
         // if ((d.getTime() - cachedData[0]) > 300000) {
-        localStorage.setItem(`img-cache-${key}`, '')
+        localStorage.setItem(`img-cache-${key}`, "")
         return ""
     }
     return cachedData[1];
@@ -119,12 +119,17 @@ export const getMethodType = (method: string) => {
     }
 }
 
-export const validURL = (str: string) => {
-    let pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
-        '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
-        '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
-        '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
-        '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
-        '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
+export const isValidDomain = (str: string) => {
+    let pattern = new RegExp("^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\.[a-zA-Z]{2,}"); // fragment locator
+    return pattern.test(str);
+}
+
+export const isValidURL = (str: string) => {
+    let pattern = new RegExp("^(https?:\\/\\/)?" + // protocol
+        "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
+        "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+        "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+        "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+        "(\\#[-a-z\\d_]*)?$", "i"); // fragment locator
     return pattern.test(str);
 }

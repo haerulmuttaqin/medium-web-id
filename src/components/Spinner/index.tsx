@@ -9,8 +9,8 @@ const spinnerStyles = xcss({
     alignItems: "center",
     justifyContent: "space-around",
     textAlign: "center",
-    width: '100%',
-    height: '70vh',
+    width: "100%",
+    height: "70vh",
 });
 const SpinnerLoading: FC<SpinnerProps> = (props) => {
     const {size} = props

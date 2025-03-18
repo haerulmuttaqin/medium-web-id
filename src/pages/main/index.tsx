@@ -1,6 +1,6 @@
-'use client'
+"use client"
 /** @jsxImportSource @emotion/react */
-import React, {useRef} from 'react';
+import React, {useRef} from "react";
 import type {NextPage} from "next";
 import dynamic from "next/dynamic";
 import {FlagsProvider} from "@atlaskit/flag";
@@ -14,12 +14,12 @@ import {useColorMode} from "@atlaskit/app-provider";
 import Content from "@/pages/main/content";
 
 const Layout = dynamic(
-    () => import('@component/Layout'),
+    () => import("@component/Layout"),
     {ssr: false}
 )
 
 const Main: NextPage = () => {
-    const {t} = useTranslation(['common'])
+    const {t} = useTranslation(["common"])
     const refContent = useRef<HTMLDivElement>(null)
     const colorMode = useColorMode();
 
@@ -32,12 +32,12 @@ const Main: NextPage = () => {
                     style={{
                         backgroundColor: token("color.background.accent.blue.subtler"),
                         backgroundSize: "cover, 1440px",
-                        backgroundImage: 'url("https://loremflickr.com/830/240/arts")',
+                        backgroundImage: "url('https://loremflickr.com/830/240/arts')",
                     }}
                 >
                     <Box
                         style={{
-                            backgroundColor: colorMode == 'dark' ? "rgb(13 42 99 / 76%)" : "#9cc7ff9e",
+                            backgroundColor: colorMode == "dark" ? "rgb(13 42 99 / 76%)" : "#9cc7ff9e",
                         }}
                     >
                         <Box

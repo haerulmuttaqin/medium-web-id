@@ -1,38 +1,38 @@
-import { Fragment, useMemo } from 'react';
+import { Fragment, useMemo } from "react";
 
-import { css, jsx } from '@emotion/react';
+import { css, jsx } from "@emotion/react";
 
-import { token } from '@atlaskit/tokens';
+import { token } from "@atlaskit/tokens";
 
 type ScrollableContentProps = {
   shouldHighlightNth?: boolean;
 };
 
 const itemStyles = css({
-  boxSizing: 'border-box',
-  width: '80%',
-  height: '2rem',
-  margin: '2rem auto',
+  boxSizing: "border-box",
+  width: "80%",
+  height: "2rem",
+  margin: "2rem auto",
   backgroundColor: token(
-    'color.background.accent.orange.subtler',
-    'papayawhip',
+    "color.background.accent.orange.subtler",
+    "papayawhip",
   ),
-  borderRadius: token('border.radius', '3px'),
+  borderRadius: token("border.radius", "3px"),
 });
 
 const highlightStyles = css({
-  ':nth-of-type(4n)': {
-    padding: token('space.050', '4px'),
-    position: 'sticky',
+  ":nth-of-type(4n)": {
+    padding: token("space.050", "4px"),
+    position: "sticky",
     top: 65,
     backgroundColor: token(
-      'color.background.accent.blue.subtle',
-      'cornflowerblue',
+      "color.background.accent.blue.subtle",
+      "cornflowerblue",
     ),
-    textAlign: 'center',
-    '&::after': {
-      color: token('color.text.inverse', '#FFF'),
-      content: '"Stickied element"',
+    textAlign: "center",
+    "&::after": {
+      color: token("color.text.inverse", "#FFF"),
+      content: "'Stickied element'",
     },
   },
 });

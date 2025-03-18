@@ -1,5 +1,5 @@
 import React from "react";
-import { NotificationIndicator } from '@atlaskit/notification-indicator';
+import { NotificationIndicator } from "@atlaskit/notification-indicator";
 const NotificationsBadge = () => (
     <NotificationIndicator
         onCountUpdated={console.log}

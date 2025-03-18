@@ -1,5 +1,5 @@
 import {OnSubmitHandler} from "@atlaskit/form";
-import {ProjectProps} from "@api/data/interfaces/project";
+import {ProjectProps} from "@api/data/interfaces/bookmark";
 
 interface MockProps {
     idx: number

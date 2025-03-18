@@ -18,7 +18,7 @@ const LandingSubFeatures = () => {
                 marginTop: "-2px",
                 paddingTop: "50px",
                 backgroundSize: "cover",
-                backgroundImage: 'url("./assets/images/bg-hero-2.svg")'
+                backgroundImage: "url('./assets/images/bg-hero-2.svg')"
             }}>
             <LandingWrapper>
                 <Box xcss={xcss({
@@ -40,8 +40,7 @@ const LandingSubFeatures = () => {
                     </Box>
                     <br/>
                     <br/>
-                    <Button onClick={() => router.push("/projects/create")} appearance="primary">Create FREE Mock
-                        Now</Button>
+                    <Button onClick={() => router.push("/bookmarks/create")} appearance="primary">Manage Bookmark</Button>
                 </Box>
             </LandingWrapper>
         </div>

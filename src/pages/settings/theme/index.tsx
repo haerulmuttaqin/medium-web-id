@@ -16,7 +16,7 @@ import ContentWrapper from "@component/Layout/common/content-wrapper";
 import {useTranslation} from "next-i18next";
 
 const Layout = dynamic(
-    () => import('@component/Layout/index'),
+    () => import("@component/Layout/index"),
     {ssr: false}
 )
 
@@ -43,7 +43,7 @@ const themeOptions = [
 
 const Company: NextPage = () => {
     const colorMode = useColorMode();
-    const {t} = useTranslation(['common'])
+    const {t} = useTranslation(["common"])
     const [theme, setTheme] = useState(colorMode as string || secureLocalStorage.getItem("color_mode") || "light");
     const setColorMode = useSetColorMode();
 
@@ -60,7 +60,7 @@ const Company: NextPage = () => {
 
     return (
         <>
-            <Layout title={t('theme_setting')} description={t('theme_setting_desc')} isSideNavOpen={true}>
+            <Layout title={t("theme_setting")} description={t("theme_setting_desc")} isSideNavOpen={true}>
                 <ContentWrapper>
                     <Grid>
                         <GridItem>

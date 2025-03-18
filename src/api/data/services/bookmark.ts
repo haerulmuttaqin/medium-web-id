@@ -1,27 +1,35 @@
 import {api} from "@/api";
 import {BaseResponse} from "../interfaces";
-import {ProjectPayloadProps} from "../interfaces/project";
 
 
-export const getProjects = async (): Promise<BaseResponse> => {
+export const getBookmarks = async (projectId: string): Promise<BaseResponse> => {
     return await api({
-        method: 'GET',
-        url: "projects",
+        method: "GET",
+        url: `bookmarks/${projectId}`,
     });
 };
+
+
+export const getBookmarkByUrl = async (bid: string, url: string): Promise<BaseResponse> => {
+    return await api({
+        method: "GET",
+        url: `bookmark/url/${bid}?url=${url}`,
+    });
+};
+
 
 export const getProject = async (project_id: string, sheet_id: string): Promise<BaseResponse> => {
     return await api({
-        method: 'GET',
-        url: `projects/${project_id}/${sheet_id}`,
+        method: "GET",
+        url: `bookmarks/${project_id}/${sheet_id}`,
     });
 };
 
-export const addProject = async (payload: ProjectPayloadProps): Promise<BaseResponse> => {
+export const addBookmark = async (payload: BookmarkPayloadProps): Promise<BaseResponse> => {
     try {
         const {data} = await api({
             method: "POST",
-            url: "projects",
+            url: "bookmark",
             data: payload
         })
         if (data) {
@@ -39,11 +47,32 @@ export const addProject = async (payload: ProjectPayloadProps): Promise<BaseResp
     }
 };
 
-export const updateProject = async (id: string, sid: string, idx: number, payload: ProjectPayloadProps): Promise<BaseResponse> => {
+export const deleteBookmark = async (bid: string, xid: number): Promise<BaseResponse> => {
+    try {
+        const {data} = await api({
+            method: "DELETE",
+            url: `bookmark/${bid}/${xid}`,
+        })
+        if (data) {
+            return data
+        } else {
+            return {success: false, message: "An error occurred"}
+        }
+    } catch (err: any) {
+        if (err.response?.data != undefined) {
+            return err.response?.data
+        } else if (err.response?.errors != undefined) {
+            return err.response?.errors
+        }
+        return {success: false, message: err.message}
+    }
+};
+
+export const updateProject = async (id: string, sid: string, idx: number, payload: BookmarkPayloadProps): Promise<BaseResponse> => {
     try {
         const {data} = await api({
             method: "POST",
-            url: `projects/${sid}/${idx}/${id}`,
+            url: `bookmarks/${sid}/${idx}/${id}`,
             data: payload
         })
         if (data) {
@@ -65,7 +94,7 @@ export const deleteProject = async (dns: string, sid: string, idx: number): Prom
     try {
         const {data} = await api({
             method: "DELETE",
-            url: `projects/${sid}/${idx}/${dns}`,
+            url: `bookmarks/${sid}/${idx}/${dns}`,
         })
         if (data) {
             return data
