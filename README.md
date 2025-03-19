@@ -8,7 +8,7 @@
 
 > Read Medium as Free | Enjoy free access to Medium articles and quench your thirst for information with a wide array of topics at your fingertips
 
-### 🏠 [Homepage](https://orify.me/)
+### 🏠 [Homepage](https://medium.web.id/)
 
 ## Install
 
