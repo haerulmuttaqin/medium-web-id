@@ -20,7 +20,6 @@ const nextConfig = {
         }];
     },
     reactStrictMode: false,
-    swcMinify: true,
     pageExtensions: ["tsx"],
     i18n,
     images: {

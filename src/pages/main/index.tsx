@@ -24,61 +24,59 @@ const Main: NextPage = () => {
     const colorMode = useColorMode();
 
     return (
-        <FlagsProvider>
-            <Layout
-                shouldShowBreadcrumbs={false}
+        <Layout
+            shouldShowBreadcrumbs={false}
+        >
+            <Box
+                style={{
+                    backgroundColor: token("color.background.accent.blue.subtler"),
+                    backgroundSize: "cover, 1440px",
+                    backgroundImage: "url('https://loremflickr.com/830/240/arts')",
+                }}
             >
                 <Box
                     style={{
-                        backgroundColor: token("color.background.accent.blue.subtler"),
-                        backgroundSize: "cover, 1440px",
-                        backgroundImage: "url('https://loremflickr.com/830/240/arts')",
+                        backgroundColor: colorMode == "dark" ? "rgb(13 42 99 / 76%)" : "#9cc7ff9e",
                     }}
                 >
                     <Box
-                        style={{
-                            backgroundColor: colorMode == "dark" ? "rgb(13 42 99 / 76%)" : "#9cc7ff9e",
-                        }}
+                        xcss={xcss({justifyContent: "center", alignItems: "center", paddingBlock: "space.1000"})}
                     >
-                        <Box
-                            xcss={xcss({justifyContent: "center", alignItems: "center", paddingBlock: "space.1000"})}
-                        >
-                            <br/><br/><br/>
-                        </Box>
+                        <br/><br/><br/>
                     </Box>
                 </Box>
-                <Box xcss={xcss({
-                    backgroundColor: "color.background.selected",
-                    display: "block",
-                    paddingBlock: "space.400",
-                    marginBottom: "space.400"
-                })}>
-                    <Grid maxWidth="wide">
-                        <GridItem start={{md: 3}} span={{md: 8}}>
-                            <Stack space="space.100">
-                                <div>
-                                    <Heading level="h700">
-                                        {process.env.NEXT_PUBLIC_APP_NAME}
-                                    </Heading>
-                                    <p>
-                                        {process.env.NEXT_PUBLIC_APP_DESC}
-                                    </p>
-                                </div>
-                                {/*<div style={{paddingTop: "10px"}}>
+            </Box>
+            <Box xcss={xcss({
+                backgroundColor: "color.background.selected",
+                display: "block",
+                paddingBlock: "space.400",
+                marginBottom: "space.400"
+            })}>
+                <Grid maxWidth="wide">
+                    <GridItem start={{md: 3}} span={{md: 8}}>
+                        <Stack space="space.100">
+                            <div>
+                                <Heading level="h700">
+                                    {process.env.NEXT_PUBLIC_APP_NAME}
+                                </Heading>
+                                <p>
+                                    {process.env.NEXT_PUBLIC_APP_DESC}
+                                </p>
+                            </div>
+                            {/*<div style={{paddingTop: "10px"}}>
                                     <Button appearance="primary"
                                             onClick={handleScrollToContent}>{t("find_out_more")}</Button>
                                 </div>*/}
-                            </Stack>
-                        </GridItem>
-                    </Grid>
-                </Box>
-                <ContentWrapper>
-                    <div ref={refContent}>
-                        <Content/>
-                    </div>
-                </ContentWrapper>
-            </Layout>
-        </FlagsProvider>
+                        </Stack>
+                    </GridItem>
+                </Grid>
+            </Box>
+            <ContentWrapper>
+                <div ref={refContent}>
+                    <Content/>
+                </div>
+            </ContentWrapper>
+        </Layout>
     );
 };
 
