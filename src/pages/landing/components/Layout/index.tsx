@@ -115,29 +115,29 @@ const ContentLayout: FC<LandingPageLayoutProps> = (
                 <meta name="robots" content="index, follow"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <meta name="title" content="MediumWebID"/>
-                <meta name="url" content="https://orify.me"/>
+                <meta name="url" content="https://medium.web.id"/>
                 <meta name="description"
                       content="Unlock Premium Knowledge – No Paywall, No Problem."/>
                 <meta name="keywords" content="Medium, Read Article Free, Free Article, Bypass Paywall"/>
-                <meta name="image" content="https://orify.me/orify.webp"/>
+                <meta name="image" content="https://medium.web.id/medium.webp"/>
                 <meta property="og:title" content="MediumWebID"/>
-                <meta property="og:url" content="https://orify.me"/>
+                <meta property="og:url" content="https://medium.web.id"/>
                 <meta property="og:description"
                       content="Unlock Premium Knowledge – No Paywall, No Problem."/>
                 <meta property="og:keywords" content="Resume , API Builder FREE, Free Resume "/>
-                <meta property="og:image" content="https://orify.me/orify.webp"/>
+                <meta property="og:image" content="https://medium.web.id/medium.webp"/>
                 <meta itemProp="title" content="MediumWebID"/>
-                <meta itemProp="url" content="https://orify.me"/>
+                <meta itemProp="url" content="https://medium.web.id"/>
                 <meta itemProp="description"
                       content="Unlock Premium Knowledge – No Paywall, No Problem."/>
                 <meta itemProp="keywords" content="Resume , API Builder FREE, Free Resume "/>
-                <meta itemProp="image" content="https://orify.me/orify.webp"/>
+                <meta itemProp="image" content="https://medium.web.id/medium.webp"/>
                 <meta property="twitter:title" content="MediumWebID"/>
-                <meta property="twitter:url" content="https://orify.me"/>
+                <meta property="twitter:url" content="https://medium.web.id"/>
                 <meta property="twitter:description"
                       content="Unlock Premium Knowledge – No Paywall, No Problem."/>
                 <meta property="twitter:keywords" content="Resume , API Builder FREE, Free Resume "/>
-                <meta property="twitter:image" content="https://orify.me/orify.webp"/>
+                <meta property="twitter:image" content="https://medium.web.id/medium.webp"/>
                 <meta charSet="UTF-8"/>
                 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
                 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
