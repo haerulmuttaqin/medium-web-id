@@ -9,6 +9,7 @@ import React from "react";
 import {appWithTranslation, UserConfig} from "next-i18next"
 import nextI18nConfig from "../../next-i18next.config"
 import {SessionProvider} from "next-auth/react";
+import {FlagsProvider} from "@atlaskit/flag";
 
 function MyApp({Component, pageProps: {session, ...pageProps}}: AppProps) {
     return (
@@ -16,7 +17,9 @@ function MyApp({Component, pageProps: {session, ...pageProps}}: AppProps) {
             <SessionProvider session={session}>
                 <Provider store={store}>
                     <AppThemeProvider>
-                        <Component {...pageProps} />
+                        <FlagsProvider>
+                            <Component {...pageProps} />
+                        </FlagsProvider>
                     </AppThemeProvider>
                 </Provider>
             </SessionProvider>

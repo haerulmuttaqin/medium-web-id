@@ -153,54 +153,52 @@ const Auth: NextPage = () => {
     }
 
     return (
-        <FlagsProvider>
-            <Layout
-                shouldShowBreadcrumbs={false}
-                shouldShowNavBar={false}
-                shouldShowPageHeader={false}
-                title={"Login"}
-            >
-                <ContentWrapper>
-                    <Box
-                        xcss={xcss({justifyContent: "center", alignItems: "center", paddingBlock: "space.1000"})}
-                    >
-                        <Grid maxWidth="wide">
-                            <GridItem start={{md: 3}} span={{md: 8}}>
-                                <Box xcss={cardBasicStyle}>
-                                    <Box xcss={xcss({
-                                        padding: "space.400",
-                                    })}>
-                                        <Flex direction={"column"} gap={"space.100"} justifyContent={"center"}>
-                                            <Heading level="h800">
+        <Layout
+            shouldShowBreadcrumbs={false}
+            shouldShowNavBar={false}
+            shouldShowPageHeader={false}
+            title={"Login"}
+        >
+            <ContentWrapper>
+                <Box
+                    xcss={xcss({justifyContent: "center", alignItems: "center", paddingBlock: "space.1000"})}
+                >
+                    <Grid maxWidth="wide">
+                        <GridItem start={{md: 3}} span={{md: 8}}>
+                            <Box xcss={cardBasicStyle}>
+                                <Box xcss={xcss({
+                                    padding: "space.400",
+                                })}>
+                                    <Flex direction={"column"} gap={"space.100"} justifyContent={"center"}>
+                                        <Heading level="h800">
                                                 <span className={"charlie-text"}
                                                       style={{
                                                           marginInlineEnd: "20px"
                                                       }}>📖 MediumWebID</span>
-                                            </Heading>
-                                            <Text>Sign in to manage your bookmarked article</Text>
-                                            <br/>
-                                            <Button
-                                                onClick={() => popupCenter("/google-signin", "Google Sign In")}>
-                                                <Flex justifyContent={"center"} alignItems={"center"}>
-                                                    <GoogleSVG/>&nbsp;&nbsp;Sign In with Google
-                                                </Flex>
-                                            </Button>
-                                            <Button
-                                                isDisabled
-                                                onClick={() => popupCenter("/google-signin", "Github Sign In")}>
-                                                <Flex justifyContent={"center"} alignItems={"center"}>
-                                                    <GithubSVG/>&nbsp;&nbsp;Sign In with Github
-                                                </Flex>
-                                            </Button>
-                                        </Flex>
-                                    </Box>
+                                        </Heading>
+                                        <Text>Sign in to manage your bookmarked article</Text>
+                                        <br/>
+                                        <Button
+                                            onClick={() => popupCenter("/google-signin", "Google Sign In")}>
+                                            <Flex justifyContent={"center"} alignItems={"center"}>
+                                                <GoogleSVG/>&nbsp;&nbsp;Sign In with Google
+                                            </Flex>
+                                        </Button>
+                                        <Button
+                                            isDisabled
+                                            onClick={() => popupCenter("/google-signin", "Github Sign In")}>
+                                            <Flex justifyContent={"center"} alignItems={"center"}>
+                                                <GithubSVG/>&nbsp;&nbsp;Sign In with Github
+                                            </Flex>
+                                        </Button>
+                                    </Flex>
                                 </Box>
-                            </GridItem>
-                        </Grid>
-                    </Box>
-                </ContentWrapper>
-            </Layout>
-        </FlagsProvider>
+                            </Box>
+                        </GridItem>
+                    </Grid>
+                </Box>
+            </ContentWrapper>
+        </Layout>
     );
 };
 

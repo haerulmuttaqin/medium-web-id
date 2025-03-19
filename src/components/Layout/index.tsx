@@ -6,7 +6,6 @@ import SideNav from "@component/SideNav";
 import MobileNavigation from "@component/SideNav/Mobile";
 import {LayoutProps} from "@component/Layout/layout";
 import BaseContent from "./content";
-import {FlagsProvider} from "@atlaskit/flag";
 import Head from "next/head";
 import DefaultSettings from "@component/Setting";
 import {useRouter} from "next/router";
@@ -77,7 +76,7 @@ const Layout: FC<LayoutProps> = (
     }
 
     return (
-        <FlagsProvider>
+        <Fragment>
             <Head>
                 <title>{`${title ? process.env.NEXT_PUBLIC_APP_NAME + " - " + title : process.env.NEXT_PUBLIC_APP_NAME}`}</title>
                 <meta property="og:title" content={`${process.env.NEXT_PUBLIC_APP_NAME} - ${title}`} key="title"/>
@@ -162,7 +161,7 @@ const Layout: FC<LayoutProps> = (
                     </PageLayout>
                 </Fragment>
             )}
-        </FlagsProvider>
+        </Fragment>
     );
 };
 
