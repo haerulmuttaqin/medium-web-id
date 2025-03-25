@@ -8,7 +8,9 @@
 
 > Read Medium as Free | Enjoy free access to Medium articles and quench your thirst for information with a wide array of topics at your fingertips
 
-### 🏠 [Homepage](https://medium.web.id/)
+- ### 🏠 [Homepage](https://medium.web.id/)
+- ### 🧪 [Extensions](https://github.com/haerulmuttaqin/medium-web-id-extension)
+---
 
 ## Install
 
