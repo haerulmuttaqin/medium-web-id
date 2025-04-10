@@ -93,6 +93,12 @@ const FooterNavigation = () => {
                                         CCTV Indonesia <b>↗</b>
                                     </Box>
                                 </Box>
+                                <Box as={"li"}>
+                                    <Box onClick={() => navigate("https://vid-thumb.hae.my.id/", true)}
+                                         xcss={navLinkStyles}>
+                                        Video Thumbnail Generator <b>↗</b>
+                                    </Box>
+                                </Box>
                             </Box>
                         </Col>
                         <Col sm={12} md={3} lg={3}>
