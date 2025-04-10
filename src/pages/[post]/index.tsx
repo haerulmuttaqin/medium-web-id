@@ -28,6 +28,7 @@ import {useTranslation} from "next-i18next";
 import {useIsLoggedIn, useUserData} from "@utils/hooks";
 import {useRouter} from "next/router";
 import CheckboxCheckedIcon from '@atlaskit/icon/core/checkbox-checked';
+import FooterNavigation from "@component/Footer/footer-nav";
 
 export default function PostPage({url}: { url: string }) {
     const paths = usePathname()
@@ -273,7 +274,7 @@ export default function PostPage({url}: { url: string }) {
                                 <p dangerouslySetInnerHTML={{__html: postData?.content}}></p>
                                 <Box xcss={xcss({marginBlock: "space.200"})}>
                                     <Box xcss={cardTagsStyle}>
-                                        <Flex>
+                                        <Flex wrap="wrap">
                                             {
                                                 postData?.tags?.map((tag: any) => (
                                                     <SimpleTag key={tag} text={tag}/>
@@ -286,6 +287,7 @@ export default function PostPage({url}: { url: string }) {
                             : null
                 }
             </PostWrapper>
+            <FooterNavigation/>
             <Footer/>
         </LandingPageLayout>
     );

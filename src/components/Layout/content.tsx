@@ -14,6 +14,7 @@ import {useRouter} from "next/router";
 import Footer from "@component/Footer";
 import ContentWrapper from "@component/Layout/common/content-wrapper";
 import "@/styles/landing.module.css"
+import FooterNavigation from "@component/Footer/footer-nav";
 
 const BaseContent: FC<LayoutProps> = (
     {
@@ -128,6 +129,7 @@ const BaseContent: FC<LayoutProps> = (
                     )}
                 {children}
             </Box>
+            <FooterNavigation/>
             <Footer/>
         </div>
     );
