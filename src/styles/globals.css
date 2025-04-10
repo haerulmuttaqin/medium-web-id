@@ -480,6 +480,7 @@ figure {
     border-style: solid;
     font-size: 14px !important;
     line-height: 1.5rem;
+    overflow-x: auto;
     background-color: var(--backgound-code);
 }
 

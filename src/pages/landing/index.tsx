@@ -5,6 +5,7 @@ import LandingFeatures from "@pages/landing/components/Features";
 import Footer from "@component/Footer";
 import LandingSubFeatures from "@pages/landing/components/SubFeatures";
 import LandingPageLayout from "@pages/landing/components/Layout";
+import FooterNavigation from "@component/Footer/footer-nav";
 
 export default function LandingPage() {
     return (
@@ -13,6 +14,7 @@ export default function LandingPage() {
             <LandingFeatures/>
             {/*<LandingHeaderCards/>*/}
             <LandingSubFeatures/>
+            <FooterNavigation/>
             <Footer/>
         </LandingPageLayout>
     );

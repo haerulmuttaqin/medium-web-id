@@ -2,9 +2,9 @@
 
 import {Box, Stack, Text, Flex} from "@atlaskit/primitives"
 import ContainerGrid from "@components/ContainerGrid";
+import LandingWrapper from "@pages/landing/components/Layout/landing-wrapper";
 import {Col, Hidden, Row} from "react-grid-system";
 import Image from "@atlaskit/image";
-import LandingWrapper from "@pages/landing/components/Layout/landing-wrapper";
 import React from "react";
 import Button from "@atlaskit/button/new";
 
@@ -41,8 +41,6 @@ const LandingFeatures = () => {
                                         full domain if article with custom domain, and got the magic!
                                     </Text>
                                 </Stack>
-                                <br/>
-                                ...........
                                 <br/>
                                 <br/>
                                 <br/>
@@ -81,6 +79,9 @@ const LandingFeatures = () => {
                                         about={"_blank"}>here</a>, and do not forget to give a star, thanks!
                                     </Text>
                                 </Stack>
+                                <br/>
+                                <br/>
+                                <br/>
                             </Box>
                         </Col>
                         <Col sm={12} md={8} lg={8}>
