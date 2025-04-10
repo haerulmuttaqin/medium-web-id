@@ -96,7 +96,7 @@ const FooterNavigation = () => {
                                 <Box as={"li"}>
                                     <Box onClick={() => navigate("https://vid-thumb.hae.my.id/", true)}
                                          xcss={navLinkStyles}>
-                                        Video Thumbnail Generator <b>↗</b>
+                                        HLS Video Thumbnail <b>↗</b>
                                     </Box>
                                 </Box>
                             </Box>
