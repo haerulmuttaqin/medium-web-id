@@ -25,7 +25,6 @@ const footerNavStyles = xcss({
 const navLinksStyles = xcss({
     marginBlockStart: "space.200",
     marginBlockEnd: "space.200",
-    marginInlineStart: "space.negative.050",
     marginInlineEnd: "space.200",
     padding: "space.0",
     gap: "space.400",
@@ -34,6 +33,7 @@ const navLinksStyles = xcss({
 
 const navLinkStyles = xcss({
     textDecoration: "none",
+    paddingBlock: "space.050",
     cursor: "pointer",
     color: "color.text.subtlest",
     ":hover": {
@@ -79,27 +79,26 @@ const FooterNavigation = () => {
                             <h5>Other Tools</h5>
                             <Box as={"ul"} xcss={navLinksStyles}>
                                 <Box as={"li"}>
-                                    <Box as={"button"} onClick={() => navigate("https://mocknroll.me/", true)}
+                                    <Box onClick={() => navigate("https://mocknroll.me/", true)}
                                          xcss={navLinkStyles}>
                                         Mock N Roll (Mock API Generator) <b>↗</b>
                                     </Box>
                                 </Box>
                                 <Box as={"li"}>
-                                    <Box as={"button"}
-                                         onClick={() => navigate(`/`)}
+                                    <Box onClick={() => navigate(`/`)}
                                          xcss={navLinkStyles}>
                                         MediumWebID
                                     </Box>
                                 </Box>
                                 <Box as={"li"}>
-                                    <Box as={"button"}
-                                         onClick={() => navigate(`https://github.com/haerulmuttaqin/medium-web-id-extension/releases`, true)}
-                                         xcss={navLinkStyles}>
+                                    <Box
+                                        onClick={() => navigate(`https://github.com/haerulmuttaqin/medium-web-id-extension/releases`, true)}
+                                        xcss={navLinkStyles}>
                                         MediumWebID Extension <b>↗</b>
                                     </Box>
                                 </Box>
                                 <Box as={"li"}>
-                                    <Box as={"button"} onClick={() => navigate("https://cctv.hae.my.id/", true)}
+                                    <Box onClick={() => navigate("https://cctv.hae.my.id/", true)}
                                          xcss={navLinkStyles}>
                                         CCTV Indonesia <b>↗</b>
                                     </Box>
@@ -110,35 +109,33 @@ const FooterNavigation = () => {
                             <h5>Sitemap</h5>
                             <Box as={"ul"} xcss={navLinksStyles}>
                                 <Box as={"li"}>
-                                    <Box as={"button"} onClick={() => navigate("/about")} xcss={navLinkStyles}>
+                                    <Box onClick={() => navigate("/about")} xcss={navLinkStyles}>
                                         {t("about")}
                                     </Box>
                                 </Box>
                                 <Box as={"li"}>
-                                    <Box as={"button"}
-                                         onClick={() => navigate(`/privacy-policy`)}
+                                    <Box onClick={() => navigate(`/privacy-policy`)}
                                          xcss={navLinkStyles}>
                                         {t("privacy_policy")}
                                     </Box>
                                 </Box>
                                 <Box as={"li"}>
-                                    <Box as={"button"}
-                                         onClick={() => navigate(`/bookmarks`)}
+                                    <Box onClick={() => navigate(`/bookmarks`)}
                                          xcss={navLinkStyles}>
                                         {t("bookmarks")}
                                     </Box>
                                 </Box>
                                 <Box as={"li"}>
-                                    <Box as={"button"}
-                                         onClick={() => navigate("https://github.com/haerulmuttaqin/medium-web-id", true)}
-                                         xcss={navLinkStyles}>
+                                    <Box
+                                        onClick={() => navigate("https://github.com/haerulmuttaqin/medium-web-id", true)}
+                                        xcss={navLinkStyles}>
                                         Github <b>↗</b>
                                     </Box>
                                 </Box>
                                 <Box as={"li"}>
-                                    <Box as={"button"}
-                                         onClick={() => navigate("https://github.com/haerulmuttaqin/medium-web-id/issues", true)}
-                                         xcss={navLinkStyles}>
+                                    <Box
+                                        onClick={() => navigate("https://github.com/haerulmuttaqin/medium-web-id/issues", true)}
+                                        xcss={navLinkStyles}>
                                         Report Issue <b>↗</b>
                                     </Box>
                                 </Box>
