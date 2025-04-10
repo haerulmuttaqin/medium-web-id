@@ -1,9 +1,6 @@
 /** @jsxImportSource @emotion/react */
 
 import {Box, Stack, xcss, Text, Flex} from "@atlaskit/primitives"
-import Heading from "@atlaskit/heading";
-import ContainerGrid from "@components/ContainerGrid";
-import {Col, Hidden, Row} from "react-grid-system";
 import Image from "@atlaskit/image";
 import LandingWrapper from "@pages/landing/components/Layout/landing-wrapper";
 import Button from "@atlaskit/button/new";

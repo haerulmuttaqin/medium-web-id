@@ -1,3 +1,4 @@
+/** @jsxImportSource @emotion/react */
 import React from "react";
 import {Box, xcss} from "@atlaskit/primitives";
 import {media} from "@atlaskit/primitives/responsive";
@@ -5,22 +6,7 @@ import {useTranslation} from "next-i18next";
 import {Col, Row} from "react-grid-system";
 import ContainerGrid from "@components/ContainerGrid";
 import {useRouter} from "next/router";
-
-const footerNavStyles = xcss({
-    msWrapMargin: undefined,
-    display: "flex",
-    justifyContent: "center",
-    color: "color.text.subtlest",
-    font: "font.body",
-    paddingBlockStart: "space.300",
-    paddingBlockEnd: "space.300",
-    paddingInlineStart: "space.400",
-    paddingInlineEnd: "space.400",
-    [media.above.xxs]: {
-        flexWrap: "wrap",
-        gap: "space.200",
-    },
-});
+import LandingWrapper from "@pages/landing/components/Layout/landing-wrapper";
 
 const navLinksStyles = xcss({
     marginBlockStart: "space.200",
@@ -49,10 +35,14 @@ const footerStyles = xcss({
     backgroundColor: "color.background.neutral",
     gridArea: "footer",
     maxHeight: "50%",
-    [media.above.xs]: {
+    paddingInline: "space.100",
+    paddingBlockStart: "space.300",
+    [media.above.sm]: {
         maxHeight: "30%",
+        paddingInline: "space.300",
     },
 });
+
 
 const FooterNavigation = () => {
     const {t} = useTranslation(["common"])
@@ -61,12 +51,12 @@ const FooterNavigation = () => {
         if (isNewTab) {
             window?.open(args);
         } else {
-            router.push(args)
+            router?.push(args)
         }
     }
     return (
         <Box xcss={footerStyles}>
-            <Box xcss={footerNavStyles}>
+            <LandingWrapper>
                 <ContainerGrid>
                     <Row>
                         <Col sm={12} md={6} lg={6}>
@@ -143,7 +133,7 @@ const FooterNavigation = () => {
                         </Col>
                     </Row>
                 </ContainerGrid>
-            </Box>
+            </LandingWrapper>
         </Box>
     )
 }
