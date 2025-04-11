@@ -487,3 +487,7 @@ figure {
 h1, h2, h3, h4, h5 {
     font-family: "Charlie Text", -apple-system, "BlinkMacSystemFont", "Segoe UI", Roboto, "Noto Sans", Ubuntu, "Droid Sans", "Helvetica Neue", sans-serif !important;
 }
+
+#empty-state-height {
+    min-height: 50vh !important;
+}
