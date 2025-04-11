@@ -2,6 +2,7 @@ import React from "react";
 import {Anchor, Box, xcss} from "@atlaskit/primitives";
 import {media} from "@atlaskit/primitives/responsive";
 import {useTranslation} from "next-i18next";
+import FooterNavigation from "@component/Footer/footer-nav";
 
 const footerNavStyles = xcss({
     msWrapMargin: undefined,
@@ -28,9 +29,12 @@ const footerStyles = xcss({
 
 const Footer = () => {
     return (
-        <Box as={"footer"} xcss={footerStyles}>
-            <Box as={"nav"} xcss={footerNavStyles}>
-                <Box as={"small"}>&copy; {new Date().getFullYear()} {process.env.NEXT_PUBLIC_APP_NAME}</Box>
+        <Box as={"footer"}>
+            <FooterNavigation/>
+            <Box xcss={footerStyles}>
+                <Box as={"nav"} xcss={footerNavStyles}>
+                    <Box as={"small"}>&copy; {new Date().getFullYear()} {process.env.NEXT_PUBLIC_APP_NAME}</Box>
+                </Box>
             </Box>
         </Box>
     )

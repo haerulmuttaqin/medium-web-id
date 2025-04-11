@@ -28,7 +28,7 @@ import {useTranslation} from "next-i18next";
 import {useIsLoggedIn, useUserData} from "@utils/hooks";
 import {useRouter} from "next/router";
 import CheckboxCheckedIcon from '@atlaskit/icon/core/checkbox-checked';
-import FooterNavigation from "@component/Footer/footer-nav";
+import EmptyState from "@atlaskit/empty-state";
 
 export default function PostPage({url}: { url: string }) {
     const paths = usePathname()
@@ -37,6 +37,7 @@ export default function PostPage({url}: { url: string }) {
     const [wSize, setSize] = React.useState(0);
     const [mediumUrl, setMediumUrl] = useState(url || paths)
     const [onCopied, setOnCopied] = useState<boolean>(false)
+    const [onError, setOnError] = useState<boolean>(false)
     const [isLoadingBookmark, setIsLoadingBookmark] = useState<boolean>(false)
     const isLoggedIn = useIsLoggedIn()
     const user = useUserData()
@@ -171,6 +172,10 @@ export default function PostPage({url}: { url: string }) {
         router.push("/auth?redirect=" + paths)
     }
 
+    const handleOnBack = () => {
+        router.back()
+    }
+
     useEffect(() => {
         if (url == null && paths != "") {
             setMediumUrl(paths)
@@ -178,8 +183,8 @@ export default function PostPage({url}: { url: string }) {
     }, [paths]);
 
     useEffect(() => {
-        if (!postIsLoading && postData?.content == null) {
-            router.back()
+        if (!postIsLoading && (postData?.content == null || postError)) {
+            setOnError(true)
             dispatch(
                 showFlag({
                     success: false,
@@ -187,107 +192,121 @@ export default function PostPage({url}: { url: string }) {
                 }) as any
             );
         }
-    }, [postData]);
+    }, [postData, postError]);
 
     return (
         <LandingPageLayout title={postData?.title}>
             <PostWrapper>
                 {
-                    postIsLoading ?
-                        <Box xcss={xcss({minHeight: "90vh"})}>
-                            <SpinnerWrapper>
-                                <SpinnerLoading size={"large"}/>
-                            </SpinnerWrapper>
+                    !postIsLoading && (onError || postData?.title == null) ?
+                        <Box id={"empty-state-height"} xcss={xcss({marginBlock: "space.400"})}>
+                            <EmptyState
+                                header="Fetch Failed 😥"
+                                description="Failed to render this page, please try again or change another Medium article URL"
+                                headingLevel={3}
+                                imageUrl={"/assets/images/empty_x.svg"}
+                            />
+                            <Flex justifyContent={"center"}>
+                                <Button onClick={handleOnBack}>
+                                    Back to Home
+                                </Button>
+                            </Flex>
                         </Box>
                         :
-                        postData ?
-                            <Fragment>
-                                <h1>
-                                    {postData?.title || "Loading..."}
-                                </h1>
-                                <br/>
-                                <Divider/>
-                                <br/>
-                                <Box xcss={cardAuthorStyle}>
-                                    <Grid
-                                        xcss={responsiveStyles} gap="space.200" alignItems="center"
-                                        templateAreas={wSize < 700 ? [
-                                            "content content content",
-                                            "action action action",
-                                        ] : [
-                                            "content content content  action action",
-                                        ]}>
-                                        <Box style={{gridArea: "content", marginBottom: "auto"}}>
-                                            <Inline alignBlock="center" space={"space.100"}>
-                                                <Flex gap="space.200" alignItems="center">
-                                                    <Avatar src={postData?.author?.avatar}/>
-                                                    <Text size={"large"} weight={"bold"}>
-                                                        {postData?.author?.name}
-                                                    </Text>
-                                                </Flex>
-                                            </Inline>
-                                        </Box>
-                                        <Box style={{gridArea: "action", marginBottom: "auto"}}>
-                                            <Inline alignBlock="center">
-                                                <ButtonGroup label="Action">
-                                                    {
-                                                        wSize < 800 ?
-                                                            <RWebShare
-                                                                data={{
-                                                                    url: `https://medium.web.id/${paths}`,
-                                                                    title: postData?.title,
-                                                                    text: "shared from: https://medium.web.id/",
-                                                                } as ShareData}
-                                                                onClick={() => console.log("shared successfully!")}
-                                                            >
-                                                                <Button iconBefore={(props) =>
-                                                                    <ShareIcon size="small" {...props}/>}
+                        postIsLoading ?
+                            <Box>
+                                {/*<SpinnerWrapper>*/}
+                                <SpinnerLoading size={"large"}/>
+                                {/*</SpinnerWrapper>*/}
+                            </Box>
+                            :
+                            postData ?
+                                <Fragment>
+                                    <h1>
+                                        {postData?.title || "Loading..."}
+                                    </h1>
+                                    <br/>
+                                    <Divider/>
+                                    <br/>
+                                    <Box xcss={cardAuthorStyle}>
+                                        <Grid
+                                            xcss={responsiveStyles} gap="space.200" alignItems="center"
+                                            templateAreas={wSize < 700 ? [
+                                                "content content content",
+                                                "action action action",
+                                            ] : [
+                                                "content content content  action action",
+                                            ]}>
+                                            <Box style={{gridArea: "content", marginBottom: "auto"}}>
+                                                <Inline alignBlock="center" space={"space.100"}>
+                                                    <Flex gap="space.200" alignItems="center">
+                                                        <Avatar src={postData?.author?.avatar}/>
+                                                        <Text size={"large"} weight={"bold"}>
+                                                            {postData?.author?.name}
+                                                        </Text>
+                                                    </Flex>
+                                                </Inline>
+                                            </Box>
+                                            <Box style={{gridArea: "action", marginBottom: "auto"}}>
+                                                <Inline alignBlock="center">
+                                                    <ButtonGroup label="Action">
+                                                        {
+                                                            wSize < 800 ?
+                                                                <RWebShare
+                                                                    data={{
+                                                                        url: `https://medium.web.id/${paths}`,
+                                                                        title: postData?.title,
+                                                                        text: "shared from: https://medium.web.id/",
+                                                                    } as ShareData}
+                                                                    onClick={() => console.log("shared successfully!")}
                                                                 >
-                                                                    {t("share")}
-                                                                </Button>
-                                                            </RWebShare>
-                                                            :
-                                                            <ShareButtonWeb onCopiedURL={handleOnCopiedURL}
-                                                                            shareData={{
-                                                                                url: `https://medium.web.id/${paths}`,
-                                                                                title: postData?.title,
-                                                                                text: "shared from: https://medium.web.id/",
-                                                                            } as ShareData}/>
-                                                    }
-                                                    <Button isLoading={isLoadingBookmark}
-                                                            isDisabled={isLoadingBookmark}
-                                                            appearance="primary"
-                                                            onClick={
-                                                                isLoggedIn ? (bookmarkData ? deleteBookmarkData : postBookmarkData) : navigateToLogin
-                                                            }
-                                                            iconBefore={(props) =>
-                                                                bookmarkData ?
-                                                                    <CheckboxCheckedIcon size="small" {...props}/>
-                                                                    :
-                                                                    <StoryIcon
-                                                                        size="small" {...props}/>}>{bookmarkData?.content ? t("un_bookmark") : t("bookmark")}</Button>
-                                                </ButtonGroup>
-                                            </Inline>
-                                        </Box>
-                                    </Grid>
-                                </Box>
-                                <p dangerouslySetInnerHTML={{__html: postData?.content}}></p>
-                                <Box xcss={xcss({marginBlock: "space.200"})}>
-                                    <Box xcss={cardTagsStyle}>
-                                        <Flex wrap="wrap">
-                                            {
-                                                postData?.tags?.map((tag: any) => (
-                                                    <SimpleTag key={tag} text={tag}/>
-                                                ))
-                                            }
-                                        </Flex>
+                                                                    <Button iconBefore={(props) =>
+                                                                        <ShareIcon size="small" {...props}/>}
+                                                                    >
+                                                                        {t("share")}
+                                                                    </Button>
+                                                                </RWebShare>
+                                                                :
+                                                                <ShareButtonWeb onCopiedURL={handleOnCopiedURL}
+                                                                                shareData={{
+                                                                                    url: `https://medium.web.id/${paths}`,
+                                                                                    title: postData?.title,
+                                                                                    text: "shared from: https://medium.web.id/",
+                                                                                } as ShareData}/>
+                                                        }
+                                                        <Button isLoading={isLoadingBookmark}
+                                                                isDisabled={isLoadingBookmark}
+                                                                appearance="primary"
+                                                                onClick={
+                                                                    isLoggedIn ? (bookmarkData ? deleteBookmarkData : postBookmarkData) : navigateToLogin
+                                                                }
+                                                                iconBefore={(props) =>
+                                                                    bookmarkData ?
+                                                                        <CheckboxCheckedIcon size="small" {...props}/>
+                                                                        :
+                                                                        <StoryIcon
+                                                                            size="small" {...props}/>}>{bookmarkData?.content ? t("un_bookmark") : t("bookmark")}</Button>
+                                                    </ButtonGroup>
+                                                </Inline>
+                                            </Box>
+                                        </Grid>
                                     </Box>
-                                </Box>
-                            </Fragment>
-                            : null
+                                    <p dangerouslySetInnerHTML={{__html: postData?.content}}></p>
+                                    <Box xcss={xcss({marginBlock: "space.200"})}>
+                                        <Box xcss={cardTagsStyle}>
+                                            <Flex wrap="wrap">
+                                                {
+                                                    postData?.tags?.map((tag: any) => (
+                                                        <SimpleTag key={tag} text={tag}/>
+                                                    ))
+                                                }
+                                            </Flex>
+                                        </Box>
+                                    </Box>
+                                </Fragment>
+                                : null
                 }
             </PostWrapper>
-            <FooterNavigation/>
             <Footer/>
         </LandingPageLayout>
     );

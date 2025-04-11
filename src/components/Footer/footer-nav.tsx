@@ -55,7 +55,7 @@ const FooterNavigation = () => {
         }
     }
     return (
-        <Box xcss={footerStyles}>
+        <Box id={"footer-nav"} xcss={footerStyles}>
             <LandingWrapper>
                 <ContainerGrid>
                     <Row>

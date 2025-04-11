@@ -72,7 +72,7 @@ const Layout: FC<LayoutProps> = (
     }
 
     const openAbout = () => {
-        router.push(`${process.env.NEXT_PUBLIC_PAGE_URL}/about`)
+        router.push(`/about`)
     }
 
     return (

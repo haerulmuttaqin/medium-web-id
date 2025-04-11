@@ -109,6 +109,7 @@ const BookmarkPage: NextPage = () => {
                     onItemDelete={handleOpenModalDelete}
                 />
                 <br/>
+                <br/>
             </ContentWrapper>
 
             <ModalTransition>
