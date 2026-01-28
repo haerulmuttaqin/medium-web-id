@@ -69,7 +69,7 @@ const FooterNavigation = () => {
                             <h5>Other Tools</h5>
                             <Box as={"ul"} xcss={navLinksStyles}>
                                 <Box as={"li"}>
-                                    <Box onClick={() => navigate("https://mocknroll.me/", true)}
+                                    <Box onClick={() => navigate("https://mocknroll.haeworks.id/", true)}
                                          xcss={navLinkStyles}>
                                         Mock N Roll (Mock API Generator) <b>↗</b>
                                     </Box>
